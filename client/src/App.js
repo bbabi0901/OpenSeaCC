@@ -1,27 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
+import Main from "./pages/Main";
 import Mint from "./pages/Mint";
 import MyPage from "./pages/MyPage";
 import Market from "./pages/Market";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <main>
-          <Header />
-          <section className="features">
-            <Routes>
-              <Route path="/market" element={<Market />} />
-              <Route path="/mypage" element={<MyPage />} />
-              <Route path="/mint" element={<Mint />} />
-            </Routes>
-          </section>
-        </main>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <main>
+        <Header />
+        <section className="features">
+          <Routes>
+            <Route exact path="/" element={<Main />} />
+            <Route path="/market" element={<Market />} />
+            <Route path="/mypage" element={<MyPage />} />
+            <Route path="/mint" element={<Mint />} />
+          </Routes>
+        </section>
+        <Footer />
+      </main>
+    </div>
   );
 };
 

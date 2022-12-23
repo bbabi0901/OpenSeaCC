@@ -1,61 +1,59 @@
-function Header() {
+import { Link } from "react-router-dom";
+
+function Header(props) {
   return (
     <div className="header">
       <div class="nav">
-        {/* <!--logo--> */}
         <span class="nav__CI">
-          <a href="/">
+          <Link to="/">
             <img
               class="nav__logo"
               src="https://opensea.io/static/images/logos/opensea.svg"
+              alt=""
             />
-          </a>
-          <a class="nav__siteName" href="/">
-            OpenSea
-          </a>
+          </Link>
+          <Link to="/">
+            <h1 className="nav__siteName">OpenSea</h1>
+          </Link>
         </span>
 
         <span class="nav__search">
-          {/* <input class="nav__searchbar" aria-label="Search OpenSea" aria-multiline="false" placeholder="    Search items, collections, and accounts" role="searchbox" type="search" value style = "cursor: text;"></input> */}
+          <input
+            class="nav__searchbar"
+            aria-label="Search OpenSea"
+            aria-multiline="false"
+            placeholder="    Search items, collections, and accounts"
+            role="searchbox"
+            type="search"
+            value
+          ></input>
         </span>
         <ul>
           <div class="nav__menu">
             <ul>
-              <a href="/market">Market</a>
-              {/* <!-- <li>All NFTs</li>
-                            <li>Art</li>
-                            <li>Collectibles</li>
-                            <li>Domain Names</li>
-                            <li>Music</li>
-                            <li>Photography</li>
-                            <li>Sports</li>
-                            <li>Trading Cards</li>
-                            <li>Utility</li>
-                            <li>Virtual Worlds</li> --> */}
+              <Link to="/market">Market</Link>
             </ul>
-
             <ul>
-              <a href="/mint">Mint</a>
+              <Link to="/mint">Mint</Link>
             </ul>
           </div>
         </ul>
+
         <div class="nav__icons">
           <li>
-            <a href="/mypage">
+            <Link to="/mypage">
               <i class="fa-solid fa-user"></i>
-            </a>
+            </Link>
           </li>
-
           <li>
-            <a>
+            <Link to="/wallet">
               <i class="fa-solid fa-wallet"></i>
-            </a>
+            </Link>
           </li>
-
           <li>
-            <a>
+            <Link to="/cart">
               <i class="fa-solid fa-cart-shopping"></i>
-            </a>
+            </Link>
           </li>
         </div>
       </div>
