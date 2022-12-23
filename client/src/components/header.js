@@ -1,4 +1,9 @@
-import './header.css';
+import '../pages/mint';
+import '../pages/mypage';
+import '../pages/wallet';
+
+
+
 
 function Header() {
   return (
@@ -17,7 +22,7 @@ function Header() {
                 <ul>
                     <div class="nav__menu">
                         {/* <!--Explore--> */}
-                        <ul><a href="">Explore</a>
+                        <ul><a href="/">Explore</a>
                             {/* <!-- <li>All NFTs</li>
                             <li>Art</li>
                             <li>Collectibles</li>
@@ -30,12 +35,12 @@ function Header() {
                             <li>Virtual Worlds</li> --> */}
                         </ul>
                         {/* <!--Stats--> */}
-                        <ul><a href="">Stats</a>
+                        <ul><a href="/">Stats</a>
                             {/* <!-- <li>Ranking</li>
                             <li>Activity</li> --> */}
                         </ul>
                         {/* <!--Resources--> */}
-                        <ul><a href="">Resources</a>
+                        <ul><a href="/">Resources</a>
                             {/* <!-- <li>Learn</li>
                             <li>Help</li>
                             <li>Platform Status</li>
@@ -53,12 +58,12 @@ function Header() {
                             <i class="fa-brands fa-tiktok"></i> --> */}
                         </ul>       
                         {/* <!--Create--> */}
-                        <ul><a href="">Create</a></ul>
+                        <ul><a href="../pages/mint">Create</a></ul>
                     </div>
                 </ul>
                 {/* <!--icon.symbol--> */}
                 <div class="nav__icons">
-                    <li><i class="fa-solid fa-user"></i></li>
+                    <li><a href="../pages/mypage"><i class="fa-solid fa-user"></i></a></li>
                         {/* <!-- <li>Profile</li>
                         <li>Favorites</li>
                         <li>Watchlist</li>
@@ -77,9 +82,9 @@ function Header() {
                         <li>Night Mode.onOff</li> --> */}
                 
                     {/* <!--Wallet.symbol--> */}
-                    <li><i class="fa-solid fa-wallet"></i></li>
+                    <li><a href='../pages/wallet'><i class="fa-solid fa-wallet"></i></a></li>
                     {/* <!--Cart.symbol--> */}
-                    <li><i class="fa-solid fa-cart-shopping"></i></li>
+                    <li><a href='/'><i class="fa-solid fa-cart-shopping"></i></a></li>
                 </div>
             </div>
     </div>
