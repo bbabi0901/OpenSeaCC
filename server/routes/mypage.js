@@ -1,8 +1,9 @@
 var express = require('express');
+const {showinfo,disconnect} = require("./../controller/mypageController.js");
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-    res.send('미구현 페이지 입니다.');
-});
+router.get('/',showinfo);
+
+router.get('/',disconnect);
 
 module.exports = router;
