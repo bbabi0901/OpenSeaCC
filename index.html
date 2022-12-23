@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSea,the largest NFT marketplace</title>
+<script src="https://kit.fontawesome.com/d8225ae48f.js" crossorigin="anonymous"></script>
+<style>
+body{
+    font-family: Helvetica;
+    background-color:rgb(238, 252, 253);
+    margin: 0;
+    }
+.nav{ 
+    margin: 0px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+}
+.nav__siteName{
+    font-family: Helvetica;
+    font-size: 30px;
+    padding: 10px;
+    font-style: bold;
+
+}
+.nav__logo{
+    height: 40px;
+    width: 40px;
+}
+.nav__CI{
+    
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav__searchbar{
+    width: 500px;
+    height: 38px;
+    font-size: 18px;
+    border-radius: 30px;
+    border-color: lightgrey;
+}
+.nav__menu{
+    padding: 0px;
+    display: flex;
+    list-style: none;
+}
+
+a{
+    font-family: Helvetica;
+    text-decoration: none;
+    color: black;
+}
+.nav__icons{
+    list-style: none;
+    display: flex;
+    font-size: 20px;
+}
+.nav__icons li{
+    padding: 8px 12px;
+    
+}
+
+.slide{
+    margin: 0px;
+    padding: 8px 12px;
+    justify-content: space-between;
+    align-items: center;
+    text-align:center;
+}
+h2{
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+}
+.trending_top{
+    background-color: whitesmoke;
+
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+}
+.trending_top_menu{
+    height: 40px;
+    margin: 0px;
+    background-color: whitesmoke;
+    display: flex;
+    list-style: none;
+}
+h5{
+    width: 500px;
+    height: 40px;
+    margin: 0px;
+    padding: 0 1.5% 0 5.5%;
+    display: flex;
+    list-style: none;
+    text-align: center;
+    color: darkgray;
+    align-items: center;
+}
+.toggle{
+    display: flex;
+
+}
+.select{
+    display: flex;
+    padding: 0px 20px 0px 0px;
+
+}
+.select_1{
+    margin: 5px;
+    border: 3px;
+    border-radius: 10px;
+    border-color: darkgrey;
+}
+i{
+    padding: 5px;
+}
+.trending_top_number{
+    display: flex;
+     margin: 0px;
+}
+.trending_top_number_a{
+    color: darkgray;
+    display: block;
+    padding: 0 10px 0 0;
+    width: 50%;
+    text-align:left;
+}
+.trending_top_number_b{
+    color: darkgray;
+    display: block;
+    padding: 0 0 0 10px;
+    width: 50%;
+    text-align:left;
+
+}
+h4{
+    margin: 5px;
+    padding: 5px;
+    background-color: whitesmoke;
+    height: 30px;
+    align-items: center;
+    border-radius: 10px;
+}
+.notable_collections{
+    display: flex;
+    align-items: center;
+}
+.notable_collections_1{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 180px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+
+
+}
+.food_NFTs_spotlight{
+    display: flex;
+    align-items: center;
+
+}
+.food_NFTs_spotlight_1{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 180px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.NFT_101{
+    display: flex;
+    align-items: center;
+
+}
+.NFT_101_1{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 180px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.browse_by_category{
+    display: flex;
+    align-items: center;
+
+}
+.browse_by_category_1{
+    margin: 5px;
+    display: block;
+    width: 33.33%;
+    height: 280px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.footer{
+    background-color: lightblue;
+
+}
+
+</style>
+</head>
+    <body>
+        <div>
+            <div class="nav">
+                    <!--logo-->
+                <span class="nav__CI">
+                    <img class="nav__logo" src ="https://opensea.io/static/images/logos/opensea.svg"/>
+                    <a class="nav__siteName" href="">OpenSea</a> 
+
+                </span>
+
+                    <!--Search items, collections, and accounts-->
+                <span class="nav__search">
+                    <input class="nav__searchbar" aria-label="Search OpenSea" aria-multiline="false" placeholder="    Search items, collections, and accounts" role="searchbox" type="search" value style = "cursor: text;">
+                </span>
+                <ul>
+                    <div class="nav__menu">
+                        <!--Explore-->
+                        <ul><a href="">Explore</a>
+                            <!-- <li>All NFTs</li>
+                            <li>Art</li>
+                            <li>Collectibles</li>
+                            <li>Domain Names</li>
+                            <li>Music</li>
+                            <li>Photography</li>
+                            <li>Sports</li>
+                            <li>Trading Cards</li>
+                            <li>Utility</li>
+                            <li>Virtual Worlds</li> -->
+                        </ul>
+                        <!--Stats-->
+                        <ul><a href="">Stats</a>
+                            <!-- <li>Ranking</li>
+                            <li>Activity</li> -->
+                        </ul>
+                        <!--Resources-->
+                        <ul><a href="">Resources</a>
+                            <!-- <li>Learn</li>
+                            <li>Help</li>
+                            <li>Platform Status</li>
+                            <li>Partners</li>
+                            <li>Taxes</li>
+                            <li>Blogs</li>
+                            <li>Docs</li>
+                            <li>Newsletter</li> -->
+                            <!--Community.symbols-->
+                            <!-- <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-discord"></i>
+                            <i class="fa-brands fa-reddit-alien"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-tiktok"></i> -->
+                        </ul>       
+                        <!--Create-->
+                        <ul><a href="">Create</a></ul>
+                    </div>
+                </ul>
+                <!--icon.symbol-->
+                <div class="nav__icons">
+                    <li><i class="fa-solid fa-user"></i></li>
+                        <!-- <li>Profile</li>
+                        <li>Favorites</li>
+                        <li>Watchlist</li>
+                        <li>My Collections</li>
+                        <li>Settings</li>
+                        <li>Language</li>
+                        <ul><a><-Choose Language</a>
+                            <li>English</li>
+                            <li>Spanish</li>
+                            <li>Deutsch</li>
+                            <li>French</li>
+                            <li>Japanese</li>
+                            <li>Korean</li>
+                            <li>Chinese</li>
+                        </ul>
+                        <li>Night Mode.onOff</li> -->
+                
+                    <!--Wallet.symbol-->
+                    <li><i class="fa-solid fa-wallet"></i></li>
+                    <!--Cart.symbol-->
+                    <li><i class="fa-solid fa-cart-shopping"></i></li>
+                </div>
+            </div>
+            <div class="slide">
+                <H1>Explore, collect, and sell NFTs</H1>
+            </div>
+            <div class="trending_top">
+                <div class="toggle">
+                <h2>Trending</h2><h2>Top</h2>
+                </div>
+                <span class="select">
+                    <div class="select_1">
+                        <select ></select>
+                        <i>All chains</i> 
+                        <i class="fa-brands fa-atlassian"></i>
+                        <i class="fa-brands fa-uikit"></i>
+                        <i class="fa-brands fa-ethereum"></i>
+                        <i class="fa-brands fa-xbox"></i>
+                        <i class="fa-brands fa-playstation"></i>
+                        <i class="fa-brands fa-pagelines"></i> 
+                        <i class="fa-brands fa-codepen"></i>
+                        <button>View all</button>
+                    </div>
+                </span> 
+            </div>   
+                <span class="trending_top_menu">
+                    <h5>COLLECTION</h5>
+                    <h5>FLOOR PRICE</h5>
+                    <h5>VOLUME</h5>
+                    <h5>COLLECTION</h5>
+                    <h5>FLOOR PRICE</h5>
+                    <h5>VOLUME</h5>
+                </span>
+                <div class="trending_top_number">
+                    <div class="trending_top_number_a">
+                        <h4>1</h4>
+                        <h4>2</h4>
+                        <h4>3</h4>
+                        <h4>4</h4>
+                        <h4>5</h4>
+                    </div>
+                    <div class="trending_top_number_b">
+                        <h4>6</h4>
+                        <h4>7</h4>
+                        <h4>8</h4>
+                        <h4>9</h4>
+                        <h4>10</h4>
+                    </div>
+                </div>            
+                
+
+                <h3>Notable collections</h3>
+            <div class="notable_collections">
+                <div class="notable_collections_1">1</div>
+                <div class="notable_collections_1">2</div>
+                <div class="notable_collections_1">3</div>
+                <div class="notable_collections_1">4</div>
+                <div class="notable_collections_1">5</div>
+            </div>
+            <h3>Food NFTs spotlight</h3>
+            <div class="food_NFTs_spotlight">
+                <div class="food_NFTs_spotlight_1">1</div>
+                <div class="food_NFTs_spotlight_1">2</div>
+                <div class="food_NFTs_spotlight_1">3</div>
+                <div class="food_NFTs_spotlight_1">4</div>
+                <div class="food_NFTs_spotlight_1">5</div>
+                <div class="food_NFTs_spotlight_1">6</div>
+            </div>
+            <h3>NFT_101</h3>
+            <div class="NFT_101">
+                <div class="NFT_101_1">1</div>
+                <div class="NFT_101_1">2</div>
+                <div class="NFT_101_1">3</div>
+                <div class="NFT_101_1">4</div>
+                <div class="NFT_101_1">5</div>
+                <div class="NFT_101_1">6</div>
+            </div>
+            <h3>Browse by category</h3>
+            <div class="browse_by_category">
+                <div class="browse_by_category_1">1</div>
+                <div class="browse_by_category_1">2</div>
+                <div class="browse_by_category_1">3</div>
+            </div>
+            <div class="browse_by_category">
+                <div class="browse_by_category_1">1</div>
+                <div class="browse_by_category_1">2</div>
+                <div class="browse_by_category_1">3</div>
+            </div>
+            <div class="browse_by_category">
+                <div class="browse_by_category_1">1</div>
+                <div class="browse_by_category_1">2</div>
+                <div class="browse_by_category_1">3</div>
+            </div>
+
+            <div class="footer">
+                <div class="stay_in_the_loop">
+                            <!--sign up-->
+                <h3>Stay in the loop</h3>
+                <h4>Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating OpenSea.</h4>
+                <input>
+                <button>Sign up</button>
+                <!--Join the community-->
+
+                </div>
+                <div class="opensea">
+                            <!--intro-->
+                    <a class = "nav_logo" href="/"><img height = "40" width = "40" src ="https://opensea.io/static/images/logos/opensea-white.svg"/></a>
+                    <h4>OpenSea</h4>
+                    <h5>The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</h5>
+                </div>
+                <div>
+                    <h4>Marketplace</h4>
+                    <a href="">All NFTs</a>
+                    <a href="">Art</a>
+                    <a href="">Collectibles</a>
+                    <a href="">Domain Names</a>
+                    <a href="">Music</a>
+                    <a href="">Photography</a>
+                    <a href="">Sports</a>
+                    <a href="">Trading Cards</a>
+                    <a href="">Utility</a>
+                    <a href="">Virtual Worlds</a>
+                </div>
+                <div>
+                    <h4>My Account</h4>
+                    <a href="">Profile</a>
+                    <a href="">Favorites</a>
+                    <a href="">Watchlist</a>
+                    <a href="">My Collections</a>
+                    <a href="">Settings</a>
+                </div>
+                <div>
+                    <h4>Stats</h4>
+                    <a href="">Rankings</a>
+                    <a href="">Activity</a>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <li><a href="">Learn</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">Platform Status</a></li>
+                    <li><a href="">Partners</a></li>
+                    <li><a href="">Taxes</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Docs</a></li>
+                    <li><a href="">Newsletter</a></li>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Ventures</a></li>
+                    <li><a href="">Grants</a></li>
+                </div>
+               <h6>© 2018 - 2022 Ozone Networks, Inc</h6>   
+               <h6><a href="">Privacy Policy</a></h6>
+                <h6><a href="">Terms of Service</a></h6>
+            </div>
+        </div>
+    </body>
+</html>
