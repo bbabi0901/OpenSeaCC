@@ -13,7 +13,7 @@ function Header(props) {
             />
           </Link>
           <Link to="/">
-            <h1 className="nav__siteName">OpenSea</h1>
+            <h1 className="nav__siteName">OpenSea?</h1>
           </Link>
         </span>
 
@@ -25,7 +25,6 @@ function Header(props) {
             placeholder="    Search items, collections, and accounts"
             role="searchbox"
             type="search"
-            value
           ></input>
         </span>
         <ul>
