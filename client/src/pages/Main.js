@@ -137,7 +137,104 @@ const Main = () => {
         <div class="browse_by_category_1">2</div>
         <div class="browse_by_category_1">3</div>
       </div>
+        <div className="footer">
+        <div className="footer_head">
+          {/* <!--sign up--> */}
+          <div className="stay_in_the_loop">
+            <h2>Stay in the loop</h2>
+            <h4>
+              Join our mailing list to stay in the loop with our newest feature
+              releases, NFT drops, and tips and tricks for navigating OpenSea.
+            </h4>
+
+            <input></input>
+            <button>Sign up</button>
+          </div>
+          <div className="join_the_community">
+            <h2>Join the community</h2>
+            <div className="icon">
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-discord"></i>
+              <i class="fa-brands fa-reddit-alien"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-tiktok"></i>
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+          </div>
+          {/* <!--Join the community--> */}
+        </div>
+        <div className="footer_body">
+          <div class="opensea">
+            {/* <!--intro--> */}
+            <div class="footer_menu_1">
+              <div>
+                <a class="footer_logo" href="/">
+                  <img class="footer_logo" src="https://opensea.io/static/images/logos/opensea-white.svg"/>
+                </a>
+                <h2>OpenSea</h2>
+                <h4>
+                  The world’s first and largest digital marketplace for crypto
+                  collectibles and non-fungible tokens (NFTs). Buy, sell, and discover
+                  exclusive digital items.
+                </h4>
+            </div>
+          </div>
+          <div class="footer_menu_2">
+              <div className="marketplace">
+              <h3>Marketplace</h3>
+              <h4>All NFTs</h4>
+              <h4>Art</h4>
+              <h4>Collectibles</h4>
+              <h4>Domain Names</h4>
+              <h4>Music</h4>
+              <h4>Photography</h4>
+              <h4>Sports</h4>
+              <h4>Trading Cards</h4>
+              <h4>Utlity</h4>
+              <h4>Virtual Worlds</h4>
+              </div>
+            </div>
+            <div className="my_account">
+              <h3>My Account</h3>
+              <h4>Profile</h4>            
+              <h4>Favorites</h4>
+              <h4>Watcst</h4>
+              <h4>My Collections</h4>
+              <h4>Settings</h4>
+              <h3 >Stats</h3>
+              <h4>Rankings</h4>
+              <h4>Activity</h4>
+            </div>
+            <div className="resources">
+              <h3>Resources</h3>       
+                <h4>Learn</h4>
+                <h4>Help Center</h4>
+                <h4>Platform Status</h4>
+                <h4>Partners</h4>
+                <h4>Taxes</h4>
+                <h4>Blog</h4>        
+                <h4>Docs</h4>
+                <h4>Newsletter</h4>     
+            </div>
+            <div className="company">
+              <h3>Company</h3>      
+                <h4>About</h4>
+                <h4>Careers</h4>
+                <h4>Ventures</h4>
+                <h4>Grants</h4>
+            </div>
+
+          </div>
+          </div>  
+        <div>
+          <h6>© 2018 - 2022 Ozone Networks, Inc</h6>
+          <h6>Privacy Policy</h6>
+          <h6>Terms of Service</h6>
+        </div>
+      </div>
     </div>
+    
   );
 };
 

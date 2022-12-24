@@ -12,7 +12,8 @@ function Header() {
       elIsWalletChecked.classList.add("gray");
     }
   };
-  // isWalletChecked(true)
+  
+  //isWalletChecked(false)
   //지갑 연결 상태 표시
 
   return (

@@ -111,14 +111,20 @@ a{
     margin: 0px;
     padding: 1px 0px;
     width: auto;
-    height: 550px;
+    height: 650px;
     justify-content: space-between;
     align-items: center;
     text-align:center;
 }
+.background_image{
+    height: 550px;
+  
+}
 h2{
+    
     margin: 0px;
     padding: 0px 0px 0px 20px;
+
 }
 .trending_top{
     background-color: whitesmoke;
@@ -139,6 +145,7 @@ h2{
     color: rgb(89, 89, 89);
 }
 h3{
+    text-align: left;
     padding: 0px 0px 0px 20px;
 }
 h6{
@@ -218,7 +225,7 @@ i{
 h4{
     margin: 0;
     padding-left: 20px;
-    width: 40px;
+    width: 20px;
 }
 .notable_collections{
     display: flex;
@@ -287,18 +294,94 @@ h4{
     text-align: center;
 }
 .footer{
+    text-decoration: none;
     display: block;
     width: auto;
-    padding: 30px;
-    background-color: lightblue;
+    padding: 30px 100px;
+    background-color: rgb(79, 154, 252);
 }
-.stay_in_the_loop{
+.footer h6{
+    color: white;
+    margin: 10px 0;
+    padding:0;
+    text-align: left;
+    width: auto;
+}
+.footer h4{
+    color: white;
+    margin: 10px 0;
+    padding:0;
+    text-align: left;
+    width: auto;
+}
+.footer h3{
+    color: white;
+    text-align: left;
+    margin: 20px 0;
+    padding:0;
+}
+.footer h2{
+    color: white;
+    text-align: left;
+    margin: 20px 0;
+    padding:0;
+}
+.footer_head{
     display: flex;
     margin: 0px;
     padding: 8px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+}
+.stay_in_the_loop{
+    margin: 0 50px 0 0;
+    width: 600px;
+
+}
+.join_the_community{
+    margin: 0 0 0 50px;
+    width: auto;
+}
+.footer_body{
+    margin: 50px 0;
+    padding: 50px 0;
+    top: 0;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+.footer_menu_1{
+    margin: 0 50px 0 0;
+}
+.footer_menu_2{
+    margin: 0 0 0 50px;
+}
+.marketplace, .my_account, .company, .resources{
+    margin: 0 20px;
+}
+.footer_logo img{
+
+    width: 40px;
+    height: 40px;
+}
+.icon{
+    text-align: left;
+}
+.join_the_community i{
+
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 6px 0px 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(117, 177, 255);
+    align-items: center;
+    text-align: center;
+
+
 }
 .opensea{
     display: flex;
@@ -312,6 +395,7 @@ footer h3 h4 h5 {
 .footer_menu{
     display: block;
 }
+
 
 .Mint{
     margin: auto;
