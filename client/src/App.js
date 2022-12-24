@@ -6,11 +6,9 @@ import Footer from "./components/Footer/Footer";
 
 import Main from "./pages/Main";
 import Mint from "./pages/Mint";
-import MyPage from "./pages/Mypage";
+import MyPage from "./pages/MyPage";
 import Market from "./pages/Market";
 import Wallet from "./pages/Wallet";
-
-
 
 const App = (props) => {
   return (
