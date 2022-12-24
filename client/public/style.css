@@ -15,7 +15,7 @@ body{
     top: 0;
 }
 .header h3{
-    padding: 0px 20px 0px 0px;
+    padding: 0px 0px 0px 0px;
     margin: 0px;
 }
 i:hover{
@@ -308,7 +308,7 @@ footer h3 h4 h5 {
     margin: auto;
     padding: 0px;
     width: 560px;
-    height: 1000px;
+    height: auto;
     display: flex;
 }
 .Mint .container{
@@ -342,4 +342,26 @@ footer h3 h4 h5 {
 .fa-image :hover{
     color: rgb(255, 255, 255);
     background-color: rgb(185, 185, 185);
+}
+
+.discription{
+    height: 100px;
+
+}
+.add__create_button h3{
+    padding: 15px 30px;
+
+}
+.add__create_button {
+    margin: 50px 0px;
+    padding: 0;
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(204, 231, 249) ;
+}
+.add__create_button :hover{
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(167, 218, 252);
+    color: white;
 }
