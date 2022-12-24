@@ -1,5 +1,9 @@
 const MyPage = () => {
-  return <div>MyPage 미구현</div>;
+  return (
+    <div className="MyPage">
+      MyPage 미구현
+      </div>
+  )
 };
 
 export default MyPage;
