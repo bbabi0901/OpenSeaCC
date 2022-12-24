@@ -40,54 +40,54 @@ function Body() {
                     <div class="trending_top_number_a">
                         <a href="#">
                             <h4>1</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/yaypegs"></img>
                             <h4>COLLECTION_1</h4>
                         </a>
                         <a href="#">
                             <h4>2</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/genesis-oath"></img>
                             <h4>COLLECTION_2</h4>
                         </a>
                         <a href="#">
                             <h4>3</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/wolf-game"></img>
                             <h4>COLLECTION_3</h4>
                         </a>
                         <a href="#">
                             <h4>4</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/tougenkyouofficial"></img>
                             <h4>COLLECTION_4</h4>
                         </a>
                         <a href="#">
                             <h4>5</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/kagura-jp"></img>
                             <h4>COLLECTION_5</h4>
                         </a>
                     </div>
                     <div class="trending_top_number_b">
                         <a href="#">
                             <h4>6</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/arbitrum-odyssey-nft"></img>
                             <h4>COLLECTION_6</h4>
                         </a>
                         <a href="#">
                             <h4>7</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/pacific-rim-legacy-collection"></img>
                             <h4>COLLECTION_7</h4>
                         </a>
                         <a href="#">
                             <h4>8</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/10ktf-stockroom"></img>
                             <h4>COLLECTION_8</h4>
                         </a>
                         <a href="#">
                             <h4>9</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/acrocalypse"></img>
                             <h4>COLLECTION_9</h4>
                         </a>
                         <a href="#">
                             <h4>10</h4>
-                            <img src=""></img>
+                            <img src="https://opensea.io/collection/a-common-place"></img>
                             <h4>COLLECTION_10</h4>
                         </a>
                     </div>
