@@ -10,8 +10,6 @@ import MyPage from "./pages/MyPage";
 import Market from "./pages/Market";
 import Wallet from "./pages/Wallet";
 
-
-
 const App = (props) => {
   return (
     <div className="App">
