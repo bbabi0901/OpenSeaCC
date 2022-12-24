@@ -1,23 +1,40 @@
 import '../pages/mint';
 import '../pages/mypage';
 import '../pages/wallet';
+// import {useState} from 'react';
+// const [isChecked, setIsChecked] = useState()
+
+
+
 
 
 
 
 function Header() {
+    let elIsWalletChecked = document.querySelector('.fa-wallet');
+    let isWalletChecked = function(value) {
+        if( value === true ){
+            elIsWalletChecked.classList.remove('gray')
+        }else if(value === false ){
+            elIsWalletChecked.classList.add('gray')
+        }
+    }
+    isWalletChecked(true)
+    //지갑 연결 상태 표시
+
   return (
-    <div className="header">
+    <div class="header">
         <div class="nav">
                     {/* <!--logo--> */}
                 <span class="nav__CI">
                     <a href="/"><img class="nav__logo" src ="https://opensea.io/static/images/logos/opensea.svg"/></a>
-                    <a class="nav__siteName" href="/">OpenSea</a> 
+                    <a class="nav__siteName" href="/"><h3>OpenSea</h3></a> 
                 </span>
 
                     {/* <!--Search items, collections, and accounts--> */}
+                    {/* <a href='#'><i class="fa-solid fa-magnifying-glass"></i></a> */}
                 <span class="nav__search">
-                    {/* <input class="nav__searchbar" aria-label="Search OpenSea" aria-multiline="false" placeholder="    Search items, collections, and accounts" role="searchbox" type="search" value style = "cursor: text;"></input> */}
+                    <input class="nav__searchbar" aria-label="Search OpenSea" aria-multiline="false" placeholder="...Search items, collections, and accounts" role="searchbox" type="search" ></input>
                 </span>
                 <ul>
                     <div class="nav__menu">
@@ -82,7 +99,11 @@ function Header() {
                         <li>Night Mode.onOff</li> --> */}
                 
                     {/* <!--Wallet.symbol--> */}
-                    <li><a href='../pages/wallet'><i class="fa-solid fa-wallet"></i></a></li>
+                        <li>
+                            <a href='../pages/wallet'>
+                                <i class="fa-solid fa-wallet gray" ></i>
+                            </a>
+                        </li>
                     {/* <!--Cart.symbol--> */}
                     <li><a href='/'><i class="fa-solid fa-cart-shopping"></i></a></li>
                 </div>

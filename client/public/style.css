@@ -1,0 +1,303 @@
+body{
+    font-family: Helvetica;
+    background-color:rgb(255, 255, 255);
+    margin: 0;
+    color: black;
+    }
+.hide{
+    display: none;
+}
+.gray{
+    color: rgb(105, 105, 105);
+}
+.header{ 
+    position: sticky;
+    top: 0;
+}
+.header h3{
+    padding: 0px 20px 0px 0px;
+    margin: 0px;
+}
+i:hover{
+    color:rgb(167, 218, 252)
+}
+.nav{ 
+    margin: 0px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white;
+}
+.nav__siteName{
+    font-family: Helvetica;
+    font-size: 30px;
+    padding: 10px;
+    font-style: bold;
+
+}
+.nav__logo{
+    height: 40px;
+    width: 40px;
+}
+.nav__CI{
+    
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav__searchbar{
+    width: 500px;
+    height: 38px;
+    font-size: 18px;
+    border-radius: 30px;
+    border-color: lightgrey;
+}
+.nav__menu{
+    padding: 0px 20px;
+    display: flex;
+    list-style: none;
+    text-align: center;
+
+}
+.nav__menu a,ul{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav__menu :hover{
+    background-color: rgb(167, 218, 252);
+    color:rgb(255, 255, 255)
+
+}
+
+a{
+    font-family: Helvetica;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.nav__icons{
+    list-style: none;
+    display: flex;
+    font-size: 20px;
+}
+.nav__icons li{
+    padding: 8px 12px;
+    
+}
+.body img{
+    margin: 0;
+    padding: 0;
+    width: 1440px;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slide{
+    margin: 0px;
+    padding: 1px 0px;
+    width: auto;
+    height: 650px;
+    justify-content: space-between;
+    align-items: center;
+    text-align:center;
+}
+h2{
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+}
+.trending_top{
+    background-color: whitesmoke;
+
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+
+}
+.trending_top_menu{
+    height: 40px;
+    margin: 0px;
+    background-color: whitesmoke;
+    display: flex;
+    list-style: none;
+}
+.trending_top_number a{
+    color: rgb(89, 89, 89);
+}
+h3{
+    padding: 0px 0px 0px 20px;
+}
+h6{
+    margin: 0;
+}
+h5{
+    width: 500px;
+    height: 40px;
+    margin: 0px;
+    padding: 0 1.5% 0 5.5%;
+    display: flex;
+    list-style: none;
+    text-align: center;
+    color: darkgray;
+    align-items: center;
+}
+.toggle{
+    display: flex;
+
+}
+.select{
+    display: flex;
+    padding: 0px 20px 0px 0px;
+
+}
+.select_1{
+    margin: 5px;
+    border: 3px;
+    border-radius: 10px;
+    border-color: darkgrey;
+}
+i{
+    padding: 5px;
+}
+.trending_top_number{
+    display: flex;
+     margin: 0px;
+}
+.trending_top_number img{
+    width: 40px;
+    height: 40px;
+}
+.trending_top_number_a{
+    color: darkgray;
+    display: block;
+    padding: 0 10px 0 0;
+    width: 50%;
+    text-align:left;
+}
+.trending_top_number_a a{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    background-color: whitesmoke;
+    height: 30px;
+    align-items: center;
+    border-radius: 10px;
+}
+.trending_top_number_b{
+    color: darkgray;
+    display: block;
+    padding: 0 0 0 10px;
+    width: 50%;
+    text-align:left;
+
+}
+.trending_top_number_b a{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    background-color: whitesmoke;
+    height: 30px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+h4{
+    margin: 0;
+    padding-left: 20px;
+    width: 40px;
+}
+.notable_collections{
+    display: flex;
+    align-items: center;
+}
+.notable_collections_1{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 180px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+
+
+}
+.food_NFTs_spotlight{
+    display: flex;
+    align-items: center;
+
+}
+.food_NFTs_spotlight_1{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 180px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.NFT_101{
+    display: flex;
+    align-items: center;
+
+}
+.NFT_101_1{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 180px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.browse_by_category{
+    display: flex;
+    align-items: center;
+
+}
+.browse_by_category_1{
+    margin: 5px;
+    display: block;
+    width: 33.33%;
+    height: 280px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.footer{
+    display: block;
+    width: auto;
+    padding: 30px;
+    background-color: lightblue;
+}
+.stay_in_the_loop{
+    display: flex;
+    margin: 0px;
+    padding: 8px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.opensea{
+    display: flex;
+    align-items: center;
+
+}
+footer h3 h4 h5 {
+    background-color: lightblue;
+    text-decoration: none;
+}
+.footer_menu{
+    display: block;
+}

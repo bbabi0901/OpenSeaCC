@@ -1,18 +1,22 @@
 
-function Body(props) {
+function Body() {
     return (
       <div className="body">
-        <div class="slide">
-                <h1>Explore, collect, and sell NFTs</h1>
+        <div class="slide" >
+        <h1>Explore, collect, and sell NFTs</h1>
+            <img src="https://cdn.mos.cms.futurecdn.net/VECkttyB7rAa9qSkxMiB8f.jpg" ></img>
             </div>
             <div class="trending_top">
                 <div class="toggle">
                 <h2>Trending</h2><h2>Top</h2>
                 </div>
                 <span class="select">
-                    <div class="select_1">
-                        <select ></select>
-                        <i>All chains</i> 
+                   <div class="select_1">
+                   <select name="chains" type="text">
+                        <option value={24}>24h</option>
+                    </select>
+
+                        All chains
                         <i class="fa-brands fa-atlassian"></i>
                         <i class="fa-brands fa-uikit"></i>
                         <i class="fa-brands fa-ethereum"></i>
@@ -34,23 +38,63 @@ function Body(props) {
                 </span>
                 <div class="trending_top_number">
                     <div class="trending_top_number_a">
-                        <h4>1</h4>
-                        <h4>2</h4>
-                        <h4>3</h4>
-                        <h4>4</h4>
-                        <h4>5</h4>
+                        <a href="#">
+                            <h4>1</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_1</h4>
+                        </a>
+                        <a href="#">
+                            <h4>2</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_2</h4>
+                        </a>
+                        <a href="#">
+                            <h4>3</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_3</h4>
+                        </a>
+                        <a href="#">
+                            <h4>4</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_4</h4>
+                        </a>
+                        <a href="#">
+                            <h4>5</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_5</h4>
+                        </a>
                     </div>
                     <div class="trending_top_number_b">
-                        <h4>6</h4>
-                        <h4>7</h4>
-                        <h4>8</h4>
-                        <h4>9</h4>
-                        <h4>10</h4>
+                        <a href="#">
+                            <h4>6</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_6</h4>
+                        </a>
+                        <a href="#">
+                            <h4>7</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_7</h4>
+                        </a>
+                        <a href="#">
+                            <h4>8</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_8</h4>
+                        </a>
+                        <a href="#">
+                            <h4>9</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_9</h4>
+                        </a>
+                        <a href="#">
+                            <h4>10</h4>
+                            <img src=""></img>
+                            <h4>COLLECTION_10</h4>
+                        </a>
                     </div>
                 </div>            
                 
-
-                <h3>Notable collections</h3>
+            
+            <h3>Notable collections</h3>
             <div class="notable_collections">
                 <div class="notable_collections_1">1</div>
                 <div class="notable_collections_1">2</div>
