@@ -6,14 +6,11 @@ import Footer from "./components/Footer/Footer";
 
 import Main from "./pages/Main";
 import Mint from "./pages/Mint";
-import MyPage from "./pages/MyPage";
+import MyPage from "./pages/Mypage";
 import Market from "./pages/Market";
 import Wallet from "./pages/Wallet";
 
-import { Web3ReactProvider } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
 
-const getLibrary = (provider: any) => new Web3Provider(provider);
 
 const App = (props) => {
   return (

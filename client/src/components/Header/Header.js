@@ -34,9 +34,9 @@ function Header() {
 
         {/* <!--Search items, collections, and accounts--> */}
         {/* <a href='#'><i class="fa-solid fa-magnifying-glass"></i></a> */}
-        <span class="nav__search">
+        <span class="nav__text_input">
           <input
-            class="nav__searchbar"
+            class="text_input"
             aria-label="Search OpenSea"
             aria-multiline="false"
             placeholder="...Search items, collections, and accounts"

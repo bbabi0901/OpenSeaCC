@@ -48,8 +48,10 @@ i:hover{
     align-items: center;
 
 }
-.nav__searchbar{
-    width: 500px;
+.text_input{
+    padding: 0;
+    margin: 0;
+    width: 560px;
     height: 38px;
     font-size: 18px;
     border-radius: 30px;
@@ -300,4 +302,44 @@ footer h3 h4 h5 {
 }
 .footer_menu{
     display: block;
+}
+
+.Mint{
+    margin: auto;
+    padding: 0px;
+    width: 560px;
+    height: 1000px;
+    display: flex;
+}
+.Mint .container{
+    
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+}
+.Mint h3, h4, h5, h6{
+    margin: 0;
+    padding: 20px 0px 10px 0px;
+
+}
+.Mint h1{
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+.image_preview{
+    width: 400px;
+    height: 200px;
+    border: 3px solid rgb(185, 185, 185);
+    border-radius: 40px;
+}
+.fa-image{
+    padding: 12% 36%;
+    color: rgb(185, 185, 185);
+    font-size: 100px;
+
+}
+.fa-image :hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(185, 185, 185);
 }
