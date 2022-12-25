@@ -1,7 +1,7 @@
 const MyPage = () => {
   return <div className="mypage">
       <div className="background_image">
-        <div class="slide">
+        <div className="slide">
           <img src="https://cdn.mos.cms.futurecdn.net/VECkttyB7rAa9qSkxMiB8f.jpg" alt=""></img>
         </div>
       </div>
@@ -12,7 +12,7 @@ const MyPage = () => {
         <div className="name">
           <h1>User_name</h1>
           <div className="wallet_address">
-            <i class="fa-brands fa-ethereum"></i> 
+            <i className="fa-brands fa-ethereum"></i> 
             <h5>accounts</h5>
             <div className="created_date">
               <h5>Joined December 2022</h5>
@@ -46,29 +46,29 @@ const MyPage = () => {
         </div>
       </div>
       <div className="display">
-        <div class="NFT_101">
-          <div class="NFT_101_1">1</div>
-          <div class="NFT_101_1">2</div>
-          <div class="NFT_101_1">3</div>
-          <div class="NFT_101_1">4</div>
-          <div class="NFT_101_1">5</div>
-          <div class="NFT_101_1">6</div>
+        <div className="NFT_101">
+          <div className="NFT_101_1">1</div>
+          <div className="NFT_101_1">2</div>
+          <div className="NFT_101_1">3</div>
+          <div className="NFT_101_1">4</div>
+          <div className="NFT_101_1">5</div>
+          <div className="NFT_101_1">6</div>
         </div>
-        <div class="NFT_101">
-          <div class="NFT_101_1">1</div>
-          <div class="NFT_101_1">2</div>
-          <div class="NFT_101_1">3</div>
-          <div class="NFT_101_1">4</div>
-          <div class="NFT_101_1">5</div>
-          <div class="NFT_101_1">6</div>
+        <div className="NFT_101">
+          <div className="NFT_101_1">1</div>
+          <div className="NFT_101_1">2</div>
+          <div className="NFT_101_1">3</div>
+          <div className="NFT_101_1">4</div>
+          <div className="NFT_101_1">5</div>
+          <div className="NFT_101_1">6</div>
         </div>
-        <div class="NFT_101">
-          <div class="NFT_101_1">1</div>
-          <div class="NFT_101_1">2</div>
-          <div class="NFT_101_1">3</div>
-          <div class="NFT_101_1">4</div>
-          <div class="NFT_101_1">5</div>
-          <div class="NFT_101_1">6</div>
+        <div className="NFT_101">
+          <div className="NFT_101_1">1</div>
+          <div className="NFT_101_1">2</div>
+          <div className="NFT_101_1">3</div>
+          <div className="NFT_101_1">4</div>
+          <div className="NFT_101_1">5</div>
+          <div className="NFT_101_1">6</div>
         </div>
 
       </div>

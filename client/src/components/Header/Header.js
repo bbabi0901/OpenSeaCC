@@ -12,7 +12,7 @@ function Header() {
       elIsWalletChecked.classList.add("gray");
     }
   };
-  
+
   //isWalletChecked(false)
   //지갑 연결 상태 표시
 
@@ -40,7 +40,7 @@ function Header() {
             className="text_input"
             aria-label="Search OpenSea"
             aria-multiline="false"
-            placeholder="...Search items, collections, and accounts"
+            placeholder="   Search items, collections, and accounts"
             role="searchbox"
             type="search"
           ></input>
