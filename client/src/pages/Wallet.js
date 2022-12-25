@@ -3,18 +3,21 @@ import { useNavigate } from "react-router-dom";
 
 import { getWallet } from "../utils/wallet";
 
-const Wallet = (props) => {
+const Wallet = ({ handleWalletChecked }) => {
   const [accounts, setAccounts] = useState([]);
   const navigate = useNavigate();
+  const onWalletChecked = () => {
+    handleWalletChecked();
+  };
   useEffect(() => {
     const connectMetamask = async () => {
       const acc = await getWallet();
-      console.log(acc);
-      setAccounts(acc);
       if (accounts === undefined) {
         alert("install metamask extension!!");
         navigate(-1);
       }
+      setAccounts(acc);
+      onWalletChecked();
     };
     connectMetamask();
   });
@@ -25,5 +28,5 @@ const Wallet = (props) => {
 export default Wallet;
 
 // isWalletConnected => icon color / body
-// wallet type => kaikas / metamask(=klaytn / ethereum)
-// singletone? token?
+// props => wallet type => kaikas / metamask(=klaytn / ethereum)
+// 계정 연동 <-> extension 건드릴 필요 없이 getWallet으로 호출

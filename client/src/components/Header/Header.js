@@ -1,28 +1,14 @@
-// import {useState} from 'react';
-// const [isChecked, setIsChecked] = useState()
-
 import { Link } from "react-router-dom";
 
-function Header() {
-  let elIsWalletChecked = document.querySelector(".fa-wallet");
-  let isWalletChecked = function (value) {
-    if (value === true) {
-      elIsWalletChecked.classList.remove("gray");
-    } else if (value === false) {
-      elIsWalletChecked.classList.add("gray");
-    }
-  };
-  // isWalletChecked(true)
-  //지갑 연결 상태 표시
-
+function Header({ isWalletChecked }) {
   return (
-    <div class="header">
-      <div class="nav">
+    <div className="header">
+      <div className="nav">
         {/* <!--logo--> */}
-        <span class="nav__CI">
+        <span className="nav__CI">
           <Link to="/">
             <img
-              class="nav__logo"
+              className="nav__logo"
               src="https://opensea.io/static/images/logos/opensea.svg"
               alt=""
             />
@@ -34,9 +20,9 @@ function Header() {
 
         {/* <!--Search items, collections, and accounts--> */}
         {/* <a href='#'><i class="fa-solid fa-magnifying-glass"></i></a> */}
-        <span class="nav__text_input">
+        <span className="nav__text_input">
           <input
-            class="text_input"
+            className="text_input"
             aria-label="Search OpenSea"
             aria-multiline="false"
             placeholder="...Search items, collections, and accounts"
@@ -45,7 +31,7 @@ function Header() {
           ></input>
         </span>
         <ul>
-          <div class="nav__menu">
+          <div className="nav__menu">
             {/* <!--Explore--> */}
             <ul>
               <Link to="/market">Market</Link>
@@ -68,10 +54,10 @@ function Header() {
           </div>
         </ul>
         {/* <!--icon.symbol--> */}
-        <div class="nav__icons">
+        <div className="nav__icons">
           <li>
             <Link to="/mypage">
-              <i class="fa-solid fa-user"></i>
+              <i className="fa-solid fa-user"></i>
             </Link>
           </li>
           {/* <!-- <li>Profile</li>
@@ -94,13 +80,19 @@ function Header() {
           {/* <!--Wallet.symbol--> */}
           <li>
             <Link to="/wallet">
-              <i class="fa-solid fa-wallet gray"></i>
+              <i
+                className={
+                  isWalletChecked
+                    ? "fa-solid fa-wallet"
+                    : "fa-solid fa-wallet gray"
+                }
+              ></i>
             </Link>
           </li>
           {/* <!--Cart.symbol--> */}
           <li>
             <Link href="/cart">
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
             </Link>
           </li>
         </div>
