@@ -17,6 +17,7 @@ const Wallet = ({ handleWalletChecked }) => {
         navigate(-1);
       }
       setAccounts(acc);
+      localStorage.setItem("account", acc);
       onWalletChecked();
     };
     connectMetamask();

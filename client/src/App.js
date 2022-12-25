@@ -14,12 +14,10 @@ import Wallet from "./pages/Wallet";
 import { getWallet } from "./utils/wallet";
 
 const App = () => {
-  const [isWalletChecked, setIsWalletChecked] = useState();
-  getWallet().then((wallet) => {
-    if (wallet) {
-      setIsWalletChecked(true);
-    }
-  });
+  const account = localStorage.getItem("account");
+  const [isWalletChecked, setIsWalletChecked] = useState(
+    account === "undefined" ? false : true
+  );
   const handleWalletChecked = () => {
     setIsWalletChecked(true);
   };
