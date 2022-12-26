@@ -84,9 +84,13 @@ function setPriview(event){
       <h3>Image, Video, Audio, or 3D Model</h3>
       <h6>File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</h6>
       <div className="add__img">
+<<<<<<< Updated upstream
 
         <input type='file' accept="image/*" onChange='setPriview(event);'></input>
 
+=======
+        <input type='file' accept="image/*"></input>
+>>>>>>> Stashed changes
         <div className="upload"></div>
         <ul className="image_preview">
         <i className="fa-regular fa-image"></i>
@@ -94,9 +98,13 @@ function setPriview(event){
       </div>
         <div className="add__name">
           <h3>Name</h3>
+<<<<<<< Updated upstream
 
           <input className = 'text_input'type='text' placeholder = '   Item name'  ></input>
 
+=======
+          <input className = 'text_input'type='text' placeholder = '   Item name'></input>
+>>>>>>> Stashed changes
         </div>
         <div className="add__external_link">
           <h3>External link</h3>

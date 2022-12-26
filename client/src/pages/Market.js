@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 import './Market.css'
 // import NFTs from '../pages/NFTs'
@@ -55,6 +56,10 @@ const Market = () => {
     </div>
     );
 
+=======
+const Market = () => {
+  return <div>Market 미구현</div>;
+>>>>>>> Stashed changes
 };
 
 export default Market;

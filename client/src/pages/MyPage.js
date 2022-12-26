@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -86,6 +87,10 @@ const MyPage = ({ name, account }) => {
       </div>
     </div>
   );
+=======
+const MyPage = () => {
+  return <div>MyPage 미구현</div>;
+>>>>>>> Stashed changes
 };
 
 export default MyPage;
