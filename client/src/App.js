@@ -2,8 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
 import Main from "./pages/Main";
 import Mint from "./pages/Mint";
 import MyPage from "./pages/MyPage";
@@ -26,7 +24,6 @@ const App = (props) => {
             <Route path="/nftdetails" element={<NFTdetails />} />
           </Routes>
         </section>
-        <Footer />
       </main>
     </div>
   );
