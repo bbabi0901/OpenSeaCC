@@ -7,7 +7,7 @@ export const getWallet = async (type = "metamask") => {
           method: "eth_requestAccounts",
         });
       }
-      return acc;
+      return acc[0];
     } catch (error) {
       return;
     }
