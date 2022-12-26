@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { getWallet } from "../utils/wallet";
-import { hashAddress } from "../utils/hash";
+// import { hashAddress } from "../utils/hash";
 
 const Wallet = ({ name, account, onWalletConnect }) => {
   const navigate = useNavigate();
@@ -11,7 +11,6 @@ const Wallet = ({ name, account, onWalletConnect }) => {
   const handleWalletConnect = async () => {
     const acc = await getWallet();
     if (acc === undefined) {
-      // alert("install metamask extension!!");
       window.open("https://metamask.io/download/");
       navigate(-1);
     }
@@ -19,7 +18,7 @@ const Wallet = ({ name, account, onWalletConnect }) => {
     onWalletConnect(accConncected);
   };
 
-  const serverURL = "http://localhost:8080/userinfo";
+  const serverURL = "http://localhost:3000/userinfo";
   const addressDB = () => {
     try {
       axios
@@ -27,7 +26,7 @@ const Wallet = ({ name, account, onWalletConnect }) => {
           serverURL,
           {
             name: name,
-            address: hashAddress(name, accConncected),
+            address: accConncected,
           },
           {
             headers: {
