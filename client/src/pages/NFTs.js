@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import NFT from '../components/NFT/NFT'
 
 const NFTs = () => {
-    const [name, setName] = useState("parkhacker")
-    const [discription, setDiscription] = useState("")
-    const [NFTs, setNFTs] = useState()
+  const [name, setName] = useState("parkhacker");
+  const [discription, setDiscription] = useState("");
+  const [NFTs, setNFTs] = useState();
 
   // TODO : 새로 트윗을 작성하고 전송할 수 있게 useState를 적절히 활용하세요.
 
   const handleButtonClick = (event) => {
-    
     // 새로 등록되는 NFT을 정의해준다
     const NFT = {
       id: NFTs.length + 1,
       name: name,
       picture: ``,
-      title: 'new NFT',
+      title: "new NFT",
       discription: discription,
-      createdAt: new Date().toLocaleDateString('ko-KR'),
+      createdAt: new Date().toLocaleDateString("ko-KR"),
       price: 0.01,
     };
 
     const newNFTs = [NFT, ...NFTs];
 
     setNFTs(newNFTs);
-  }
+  };
 
   const handleChangeName = (event) => {
-    setName(event.target.value)
+    setName(event.target.value);
     // TODO : NFT input 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
   };
 
   const handleChangeDiscription = (event) => {
-    setDiscription(event.target.value)
+    setDiscription(event.target.value);
 
     // TODO : NFT textarea 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
   };
@@ -50,41 +49,42 @@ const NFTs = () => {
                 <input
                   type="text"
                   value={name}
-                  onChange = {handleChangeName}
+                  onChange={handleChangeName}
                   placeholder="your username here.."
                   className="NFTForm__input--username"
                 ></input>
                 <textarea
                   type="text"
                   value={discription}
-                  onChange = {handleChangeDiscription}
+                  onChange={handleChangeDiscription}
                   placeholder="your username here.."
                   className="NFTForm__input--message"
                 ></textarea>
               </div>
               <div className="NFTForm__count" role="status">
                 <span className="NFTForm__count__text">
-                  {'total: ' + NFTs.length}
+                  {"total: " + NFTs.length}
                 </span>
               </div>
             </div>
             <div className="NFTForm__submit">
               <div className="NFTForm__submitIcon"></div>
-              <button className="NFTForm__submitButton" onClick={handleButtonClick}> Create</button>
-               
+              <button
+                className="NFTForm__submitButton"
+                onClick={handleButtonClick}
+              >
+                {" "}
+                Create
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div className="NFT__selectUser"></div>
       <ul className="NFTs">
-        
-        {NFTs.map(NFT => {
-            return (
-            <NFT  NFT={NFT} key={NFT.id}/>
-            )
-            }
-        )}
+        {NFTs.map((NFT) => {
+          return <NFT NFT={NFT} key={NFT.id} />;
+        })}
       </ul>
     </React.Fragment>
   );

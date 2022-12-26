@@ -1,21 +1,7 @@
-// import {useState} from 'react';
-// const [isChecked, setIsChecked] = useState()
-
 import { Link } from "react-router-dom";
-import './Header.css'
-function Header() {
-  let elIsWalletChecked = document.querySelector(".fa-wallet");
-  let isWalletChecked = function (value) {
-    if (value === true) {
-      elIsWalletChecked.classList.remove("gray");
-    } else if (value === false) {
-      elIsWalletChecked.classList.add("gray");
-    }
-  };
+import "./Header.css";
 
-  //isWalletChecked(false)
-  //지갑 연결 상태 표시
-
+function Header({ account, isAccConnected }) {
   return (
     <div className="header">
       <div className="nav">
@@ -69,7 +55,6 @@ function Header() {
             <ul>
               <Link to="/nftdetails">NFTdetails</Link>
             </ul>
-
           </div>
         </ul>
         {/* <!--icon.symbol--> */}
@@ -99,7 +84,13 @@ function Header() {
           {/* <!--Wallet.symbol--> */}
           <li>
             <Link to="/wallet">
-              <i className="fa-solid fa-wallet gray"></i>
+              <i
+                className={
+                  isAccConnected
+                    ? "fa-solid fa-wallet"
+                    : "fa-solid fa-wallet gray"
+                }
+              ></i>
             </Link>
           </li>
           {/* <!--Cart.symbol--> */}
