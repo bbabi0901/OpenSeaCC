@@ -1,31 +1,23 @@
 const execute = require("./../database/ExecuteQuery")
 const query = require("./../database/Query");
+const path = require("path")
 
 module.exports = {
-    mint : async (req, res) => {
-        const address = req.query.user_address;
-        const nickname = req.query.nickname;
+    // 민팅 메소드
+    minting :async (req,res) => {
+        const user_address = req.body.user_address;
+        const nft_address = req.body.nft_address;
+        const image = req.body.image;
+        const name = req.body.nft_name;
+        const nft_detail = req.body.nft_detail;
+        const nft_price = req.body.nft_price;
 
-        console.log(address)
-        console.log(nickname)
-        let result = await execute(query.GET_USER, address);
-        if (result) {
-
-            if(result[0].length === 0 ) {
-                console.log('insert user')
-                result = await execute(query.INSERT_USR, [address, nickname]);
-                if(result) {
-                    res.send(result)
-                } else {
-                    res.send("not enough")
-                }
-            } else {
-                res.send(result[0]);    
-            }
-
-        } else {
-            res.send('Mint 미구현 페이지 입니다.');
+        if (!(user_address && nft_address && image && name && nft_price)) {
+            return await res.status(500).send("not enough").end();
         }
+
+        return await res.status(202).send("success").end();
+    
     },
     mintDetail : (req, res) => {
         res.send("Mint Detail 미구현 페이지 입니다.");
