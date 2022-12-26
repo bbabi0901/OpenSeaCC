@@ -1,28 +1,58 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { getWallet } from "../utils/wallet";
+import { hashAddress } from "../utils/hash";
 
-const Wallet = ({ handleWalletChecked }) => {
-  const [accounts, setAccounts] = useState([]);
+const Wallet = ({ name, account, onWalletConnect }) => {
   const navigate = useNavigate();
-  const onWalletChecked = () => {
-    handleWalletChecked();
+  const [accConncected, setAccConnected] = useState(account);
+  const handleWalletConnect = async () => {
+    const acc = await getWallet();
+    if (acc === undefined) {
+      // alert("install metamask extension!!");
+      window.open("https://metamask.io/download/");
+      navigate(-1);
+    }
+    setAccConnected(acc);
+    onWalletConnect(accConncected);
+  };
+
+  const serverURL = "http://localhost:8080/userinfo";
+  const addressDB = () => {
+    try {
+      axios
+        .post(
+          serverURL,
+          {
+            name: name,
+            address: hashAddress(name, accConncected),
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        )
+        .then((res) => {
+          console.log("ok", res);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   };
   useEffect(() => {
-    const connectMetamask = async () => {
-      const acc = await getWallet();
-      if (accounts === undefined) {
-        alert("install metamask extension!!");
-        navigate(-1);
-      }
-      setAccounts(acc);
-      onWalletChecked();
-    };
-    connectMetamask();
+    handleWalletConnect();
+    addressDB();
   });
 
-  return <div>Wallet 미구현, {accounts}</div>;
+  return <div>Wallet 미구현, {accConncected}</div>;
 };
 
 export default Wallet;

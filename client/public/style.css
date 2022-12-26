@@ -10,44 +10,6 @@ body{
 .gray{
     color: rgb(105, 105, 105);
 }
-.header{ 
-    position: sticky;
-    top: 0;
-}
-.header h3{
-    padding: 0px 20px 0px 0px;
-    margin: 0px;
-}
-i:hover{
-    color:rgb(167, 218, 252)
-}
-.nav{ 
-    margin: 0px;
-    padding: 8px 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:white;
-}
-.nav__siteName{
-    font-family: Helvetica;
-    font-size: 30px;
-    padding: 10px;
-    font-style: bold;
-
-}
-.nav__logo{
-    height: 40px;
-    width: 40px;
-}
-.nav__CI{
-    
-    margin: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
 .text_input{
     padding: 0;
     margin: 0;
@@ -57,39 +19,23 @@ i:hover{
     border-radius: 30px;
     border-color: lightgrey;
 }
-.nav__menu{
-    padding: 0px 20px;
-    display: flex;
-    list-style: none;
-    text-align: center;
-
-}
-.nav__menu a,ul{
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.nav__menu :hover{
-    background-color: rgb(167, 218, 252);
-    color:rgb(255, 255, 255)
-
-}
 
 a{
     font-family: Helvetica;
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
-.nav__icons{
-    list-style: none;
-    display: flex;
-    font-size: 20px;
-}
-.nav__icons li{
-    padding: 8px 12px;
-    
-}
+
 .body img{
+    margin: 0;
+    padding: 0;
+    width: 1440px;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mypage img{
     margin: 0;
     padding: 0;
     width: 1440px;
@@ -107,9 +53,15 @@ a{
     align-items: center;
     text-align:center;
 }
+.background_image{
+    height: 550px;
+  
+}
 h2{
+    
     margin: 0px;
     padding: 0px 0px 0px 20px;
+
 }
 .trending_top{
     background-color: whitesmoke;
@@ -130,6 +82,7 @@ h2{
     color: rgb(89, 89, 89);
 }
 h3{
+    text-align: left;
     padding: 0px 0px 0px 20px;
 }
 h6{
@@ -209,7 +162,7 @@ i{
 h4{
     margin: 0;
     padding-left: 20px;
-    width: 40px;
+    width: 20px;
 }
 .notable_collections{
     display: flex;
@@ -262,6 +215,7 @@ h4{
 }
 
 .browse_by_category{
+    margin-bottom: 50px;
     display: flex;
     align-items: center;
 
@@ -278,18 +232,95 @@ h4{
     text-align: center;
 }
 .footer{
+    text-decoration: none;
     display: block;
     width: auto;
-    padding: 30px;
-    background-color: lightblue;
+    padding: 30px 100px;
+    background-color: rgb(79, 154, 252);
 }
-.stay_in_the_loop{
+.footer h6{
+    color: white;
+    margin: 10px 0;
+    padding:0;
+    text-align: left;
+    width: auto;
+}
+.footer h4{
+    color: white;
+    margin: 10px 0;
+    padding:0;
+    text-align: left;
+    width: auto;
+}
+.footer h3{
+    color: white;
+    text-align: left;
+    margin: 20px 0;
+    padding:0;
+}
+.footer h2{
+    color: white;
+    text-align: left;
+    margin: 20px 0;
+    padding:0;
+}
+.footer_head{
     display: flex;
     margin: 0px;
     padding: 8px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+}
+.stay_in_the_loop{
+    margin: 0 50px 0 0;
+    width: 600px;
+    text-align: left;
+    justify-content: space-between;
+}
+.join_the_community{
+    margin: 0 0 0 50px;
+    width: auto;
+}
+.footer_body{
+    margin: 25px 0;
+    padding: 25px 0;
+    top: 0;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+.footer_menu_1{
+    margin: 0 50px 0 0;
+}
+.footer_menu_2{
+    margin: 0 0 0 50px;
+}
+.marketplace, .my_account, .company, .resources{
+    margin: 0 20px;
+}
+.footer_logo img{
+
+    width: 40px;
+    height: 40px;
+}
+.icon{
+    text-align: left;
+}
+.join_the_community i{
+
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 6px 0px 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(117, 177, 255);
+    align-items: center;
+    text-align: center;
+
+
 }
 .opensea{
     display: flex;
@@ -303,12 +334,37 @@ footer h3 h4 h5 {
 .footer_menu{
     display: block;
 }
+.footer_input{
+    padding: -1 0 0 0;
+    margin: 20px 20px 50px 0;
+    height: 50px;
+    width: 400px;
+    border: 0;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+.footer_signup{
+    padding: 0;
+
+    height: 50px;
+    width: 100px;
+    margin: 20px 0px 50px 0;
+    padding: 0;
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(117, 177, 255);
+}
+.footer_signup h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 
 .Mint{
     margin: auto;
     padding: 0px;
     width: 560px;
-    height: 1000px;
+    height: auto;
     display: flex;
 }
 .Mint .container{
@@ -342,4 +398,77 @@ footer h3 h4 h5 {
 .fa-image :hover{
     color: rgb(255, 255, 255);
     background-color: rgb(185, 185, 185);
+}
+
+.discription{
+    height: 100px;
+
+}
+.add__create_button h3{
+    padding: 15px 30px;
+
+}
+.add__create_button {
+    margin: 50px 0px;
+    padding: 0;
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(204, 231, 249) ;
+}
+.add__create_button :hover{
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(167, 218, 252);
+    color: white;
+}
+.user_image img{
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    width: 250px;
+    height: 250px;
+    text-shadow: 10px;
+    border: 5px solid white;
+    border-radius: 250px;
+}
+.wallet_address{
+    padding: 0;
+    margin: 10px;
+    width: 100px;
+    display: flex;
+    text-align: left;
+
+}
+.wallet_address i, h5{
+    height: 15px;
+    padding: 0px 0px 0px 10px;
+    text-align: center;
+    align-items: center;
+}
+.user_info h1{
+    margin: 20px 0px 0px 20px;
+    text-align: left;
+}
+.user_menu{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid lightgray;
+}
+.user_menu select{
+    margin: 0 0 0 20px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    text-align: center;
+}
+.user_menu h2{
+    color: gray;
+}
+.display{
+    margin: 20px 20px 100px 20px;
+
+}
+.display .NFT_101 .NFT_101_1{
+    margin: 10px;
 }

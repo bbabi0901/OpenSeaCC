@@ -1,0 +1,20 @@
+.market{
+    margin: 20px;
+    text-align: left;
+}
+.category{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: gray;
+}
+a{
+    color: gray;
+
+}
+h3{
+    padding: 0 20px 0 0;
+}
+.goods{
+    border-top: 2px solid lightgray;
+}

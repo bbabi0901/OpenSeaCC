@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header({ isWalletChecked }) {
+function Header({ account }) {
   return (
     <div className="header">
       <div className="nav">
@@ -25,7 +25,7 @@ function Header({ isWalletChecked }) {
             className="text_input"
             aria-label="Search OpenSea"
             aria-multiline="false"
-            placeholder="...Search items, collections, and accounts"
+            placeholder="   Search items, collections, and accounts"
             role="searchbox"
             type="search"
           ></input>
@@ -50,6 +50,9 @@ function Header({ isWalletChecked }) {
             {/* <!--Create--> */}
             <ul>
               <Link to="/mint">Mint</Link>
+            </ul>
+            <ul>
+              <Link to="/nftdetails">NFTdetails</Link>
             </ul>
           </div>
         </ul>
@@ -82,9 +85,9 @@ function Header({ isWalletChecked }) {
             <Link to="/wallet">
               <i
                 className={
-                  isWalletChecked
-                    ? "fa-solid fa-wallet"
-                    : "fa-solid fa-wallet gray"
+                  account === undefined
+                    ? "fa-solid fa-wallet gray"
+                    : "fa-solid fa-wallet"
                 }
               ></i>
             </Link>
