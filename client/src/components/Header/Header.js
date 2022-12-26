@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-function Header({ account }) {
+function Header({ account, isAccConnected }) {
   return (
     <div className="header">
       <div className="nav">
@@ -86,9 +86,9 @@ function Header({ account }) {
             <Link to="/wallet">
               <i
                 className={
-                  account === undefined
-                    ? "fa-solid fa-wallet gray"
-                    : "fa-solid fa-wallet"
+                  isAccConnected
+                    ? "fa-solid fa-wallet"
+                    : "fa-solid fa-wallet gray"
                 }
               ></i>
             </Link>

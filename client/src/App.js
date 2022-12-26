@@ -23,16 +23,24 @@ const App = () => {
       }
     }
   }, []);
-
+  const checkAccConnect = () => {
+    if (typeof window.ethereum !== "undefined") {
+      return window.ethereum.isConnected();
+    }
+    return false;
+  };
+  const [isAccConnected, setIsAccConnected] = useState(checkAccConnect());
   const [account, setAccount] = useState(undefined);
   const onWalletConnect = (account) => {
     setAccount(account);
+    setIsAccConnected(true);
   };
+
   const name = "example";
   return (
     <div className="App">
       <main>
-        <Header account={account} />
+        <Header account={account} isAccConnected={isAccConnected} />
         <section className="features">
           <Routes>
             <Route exact path="/" element={<Main />} />
