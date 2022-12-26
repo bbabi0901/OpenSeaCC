@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var mypageRouter = require("./routes/mypage");
 var mintRouter = require("./routes/mint");
+var walletRouter = require("./routes/wallet");
 
 const { send } = require('process');
 const { use } = require('./routes/index');
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 app.use("/mypage", mypageRouter);
 app.use("/mint", mintRouter);
+app.use("/wallet",walletRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

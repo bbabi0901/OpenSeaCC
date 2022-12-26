@@ -9,9 +9,6 @@ module.exports = {
             const address = req.query.user_address;
             const nickname = req.query.nickname;
 
-            console.log(address)
-            console.log(nickname)
-
             let result = await execute(query.GET_USER, address);
 
             if (result) {
