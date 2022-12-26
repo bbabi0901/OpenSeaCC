@@ -1,20 +1,52 @@
+
 .market{
-    margin: 20px;
     text-align: left;
+    width: 94%;
+    margin: 3%;
 }
+
 .category{
-    margin: 0;
+    width: 94%;
+    margin: 0 3%;
     padding: 0;
     display: flex;
     color: gray;
+    justify-content: space-between;
 }
-a{
+.category :hover{
+    color: black;
+}
+.category a {
+    margin: 0;
+}
+.category a h3{
+    
     color: gray;
-
+    padding: 0px;
 }
 h3{
     padding: 0 20px 0 0;
 }
 .goods{
     border-top: 2px solid lightgray;
+    
+    justify-content: space-around;
+}
+.nft_list{
+    padding: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.NFTs{
+    display: flex;
+    margin: 30px 10px;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }

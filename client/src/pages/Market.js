@@ -37,26 +37,16 @@ const Market = () => {
         )} */}
       <div className="display">
         
+      <div className="nft_list">
+          <NFT/><NFT/><NFT/>
+          </div>
+          <div className="nft_list">
+          <NFT/><NFT/><NFT/>
+          </div>
+          <div className="nft_list">
+          <NFT/><NFT/><NFT/>
+          </div>
 
-      <div className="browse_by_category">
-          <NFT/><NFT/><NFT/>
-          </div>
-          <div className="browse_by_category">
-          <NFT/><NFT/><NFT/>
-          </div>
-          <div className="browse_by_category">
-          <NFT/><NFT/><NFT/>
-          </div>
-          <div className="browse_by_category">
-            <div className="browse_by_category_1">1</div>
-            <div className="browse_by_category_1">2</div>
-            <div className="browse_by_category_1">3</div>
-          </div>
-          <div className="browse_by_category">
-            <div className="browse_by_category_1">1</div>
-            <div className="browse_by_category_1">2</div>
-            <div className="browse_by_category_1">3</div>
-          </div>
         </div>
 
       </ul>

@@ -17,7 +17,7 @@ export default function NFT({nft, handleClick}) {
                 <div className = "nft__upt_dt">{1234}</div>
               </div>
             </div>
-            <div className = "nft__discription">겁나좋쿤</div>
+            <div className = "nft__discription"></div>
           </div>
         
       </li>
