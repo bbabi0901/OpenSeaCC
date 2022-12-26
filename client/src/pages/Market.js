@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-
 import './Market.css'
-// import NFTs from '../pages/NFTs'
-// import NFT from '../components/NFT/NFT'
 import React,  { useEffect } from 'react';
 import NFT from '../components/NFT/NFT';
 import { Router } from 'react-router-dom';
@@ -56,10 +52,7 @@ const Market = () => {
     </div>
     );
 
-=======
-const Market = () => {
-  return <div>Market 미구현</div>;
->>>>>>> Stashed changes
+
 };
 
 export default Market;
