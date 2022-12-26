@@ -1,3 +1,4 @@
+
 import './Market.css'
 // import NFTs from '../pages/NFTs'
 // import NFT from '../components/NFT/NFT'
@@ -63,6 +64,7 @@ const Market = () => {
       </div>
     </div>
     );
+
 };
 
 export default Market;

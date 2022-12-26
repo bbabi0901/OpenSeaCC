@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 const Mint = () => {
+
   const [nftName, setNftName] = useState(null);
   const [nftAddress, setNftAddress] = useState(null);
   const [nftDetail, setNftDetail] = useState(null);
@@ -54,6 +55,27 @@ function setPriview(event){
   };
 
 }
+
+  function getImageFiles(el){
+    const uploadFiles = [];
+    const files = el.currentTarget.files;
+    const ImagePreview = document.querySelector('.image_preview')
+    const docFrag = new DocumentFragment()
+    function createElement(el,file) {
+      const li = document.createElement('li');
+      const img = document.createElement('img');
+      img.setAttribute('src', el.target.result);
+      img.setAttribute('data-file', file.name);
+      li.appendChile(img);
+      return li;
+    };
+    const realUpload = document.querySelector('.real-update');
+    const upload = document.querySelector('.upload');
+
+    upload.addEventListener('click', ()=>realUpload.click());
+    realUpload.addEventListener('change', getImageFiles);
+  }
+
   return(
   <div className="Mint">
     <div className="container">
@@ -62,7 +84,9 @@ function setPriview(event){
       <h3>Image, Video, Audio, or 3D Model</h3>
       <h6>File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</h6>
       <div className="add__img">
+
         <input type='file' accept="image/*" onchange='setPriview(event);'></input>
+
         <div className="upload"></div>
         <ul className="image_preview">
         <i className="fa-regular fa-image"></i>
@@ -70,7 +94,9 @@ function setPriview(event){
       </div>
         <div className="add__name">
           <h3>Name</h3>
+
           <input className = 'text_input'type='text' placeholder = '   Item name' onChange={handleSetNftName} ></input>
+
         </div>
         <div className="add__external_link">
           <h3>External link</h3>
