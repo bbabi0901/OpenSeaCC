@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
 const Mint = () => {
 function setPriview(event){
   let reader = new FileReader();
@@ -7,6 +10,22 @@ function setPriview(event){
     document.querySelector("div.image_preview").appendChild(img);
   };
   reader.readAsDataURL(event.target.files[0]);
+
+
+  
+  const Minting = async() => {
+    const response = await axios('http://localhost:3000/Mint', {
+      // name: nftName,
+      // address: nftAddress,
+      // detail: nftDetails,
+      // image: nftImg,
+      // price: nftPrice,
+
+    });
+    console.log(response.data);
+    // data속에 담겨져 나온다.
+  };
+
 }
   return(
   <div className="Mint">

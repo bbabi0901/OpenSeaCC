@@ -1,6 +1,11 @@
 import './Market.css'
 // import NFTs from '../pages/NFTs'
 // import NFT from '../components/NFT/NFT'
+import React,  { useEffect } from 'react';
+import NFT from '../components/NFT/NFT';
+import { Router } from 'react-router-dom';
+
+
 
 const Market = () => {
 
@@ -30,10 +35,16 @@ const Market = () => {
             }
         )} */}
       <div className="display">
-        <div className="browse_by_category">
-            <div className="browse_by_category_1">1</div>
-            <div className="browse_by_category_1">2</div>
-            <div className="browse_by_category_1">3</div>
+        
+
+      <div className="browse_by_category">
+          <NFT/><NFT/><NFT/>
+          </div>
+          <div className="browse_by_category">
+          <NFT/><NFT/><NFT/>
+          </div>
+          <div className="browse_by_category">
+          <NFT/><NFT/><NFT/>
           </div>
           <div className="browse_by_category">
             <div className="browse_by_category_1">1</div>

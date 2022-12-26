@@ -1,0 +1,24 @@
+.NFT{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.nft__Info--wrapper {
+    margin: 5px;
+    display: block;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.nft__nft_image{
+    width: 33.33%;
+}
+.nft__nft_image img{
+    width: auto;
+    height: 280px;
+
+}
