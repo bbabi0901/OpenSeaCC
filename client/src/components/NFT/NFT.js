@@ -1,6 +1,6 @@
 import React from 'react';
 function NFT({nft}) {
-  const parsedDate = new Date(tweet.createdAt).toLocaleDateString('ko-kr');
+  const parsedDate = new Date(nft.createdAt).toLocaleDateString('ko-kr');
 
     //required data
         //img
@@ -14,7 +14,7 @@ function NFT({nft}) {
         //current price
     return(
         <li className="NFT" id={nft.id} key = {nft.id}>
-        <div className="tweet__profile">
+        <div className="nft__profile">
             <img src={nft.picture} />
         </div>
           <div className="nft__content">

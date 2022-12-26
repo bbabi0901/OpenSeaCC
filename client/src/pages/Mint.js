@@ -2,8 +2,11 @@ const Mint = () => {
 function setPriview(event){
   let reader = new FileReader();
   reader.onload = function(event){
-    let img
-  }
+    let img = document.createElement("img");
+    img.setAttribute("src", event.target.result);
+    document.querySelector("div.image_preview").appendChild(img);
+  };
+  reader.readAsDataURL(event.target.files[0]);
 }
   return(
   <div className="Mint">
@@ -13,7 +16,7 @@ function setPriview(event){
       <h3>Image, Video, Audio, or 3D Model</h3>
       <h6>File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</h6>
       <div className="add__img">
-        <input type='file' accept="image/*"></input>
+        <input type='file' accept="image/*" onchange='setPriview(event);'></input>
         <div className="upload"></div>
         <ul className="image_preview">
         <i className="fa-regular fa-image"></i>

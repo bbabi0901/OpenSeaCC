@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NFT from '../components/NFT/NFT'
+// import NFT from '../components/NFT/NFT'
 
 const NFTs = () => {
     const [name, setName] = useState("parkhacker")
@@ -31,7 +31,7 @@ const NFTs = () => {
     // TODO : NFT input 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
   };
 
-  const handleChangeMsg = (event) => {
+  const handleChangeDiscription = (event) => {
     setDiscription(event.target.value)
 
     // TODO : NFT textarea 엘리먼트에 입력 시 작동하는 함수를 완성하세요.
@@ -56,17 +56,15 @@ const NFTs = () => {
                 ></input>
                 <textarea
                   type="text"
-                  value={msg}
-                  onChange = {handleChangeMsg}
+                  value={discription}
+                  onChange = {handleChangeDiscription}
                   placeholder="your username here.."
                   className="NFTForm__input--message"
                 ></textarea>
-                {/*TODO : 트윗을 작성할 수 있는 textarea 엘리먼트를 작성하세요.*/}
               </div>
               <div className="NFTForm__count" role="status">
                 <span className="NFTForm__count__text">
-                  {/* TODO : 트윗 총 개수를 보여줄 수 있는 Counter를 작성하세요.// */}
-                  {'total: ' + dummyNFTs.length}
+                  {'total: ' + NFTs.length}
                 </span>
               </div>
             </div>
@@ -74,8 +72,6 @@ const NFTs = () => {
               <div className="NFTForm__submitIcon"></div>
               <button className="NFTForm__submitButton" onClick={handleButtonClick}> Create</button>
                
-              {/* TODO : 작성한 트윗을 전송할 수 있는 button 엘리먼트를 작성하세요. */}
-
             </div>
           </div>
         </div>
