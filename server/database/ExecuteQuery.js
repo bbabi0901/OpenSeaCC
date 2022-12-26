@@ -15,6 +15,8 @@ async function execute(query, param) {
             return res;
         });
 
+        conn.commit();
+
         // 쿼리결과에 따라 true/false 반환
         if (res) {
             return res;
