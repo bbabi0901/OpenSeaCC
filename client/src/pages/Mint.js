@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
+
 const Mint = () => {
+  const [nftName, setNftName] = useState(null);
+  const [nftAddress, setNftAddress] = useState(null);
+  const [nftDetail, setNftDetail] = useState(null);
+  const [nftImage, setNftImage] = useState(null);
+  const [nftPrice, setNftPrice] = useState(null);
+
 function setPriview(event){
   let reader = new FileReader();
   reader.onload = function(event){
@@ -12,14 +20,33 @@ function setPriview(event){
   reader.readAsDataURL(event.target.files[0]);
 
 
-  
+  const handleSetNftName = (e) => {
+    setNftName(e.target.value);
+    Minting()
+    };
+  const handleSetNftAddress = (e) => {
+    setNftAddress(e.target.value);
+    Minting()
+    };
+  const handleSetNftDetail = (e) => {
+    setNftDetail(e.target.value);
+    Minting()
+    };
+  const handleSetNftImage = (e) => {
+    setNftImage(e.target.value);
+    Minting()
+    };
+  const handleSetNftPrice = (e) => {
+    setNftPrice(e.target.value);
+    Minting()
+    };
   const Minting = async() => {
     const response = await axios('http://localhost:3000/Mint', {
-      // name: nftName,
-      // address: nftAddress,
-      // detail: nftDetails,
-      // image: nftImg,
-      // price: nftPrice,
+      name: nftName,
+      address: nftAddress,
+      detail: nftDetail,
+      image: nftImage,
+      price: nftPrice,
 
     });
     console.log(response.data);
@@ -43,7 +70,7 @@ function setPriview(event){
       </div>
         <div className="add__name">
           <h3>Name</h3>
-          <input className = 'text_input'type='text' placeholder = '   Item name'></input>
+          <input className = 'text_input'type='text' placeholder = '   Item name' onChange={handleSetNftName} ></input>
         </div>
         <div className="add__external_link">
           <h3>External link</h3>
