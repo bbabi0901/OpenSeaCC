@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Web3 from "web3";
-
 import Header from "./components/Header/Header";
 import Main from "./pages/Main";
 import Mint from "./pages/Mint";
