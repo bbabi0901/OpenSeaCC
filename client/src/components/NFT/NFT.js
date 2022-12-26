@@ -1,5 +1,7 @@
 import React from 'react';
-function NFT() {
+function NFT({nft}) {
+  const parsedDate = new Date(tweet.createdAt).toLocaleDateString('ko-kr');
+
     //required data
         //img
         //name
@@ -16,16 +18,15 @@ function NFT() {
             <img src={nft.picture} />
         </div>
           <div className="nft__content">
-            <div className="nft__userInfo">
-              <div className="nft__userInfo--wrapper">
-                {/* TODO : 유져 이름이 있어야 합니다. */}
-                <div className="nft__username">{tweet.username}</div>
-                {/* TODO : 트윗 생성 일자가 있어야 합니다. parsedDate를 이용하세요. */}
+            <div className="nft__Info">
+              <div className="nft__Info--wrapper">
+                <div className="nft__name">{nft.name}</div>
                 <div className = "nft__createdAt">{parsedDate}</div>
+                <div className = "nft__currentPrice">{nft.price}</div>
               </div>
             </div>
-            {/*TODO : 트윗 메세지가 있어야 합니다.*/}
-            <div className = "nft__discription">{tweet.content}</div>
+            {/*TODO : NFT discription이 있어야 합니다.*/}
+            <div className = "nft__discription">{nft.discription}</div>
           </div>
         
       </li>

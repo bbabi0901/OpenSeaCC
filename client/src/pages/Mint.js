@@ -1,23 +1,10 @@
 const Mint = () => {
-  function getImageFiles(el){
-    const uploadFiles = [];
-    const files = el.currentTarget.files;
-    const ImagePreview = document.querySelector('.image_preview')
-    const docFrag = new DocumentFragment()
-    function createElement(el,file) {
-      const li = document.createElement('li');
-      const img = document.createElement('img');
-      img.setAttribute('src', el.target.result);
-      img.setAttribute('data-file', file.name);
-      li.appendChile(img);
-      return li;
-    };
-    const realUpload = document.querySelector('.real-update');
-    const upload = document.querySelector('.upload');
-
-    upload.addEventListener('click', ()=>realUpload.click());
-    realUpload.addEventListener('change', getImageFiles);
+function setPriview(event){
+  let reader = new FileReader();
+  reader.onload = function(event){
+    let img
   }
+}
   return(
   <div className="Mint">
     <div className="container">

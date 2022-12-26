@@ -3,8 +3,9 @@ const Main = () => {
     <div className="body">
       <div className="slide">
         <h1>Explore, collect, and sell NFTs</h1>
+
         <img
-          src="https://cdn.mos.cms.futurecdn.net/VECkttyB7rAa9qSkxMiB8f.jpg"
+          src="https://g.foolcdn.com/image/?url=https%3A//g.foolcdn.com/editorial/images/706290/nft-abstract-design.jpg&w=2000&op=resize"
           alt=""
         ></img>
       </div>
