@@ -18,7 +18,7 @@ const MyPage = () => {
     };
     connectMetamask();
   });
-  return <div>MyPage 미구현, {accounts}</div>;
+  return <div>MyPage 미구현, {accounts}s</div>;
 };
 
 export default MyPage;

@@ -11,12 +11,9 @@ import MyPage from "./pages/MyPage";
 import Market from "./pages/Market";
 import Wallet from "./pages/Wallet";
 
-import { getWallet } from "./utils/wallet";
-
 const App = () => {
-  const account = localStorage.getItem("account");
   const [isWalletChecked, setIsWalletChecked] = useState(
-    account === "undefined" ? false : true
+    window.ethereum ? window.ethereum.isConnected() : false
   );
   const handleWalletChecked = () => {
     setIsWalletChecked(true);
