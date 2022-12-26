@@ -2,7 +2,7 @@
 // const [isChecked, setIsChecked] = useState()
 
 import { Link } from "react-router-dom";
-
+import './Header.css'
 function Header() {
   let elIsWalletChecked = document.querySelector(".fa-wallet");
   let isWalletChecked = function (value) {
@@ -66,6 +66,10 @@ function Header() {
             <ul>
               <Link to="/mint">Mint</Link>
             </ul>
+            <ul>
+              <Link to="/nftdetails">NFTdetails</Link>
+            </ul>
+
           </div>
         </ul>
         {/* <!--icon.symbol--> */}

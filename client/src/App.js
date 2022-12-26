@@ -9,6 +9,7 @@ import Mint from "./pages/Mint";
 import MyPage from "./pages/MyPage";
 import Market from "./pages/Market";
 import Wallet from "./pages/Wallet";
+import NFTdetails from "./pages/NFTdetails";
 
 const App = (props) => {
   return (
@@ -22,6 +23,7 @@ const App = (props) => {
             <Route path="/mypage" element={<MyPage />} />
             <Route path="/mint" element={<Mint />} />
             <Route path="/wallet" element={<Wallet />} />
+            <Route path="/nftdetails" element={<NFTdetails />} />
           </Routes>
         </section>
         <Footer />
