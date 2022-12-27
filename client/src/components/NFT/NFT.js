@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './NFT.css'
 export default function NFT({nft, handleClick}) {
     return(
-        <a href='/' className="NFT" id='1' key = '1'>
+      
+        <Link className="NFT" id='1' key = '1' to="../nftdetails/?id=1">
           <div className="nft__content">
             <div className="nft__Info">
               <div className="nft__Info--wrapper">
@@ -18,8 +20,8 @@ export default function NFT({nft, handleClick}) {
             </div>
             <div className = "nft__discription"></div>
           </div>
-        
-      </a>
+        </Link>
+      
     );
 
 }
