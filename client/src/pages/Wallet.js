@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Web3 from "web3";
+// import Web3 from "web3";
 
-import { getWallet } from "../utils/wallet";
+import { getWallet, getBalance, getGoerliWeb } from "../utils/wallet";
 // import { hashAddress } from "../utils/hash";
 
 const Wallet = ({ name, account, onWalletConnect }) => {
@@ -48,39 +48,15 @@ const Wallet = ({ name, account, onWalletConnect }) => {
       console.log(e);
     }
   };
+
   useEffect(() => {
     handleWalletConnect();
     addressDB();
-    getBalance(accConncected, web3);
+    const web = getGoerliWeb();
+    getBalance(accConncected, web).then((bal) =>
+      setBalance(parseFloat(web.utils.fromWei(bal)).toFixed(4))
+    );
   }, [accConncected]);
-
-  const goerliURL =
-    "https://goerli.infura.io/v3/2d2c8426cde6446fa9185e2e0b01dcea";
-  const getWeb3 = () => {
-    const web3 = new Web3(new Web3.providers.HttpProvider(goerliURL));
-    return web3;
-  };
-  const getBalance = async (address, web3) => {
-    const addressChecksum = web3.utils.toChecksumAddress(address);
-    const balance = await web3.eth.getBalance(addressChecksum, "latest");
-    setBalance(balance);
-  };
-  const web3 = getWeb3();
-  // const ganache = "0x4A9ABCDBAd58601e021e2C698Bc193eDBfd7f692";
-  // const [balance, setBalance] = useState("0");
-  // const web3ganache = () => {
-  //   return new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
-  // };
-  // const getBalanceGanache = async (address) => {
-  //   const checksumAddr = web3ganache().utils.toChecksumAddress(address);
-  //   try {
-  //     const balance = await web3ganache().eth.getBalance(checksumAddr);
-  //     return balance;
-  //   } catch (e) {
-  //     console.log(e);
-  //     return e;
-  //   }
-  // };
 
   const [balance, setBalance] = useState("0");
 

@@ -15,7 +15,14 @@ const App = () => {
   useEffect(() => {
     if (typeof window.ethereum !== "undefined") {
       try {
-        const web = new Web3(window.ethereum);
+        // const web = new Web3(window.ethereum);
+        const goerliURL =
+          "https://goerli.infura.io/v3/2d2c8426cde6446fa9185e2e0b01dcea";
+        const getWeb3 = () => {
+          const web3 = new Web3(new Web3.providers.HttpProvider(goerliURL));
+          return web3;
+        };
+        const web = getWeb3();
         setWeb3(web);
       } catch (err) {
         console.log(err);
