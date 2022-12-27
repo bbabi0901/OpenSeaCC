@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Mint = ({ name, account }) => {
-  console.log(account)
-  console.log(name)
+const Mint = ({name, account}) => {
+  const address = localStorage.getItem("address");
   const [values, setValues] = useState({});
   const [imgBase64, setImgBase64] = useState([]); // 파일 base64
   const [imgFile, setImgFile] = useState(null);	//파일	
   const req = async () => {
     const result = await axios.post("http://localhost:3000/mint/minting",
       {
-        "address" : account,
+        "address" : address,
         "img" : imgBase64,
         "info" : values
       },  // body
