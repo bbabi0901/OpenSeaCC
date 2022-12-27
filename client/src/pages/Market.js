@@ -6,7 +6,9 @@ import { Router } from 'react-router-dom';
 
 
 const Market = () => {
-
+  let list = [];
+  let data = this.props.data;
+  
   return (
     <div className='market'>
       <h1>Explore collections</h1>
@@ -24,30 +26,26 @@ const Market = () => {
         <a href='/' className="virtual_worlds"><h3>Virtual Worlds</h3></a>
       </div>
       <div className='goods'>
-      <ul className="NFTs">
-        
-        {/* {NFTs.map(NFT => {
-            return (
-            <NFT  NFT={NFT} key={NFT.id}/>
-            )
-            }
-        )} */}
-      <div className="display">
-        
-      <div className="nft_list">
-          <NFT/><NFT/><NFT/>
+        <ul className="NFTs">
+          
+          {/* {NFTs.map(NFT => {
+              return (
+              <NFT  NFT={NFT} key={NFT.id}/>
+              )
+              }
+          )} */}
+          <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
           </div>
-          <div className="nft_list">
-          <NFT/><NFT/><NFT/>
-          </div>
-          <div className="nft_list">
-          <NFT/><NFT/><NFT/>
-          </div>
-
-        </div>
-
-      </ul>
-
+        </ul>
       </div>
     </div>
     );

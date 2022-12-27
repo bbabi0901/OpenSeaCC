@@ -1,3 +1,4 @@
+import NFT from '../components/NFT/NFT';
 const Main = () => {
   return (
     <div className="body">
@@ -97,46 +98,82 @@ const Main = () => {
       </div>
 
       <h3>Notable collections</h3>
-      <div className="notable_collections">
-        <div className="notable_collections_1">1</div>
-        <div className="notable_collections_1">2</div>
-        <div className="notable_collections_1">3</div>
-        <div className="notable_collections_1">4</div>
-        <div className="notable_collections_1">5</div>
-      </div>
+      <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
       <h3>Food NFTs spotlight</h3>
-      <div className="food_NFTs_spotlight">
-        <div className="food_NFTs_spotlight_1">1</div>
-        <div className="food_NFTs_spotlight_1">2</div>
-        <div className="food_NFTs_spotlight_1">3</div>
-        <div className="food_NFTs_spotlight_1">4</div>
-        <div className="food_NFTs_spotlight_1">5</div>
-        <div className="food_NFTs_spotlight_1">6</div>
-      </div>
+      <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
       <h3>NFT_101</h3>
       <div className="NFT_101">
-        <div className="NFT_101_1">1</div>
-        <div className="NFT_101_1">2</div>
-        <div className="NFT_101_1">3</div>
-        <div className="NFT_101_1">4</div>
-        <div className="NFT_101_1">5</div>
-        <div className="NFT_101_1">6</div>
+      <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
       </div>
       <h3>Browse by category</h3>
       <div className="browse_by_category">
-        <div className="browse_by_category_1">1</div>
-        <div className="browse_by_category_1">2</div>
-        <div className="browse_by_category_1">3</div>
+      <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
       </div>
       <div className="browse_by_category">
-        <div className="browse_by_category_1">1</div>
-        <div className="browse_by_category_1">2</div>
-        <div className="browse_by_category_1">3</div>
+      <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
       </div>
       <div className="browse_by_category">
-        <div className="browse_by_category_1">1</div>
-        <div className="browse_by_category_1">2</div>
-        <div className="browse_by_category_1">3</div>
+      <div className="display">
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
       </div>
         <div className="footer">
         <div className="footer_head">
