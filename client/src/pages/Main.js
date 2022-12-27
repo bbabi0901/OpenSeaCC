@@ -122,7 +122,6 @@ const Main = () => {
             </div>
           </div>
       <h3>NFT_101</h3>
-      <div className="NFT_101">
       <div className="display">
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
@@ -133,10 +132,8 @@ const Main = () => {
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
             </div>
-          </div>
       </div>
       <h3>Browse by category</h3>
-      <div className="browse_by_category">
       <div className="display">
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
@@ -147,9 +144,7 @@ const Main = () => {
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
             </div>
-          </div>
       </div>
-      <div className="browse_by_category">
       <div className="display">
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
@@ -160,9 +155,7 @@ const Main = () => {
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
             </div>
-          </div>
       </div>
-      <div className="browse_by_category">
       <div className="display">
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
@@ -173,7 +166,6 @@ const Main = () => {
             <div className="nft_list">
             <NFT/><NFT/><NFT/>
             </div>
-          </div>
       </div>
         <div className="footer">
         <div className="footer_head">

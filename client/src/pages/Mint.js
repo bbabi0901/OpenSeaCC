@@ -3,16 +3,22 @@ import axios from 'axios';
 
 
 
-const Mint = (e) => {
-  
+const Mint = ({ name, account }) => {
+  const [values, setValues] = useState({});
+  const req = async () => {
+    const result = await axios.post("http://localhost:3000/mypage/userInfo",
+      {
+        "address" : account
+      },  // body
+      {"Content-Type": "application/json"} // header
+    )
+    return result;
+  }
 
-  const [nftName, setNftName] = useState(null);
-  const [nftAddress, setNftAddress] = useState(null);
-  const [nftDetail, setNftDetail] = useState(null);
-  const [nftImage, setNftImage] = useState(null);
-  const [nftPrice, setNftPrice] = useState(null);
-
-  // const response = await axios('http://localhost:3000/Mint', {
+  const result = req().then((result) => {
+    return result;
+  })
+  // const response = await axios('http://localhost:3000/mint', {
   //   name: nftName,
   //   address: nftAddress,
   //   detail: nftDetail,
@@ -21,50 +27,34 @@ const Mint = (e) => {
 
   // });
   // console.log(response.data);
-  const handleSetNftName = (e) => {
-    setNftName(e.target.value);
-    Mint()
-    };
-  const handleSetNftAddress = (e) => {
-    setNftAddress(e.target.value);
-    Mint()
-    };
-  const handleSetNftDetail = (e) => {
-    setNftDetail(e.target.value);
-    Mint()
-    };
-  const handleSetNftImage = (e) => {
-    setNftImage(e.target.value);
-    Mint()
-    };
-  const handleSetNftPrice = (e) => {
-    setNftPrice(e.target.value);
-    Mint()
-    };
+  const handleChange = e => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    })
+  }
 
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   alert(JSON.stringify(response, null,5))
-
-  // }
+  const handleSubmit = e => {
+    e.preventDefault()
+    alert(JSON.stringify(values, null, 2))
+  }
 
   return(
     
   <div className="Mint">
     <div className="container">
-      <form onSubmit>
+    <form onSubmit={handleSubmit}>
         <h1>Create New Item</h1>
         <h6>* Required fields</h6>
         <h3>Image, Video, Audio, or 3D Model</h3>
-        <h6>File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</h6>
+        <h6>File types supported: Image Link Only</h6>
         <div className="add__img">
-
-
           <input 
-          type='file' 
+          className = 'text_input'
+          type='text' 
           accept="image/*" 
-          // value={nftImage}
-          // onChange={handleSetNftImage}
+          name='nft_image'
+          onChange={handleChange}
           ></input>
 
           <div className="upload"></div>
@@ -79,8 +69,8 @@ const Mint = (e) => {
             className = 'text_input'
             type='text' 
             placeholder = '   Item name'
-            // onChange={handleSetNftName}
-
+            name='nft_name'
+            onChange={handleChange}
             ></input>
           </div>
           <div className="add__external_link">
@@ -100,7 +90,8 @@ const Mint = (e) => {
             <textarea 
             className = 'text_input discription'  
             placeholder = '  Provide a detailed discription of your item.'
-            // onChange={handleSetNftDetail}
+            name='nft_detail'
+            onChange={handleChange}
             ></textarea>
           </div>
           <div className="add__collection">
@@ -109,7 +100,6 @@ const Mint = (e) => {
             <select 
             className = 'text_input' 
             placeholder = 'Select Collection'
-            
             >
               <option value = 'Select Collection'>...Select Collection</option>
               <option value = 'No Result'>...No Result</option>
