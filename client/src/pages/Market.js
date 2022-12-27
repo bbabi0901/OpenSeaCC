@@ -6,9 +6,6 @@ import { Router } from 'react-router-dom';
 
 
 const Market = () => {
-  let list = [];
-  let data = this.props.data;
-  
   return (
     <div className='market'>
       <h1>Explore collections</h1>
