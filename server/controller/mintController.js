@@ -1,25 +1,50 @@
 const execute = require("./../database/ExecuteQuery")
 const query = require("./../database/Query");
 const path = require("path")
+const fs = require('fs');
 
 module.exports = {
     // 민팅 메소드
-    minting :async (req,res) => {
-        const user_address = req.body.user_address;
-        const nft_address = req.body.nft_address;
-        const image = req.body.image;
-        const name = req.body.nft_name;
-        const nft_detail = req.body.nft_detail;
-        const nft_price = req.body.nft_price;
+    minting : async (req,res) => {
+        const time = Date.now();
+        const img = req.body.img;
+        const address = req.body.address;
+        const info = req.body.info;
+        
+        const name = time + "_" + address
 
-        if (!(user_address && nft_address && image && name && nft_price)) {
-            return await res.status(500).send("not enough").end();
-        }
+        const fullnm = `${name}.jpg`;
 
-        return await res.status(202).send("success").end();
-    
+        fs.writeFileSync(path.join(__dirname, `../../data/${fullnm}`), img[0].replace(/^data:image\/jpeg;base64,/, ""), "base64");
+
+        execute(query.INSERT_NFT, [address, "", info.nft_name, info.nft_detail, fullnm, info.nft_price])
+
+        res.send({"data":fullnm}).end()
     },
-    mintDetail : (req, res) => {
-        res.send("Mint Detail 미구현 페이지 입니다.");
+
+    mintDetail : async (req, res) => {
+        const id = req.query.id;
+        console.log(id)
+        // const usr = await execute(query.GET_USER, address);
+
+        const nft = await execute(query.GET_NFT_BY_ID, id);
+
+        if (nft) {
+            const nftResult = nft[0];
+            const address = nftResult;
+            // const usr = await execute(query.GET_USER, address);
+
+            const result = {
+                user_address : address,
+                nft_name : nftResult.nft_name,
+                discription : nftResult.nft_detail,
+                nft_image : nftResult.nft_image,
+                nft_price : nftResult.nft_price
+            }
+            return await res.send(result)
+
+        } else {
+            return await res.send({data:"fail"})
+        }
     }
 }

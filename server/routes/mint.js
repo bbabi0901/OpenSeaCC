@@ -3,11 +3,12 @@ var router = express.Router();
 const {minting, mintDetail} = require("./../controller/mintController");
 const path = require("path");
 
+
 router.get('/', async function(req, res, next) {
     res.sendFile(path.join(__dirname, "../../client/build/index.html"));
 });
 
-router.post('/minting', minting);
+router.post('/minting', minting) ;
 
 router.get("/detail", mintDetail);
 
