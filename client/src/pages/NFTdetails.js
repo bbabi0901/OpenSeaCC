@@ -41,12 +41,16 @@ const NFTdetails = ({}) => {
                     <div className='info'>
                         <div className='nft_name'>{/*nft_name*/}</div>
                         <div className='owner'>
+                            <h4>Created by</h4>
+                            <a href='/'>{/*this.props.owner*/}</a>
+                        </div>
+                        <div className='creater'>
                             <h4>Owned by</h4>
-                            <a href='/'>{/*user*/}</a>
+                            <a href='/'>{/*this.props.creater*/}</a>
                         </div>
                     </div>
                     <div className='sale_ends'>
-                        <h4>Sale ends 2022년 12월 29일 at 오전 8:06 GMT+9</h4>
+                        <h4>Trade ends{/*this.props.upt_dt*/}</h4>
                         <h4>02  17  06  24</h4>
                         <h4>Days  Hours  Minutes  Seconds</h4>
                     </div>
