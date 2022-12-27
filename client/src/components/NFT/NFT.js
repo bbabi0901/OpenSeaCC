@@ -3,7 +3,7 @@ import './NFT.css'
 export default function NFT({nft, handleClick}) {
     return(
       
-        <li className="NFT" id='1' key = '1'>
+        <a href='/' className="NFT" id='1' key = '1'>
           <div className="nft__content">
             <div className="nft__Info">
               <div className="nft__Info--wrapper">
@@ -20,7 +20,7 @@ export default function NFT({nft, handleClick}) {
             <div className = "nft__discription"></div>
           </div>
         
-      </li>
+      </a>
     );
 
 }

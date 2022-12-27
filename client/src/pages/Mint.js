@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
-
 const Mint = ({ name, account }) => {
   const [values, setValues] = useState({});
   const [imgBase64, setImgBase64] = useState([]); // 파일 base64
