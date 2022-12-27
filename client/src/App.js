@@ -57,7 +57,7 @@ const App = () => {
               path="/mypage"
               element={<MyPage name={name} account={account} web3={web3} />}
             />
-            <Route path="/mint" element={<Mint />} />
+            <Route path="/mint" element={<Mint />} account={account} />
             <Route
               path="/wallet"
               element={
