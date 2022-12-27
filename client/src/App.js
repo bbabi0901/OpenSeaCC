@@ -23,16 +23,18 @@ const App = () => {
     }
   }, []);
   const checkAccConnect = () => {
-    if (typeof window.ethereum !== "undefined") {
-      return window.ethereum.isConnected();
-    }
-    return false;
+    // if (typeof window.ethereum !== "undefined") {
+    //   return window.ethereum.isConnected();
+    // }
+    // return false;
+    return localStorage.getItem("address") !== "undefined";
   };
   const [isAccConnected, setIsAccConnected] = useState(checkAccConnect());
-  const [account, setAccount] = useState(undefined);
+  const [account, setAccount] = useState(localStorage.getItem("address"));
   const onWalletConnect = (account) => {
     setAccount(account);
     setIsAccConnected(true);
+    localStorage.setItem("address", account);
   };
 
   const name = "example";
@@ -46,7 +48,7 @@ const App = () => {
             <Route path="/market" element={<Market />} />
             <Route
               path="/mypage"
-              element={<MyPage name={name} account={account} />}
+              element={<MyPage name={name} account={account} web3={web3} />}
             />
             <Route path="/mint" element={<Mint />} />
             <Route
