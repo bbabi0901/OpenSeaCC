@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-const Mint = async(e) => {
+const Mint = (e) => {
   
 
   const [nftName, setNftName] = useState(null);
@@ -12,15 +12,15 @@ const Mint = async(e) => {
   const [nftImage, setNftImage] = useState(null);
   const [nftPrice, setNftPrice] = useState(null);
 
-  const response = await axios('http://localhost:3000/Mint', {
-    name: nftName,
-    address: nftAddress,
-    detail: nftDetail,
-    image: nftImage,
-    price: nftPrice,
+  // const response = await axios('http://localhost:3000/Mint', {
+  //   name: nftName,
+  //   address: nftAddress,
+  //   detail: nftDetail,
+  //   image: nftImage,
+  //   price: nftPrice,
 
-  });
-  console.log(response.data);
+  // });
+  // console.log(response.data);
   const handleSetNftName = (e) => {
     setNftName(e.target.value);
     Mint()
@@ -42,16 +42,17 @@ const Mint = async(e) => {
     Mint()
     };
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    // alert(JSON.stringify(response, null,5))
-  }
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   alert(JSON.stringify(response, null,5))
+
+  // }
 
   return(
     
   <div className="Mint">
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit>
         <h1>Create New Item</h1>
         <h6>* Required fields</h6>
         <h3>Image, Video, Audio, or 3D Model</h3>
@@ -62,14 +63,15 @@ const Mint = async(e) => {
           <input 
           type='file' 
           accept="image/*" 
-          value={nftImage}
-          onChange={handleSetNftImage}
+          // value={nftImage}
+          // onChange={handleSetNftImage}
           ></input>
 
           <div className="upload"></div>
           <ul className="image_preview">
           <i className="fa-regular fa-image"></i>
           </ul>
+
         </div>
           <div className="add__name">
             <h3>Name</h3>
@@ -77,7 +79,7 @@ const Mint = async(e) => {
             className = 'text_input'
             type='text' 
             placeholder = '   Item name'
-            onChange={handleSetNftName}
+            // onChange={handleSetNftName}
 
             ></input>
           </div>
@@ -98,7 +100,7 @@ const Mint = async(e) => {
             <textarea 
             className = 'text_input discription'  
             placeholder = '  Provide a detailed discription of your item.'
-            onChange={handleSetNftDetail}
+            // onChange={handleSetNftDetail}
             ></textarea>
           </div>
           <div className="add__collection">
