@@ -74,7 +74,6 @@ const NFTdetails = ({ account }) => {
             <div className="nft_name">{/*nft_name*/}</div>
             <div className="owner">
               <h4>Owned by {nftDetails.user_address}</h4>
-              <a href="/">{/*user*/}</a>
             </div>
           </div>
           <div className="sale_ends">
@@ -86,7 +85,6 @@ const NFTdetails = ({ account }) => {
             <h4>Current price</h4>
             <h4>
               {nftDetails.nft_price}
-              {/*this.props.nft_price*/}
             </h4>
             <button className="add_to_cart" onClick={onAddToCartClick}>
               <h3>Add to cart</h3>

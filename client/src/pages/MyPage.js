@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import NFT from '../components/NFT/NFT';
 import { useNavigate } from "react-router-dom";
-
 import { getWallet } from "../utils/wallet";
 
 const MyPage = ({ name, account, web3 }) => {
@@ -72,31 +72,16 @@ const MyPage = ({ name, account, web3 }) => {
         </div>
       </div>
       <div className="display">
-        <div className="NFT_101">
-          <div className="NFT_101_1">1</div>
-          <div className="NFT_101_1">2</div>
-          <div className="NFT_101_1">3</div>
-          <div className="NFT_101_1">4</div>
-          <div className="NFT_101_1">5</div>
-          <div className="NFT_101_1">6</div>
-        </div>
-        <div className="NFT_101">
-          <div className="NFT_101_1">1</div>
-          <div className="NFT_101_1">2</div>
-          <div className="NFT_101_1">3</div>
-          <div className="NFT_101_1">4</div>
-          <div className="NFT_101_1">5</div>
-          <div className="NFT_101_1">6</div>
-        </div>
-        <div className="NFT_101">
-          <div className="NFT_101_1">1</div>
-          <div className="NFT_101_1">2</div>
-          <div className="NFT_101_1">3</div>
-          <div className="NFT_101_1">4</div>
-          <div className="NFT_101_1">5</div>
-          <div className="NFT_101_1">6</div>
-        </div>
-      </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+            <div className="nft_list">
+            <NFT/><NFT/><NFT/>
+            </div>
+          </div>
     </div>
   );
 };
