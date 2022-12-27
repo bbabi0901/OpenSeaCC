@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var mypageRouter = require("./routes/mypage");
 var mintRouter = require("./routes/mint");
 var walletRouter = require("./routes/wallet");
-var imageRouter = require("./routes/image")
+var imageRouter = require("./routes/image");
 
 const { send } = require('process');
 const { use } = require('./routes/index');
@@ -22,8 +22,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({limit: '100mb'}));
+app.use(express.urlencoded({limit: '100mb', extended: false }));
 app.use(cookieParser());
 
 
