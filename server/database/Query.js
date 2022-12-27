@@ -26,6 +26,13 @@ const query = {
             NOW()
         );
 
+    `,
+    "SELECT_LIMIT_10P" : `
+        SELECT * from nft n 
+        WHERE reg_dt <= ?
+        order by reg_dt DESC 
+        limit 10
+        ;
     `
 };
 
