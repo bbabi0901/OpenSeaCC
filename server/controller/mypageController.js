@@ -18,7 +18,7 @@ module.exports = {
         
         const userResult = await execute(query.GET_USER, address);
 
-        const nftResult = await execute(query.GET_NFT, address);
+        const nftResult = await execute(query.GET_NFT_BY_ADDRESS, address);
         
         return res.send(nftResult);
     }

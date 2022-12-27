@@ -22,7 +22,29 @@ module.exports = {
         res.send({"data":fullnm}).end()
     },
 
-    mintDetail : (req, res) => {
-        res.send("Mint Detail 미구현 페이지 입니다.");
+    mintDetail : async (req, res) => {
+        const id = req.query.id;
+        console.log(id)
+        // const usr = await execute(query.GET_USER, address);
+
+        const nft = await execute(query.GET_NFT_BY_ID, id);
+
+        if (nft) {
+            const nftResult = nft[0];
+            const address = nftResult;
+            // const usr = await execute(query.GET_USER, address);
+
+            const result = {
+                user_address : address,
+                nft_name : nftResult.nft_name,
+                discription : nftResult.nft_detail,
+                nft_image : nftResult.nft_image,
+                nft_price : nftResult.nft_price
+            }
+            return await res.send(result)
+
+        } else {
+            return await res.send({data:"fail"})
+        }
     }
 }
