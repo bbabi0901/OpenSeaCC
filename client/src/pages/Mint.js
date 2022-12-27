@@ -17,7 +17,7 @@ const Mint = ({ name, account }) => {
         "Content-Type": "multipart/form-data",
       } // header
     )
-    console.log(account)
+    console.log(this.props.account)
 
     return result;
   }
@@ -44,9 +44,8 @@ const Mint = ({ name, account }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // const mintData = 
-    alert(JSON.stringify(values, null,2))
-    // req(mintData)
+    const mintData = JSON.stringify(values, null,2);
+    req(mintData)
   }
   const handleChangeFile = (event) => {
     console.log(event.target.files)
