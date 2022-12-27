@@ -1,0 +1,12 @@
+.image {
+    width:100%;
+    height:100%;
+    display: inline;
+}
+
+.photo  {
+    height: 430px;
+    width: 380px;
+    margin:0 auto;
+}
+
