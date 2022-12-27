@@ -34,7 +34,9 @@ const query = {
         limit 10
         ;
     `,
-    "GET_NFT_BY_ID" : "SELECT * FROM nft WHERE id = ?;"
+    "GET_NFT_BY_ID" : "SELECT * FROM nft WHERE id = ?;",
+    "GET_NFT_LIST_FROM_CREATOR":"SELECT * FROM nft WHERE creator_address = ?;",
+    "GET_NFT_LIST_FROM_OWNER":"SELECT * FROM nft WHERE owner_address = ?;",
 };
 
 module.exports = query;
