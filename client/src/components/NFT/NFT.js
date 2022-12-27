@@ -2,7 +2,6 @@ import React from 'react';
 import './NFT.css'
 export default function NFT({nft, handleClick}) {
     return(
-      
         <a href='/' className="NFT" id='1' key = '1'>
           <div className="nft__content">
             <div className="nft__Info">
