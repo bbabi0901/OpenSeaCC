@@ -5,7 +5,7 @@ const fs = require('fs');
 
 module.exports = {
     // 민팅 메소드
-    minting :async (req,res) => {
+    minting : async (req,res) => {
         const time = Date.now();
         const img = req.body.img;
         const address = req.body.address;
