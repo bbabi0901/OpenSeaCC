@@ -1,23 +1,22 @@
-
-
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { getWallet } from "../utils/wallet";
 
-const MyPage = ({ name, account }) => {
+const MyPage = ({ name, account, web3 }) => {
   const req = async () => {
-    const result = await axios.post("http://localhost:3000/mypage/userInfo",
-      {"address" : account},  // body
-      {"Content-Type": "application/json"} // header
-    )
+    const result = await axios.post(
+      "http://localhost:3000/mypage/userInfo",
+      { address: account }, // body
+      { "Content-Type": "application/json" } // header
+    );
     return result;
-  }
+  };
 
   const result = req().then((result) => {
     return result;
-  })
+  });
 
   return (
     <div className="mypage">
@@ -100,7 +99,6 @@ const MyPage = ({ name, account }) => {
       </div>
     </div>
   );
-
 };
 
 export default MyPage;

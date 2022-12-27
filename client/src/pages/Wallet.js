@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Web3 from "web3";
 
 import { getWallet } from "../utils/wallet";
 // import { hashAddress } from "../utils/hash";
@@ -19,6 +20,7 @@ const Wallet = ({ name, account, onWalletConnect }) => {
   };
 
   const serverURL = "http://localhost:3000/userinfo";
+
   const addressDB = () => {
     try {
       axios
@@ -49,7 +51,23 @@ const Wallet = ({ name, account, onWalletConnect }) => {
   useEffect(() => {
     handleWalletConnect();
     addressDB();
-  });
+  }, [accConncected]);
+
+  // const ganache = "0x4A9ABCDBAd58601e021e2C698Bc193eDBfd7f692";
+  // const [balance, setBalance] = useState("0");
+  // const web3ganache = () => {
+  //   return new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
+  // };
+  // const getBalanceGanache = async (address) => {
+  //   const checksumAddr = web3ganache().utils.toChecksumAddress(address);
+  //   try {
+  //     const balance = await web3ganache().eth.getBalance(checksumAddr);
+  //     return balance;
+  //   } catch (e) {
+  //     console.log(e);
+  //     return e;
+  //   }
+  // };
 
   return <div>Wallet 미구현, {accConncected}</div>;
 };
