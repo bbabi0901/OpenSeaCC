@@ -19,8 +19,9 @@ module.exports = {
 
         execute(query.INSERT_NFT, [address, "", info.nft_name, info.nft_detail, fullnm, info.nft_price])
 
-        res.send("")
+        res.send({"data":fullnm}).end()
     },
+
     mintDetail : (req, res) => {
         res.send("Mint Detail 미구현 페이지 입니다.");
     }
