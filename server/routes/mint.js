@@ -5,11 +5,7 @@ const path = require("path");
 const fs = require('fs');
 
 
-const multer = require("multer")
 
-const upload = multer({ 
-    dest: __dirname+'../../../data/', // 이미지 업로드 경로
-})
 
 router.get('/', async function(req, res, next) {
     res.sendFile(path.join(__dirname, "../../client/build/index.html"));
