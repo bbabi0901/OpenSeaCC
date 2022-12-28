@@ -51,7 +51,6 @@ export default function NFT({nft}) {
 
     if (nft) {
       return(
-<<<<<<< Updated upstream
       <Link className='NFT' id={nft.nft_id} key ={nft.nft_id} to={"../nftdetails?id="+nft.id}>
         <div className="parts">
           <div className="nft__content">
@@ -64,14 +63,6 @@ export default function NFT({nft}) {
                 <div className="nft__nft_name">{nft.nft_name}</div>
                 <div className="nft__nft_price">${nft.nft_price}</div>
 
-=======
-      <Link className="nft_list" id={nft.nft_id} key ={nft.nft_id} to={"../nftdetails?id="+nft.id}>
-        <div className="nft__content">
-          <div className="nft__Info">
-            <div className="nft__Info--wrapper">
-              <div className="nft__nft_image" onClick={(e) => handleClick(e, nft.id)} value={nft.id}>
-                <img src={`http://localhost:3000/images?path=${nft.nft_image}`}/>
->>>>>>> Stashed changes
               </div>
             </div>
             <div className = "nft__discription"></div>
@@ -106,5 +97,4 @@ export default function NFT({nft}) {
   </div>
   <div className = "nft__discription">{nft.discription}</div>
 </div>
-
 </li> */}

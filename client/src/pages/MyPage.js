@@ -99,7 +99,7 @@ const MyPage = ({ name, account, web3 }) => {
         }
 
       </div>
-    </div>
+    </div> 
   );
 };
 
