@@ -35,7 +35,7 @@ const Mint = ({name, account}) => {
     const mintData = JSON.stringify(values, null,2);
     alert(JSON.stringify(values, null,2))
 
-    req(mintData)
+    req()
   }
   const handleChangeFile = (event) => {
 
@@ -138,14 +138,14 @@ const Mint = ({name, account}) => {
             </select>
           </div>
           <div className="add__create">
-            <Link to="/mypage">
+            {/* <Link to="/mypage"> */}
               <button 
               className="add__create_button" 
               type='submit'
               >
               <h3>Create</h3>  
               </button>
-            </Link>
+            {/* </Link> */}
           </div>
         </form>
       </div>
