@@ -32,19 +32,29 @@ const Market = () => {
   };
   const azukiList = getNftList();
   // const [nftList, setNftList] = useState([]);
-
+  const trendingClick =()=>{
+    return
+  }
+  const artClick =()=>{
+    return
+  }
+  const collectiblesClick =()=>{
+    return
+  }
 
   return (
     <div className="market">
       <h1>Explore collections </h1>
       <div className="category">
-        <button onClick="/market/trending" className="trending">
+        <button onClick={trendingClick()}
+        className="trending">
           <h3>Trending</h3>
         </button>
-        <button onClick="/market/art" className="art">
+        <button onClick={artClick()} className="art">
           <h3>Art</h3>
         </button>
-        <button onClick="/market/collectibles" className="collectibles">
+        <button onClick={collectiblesClick()}
+        className="collectibles">
           <h3>Collectibles</h3>
         </button>
       </div>
