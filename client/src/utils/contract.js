@@ -6,7 +6,7 @@ import { getGoerliWeb } from "./wallet.js";
 const contractAddr = "0x4197425d40E4fDA55C0c2913bcDB325217A7079a";
 
 // minting tx
-const mint = async (address, tokenURI) => {
+const mint = async (address, tokenURI, web) => {
   try {
     const web = getGoerliWeb();
     const nftContract = new web.eth.Contract(abi, contractAddr);
@@ -24,14 +24,30 @@ const mint = async (address, tokenURI) => {
       data: data,
     };
     return tx;
-  } catch (e) {
-    console.log(e);
+  } catch (err) {
+    // console.log(err);
     return false;
   }
 };
 
 // signing transaction
-const signTx = (tx, privateKey) => {};
+const signTx = async (tx, privateKey) => {
+  try {
+    const web = getGoerliWeb();
+    const txSigned = await web.eth.accounts.signTransaction(tx, privateKey);
+    console.log("signed", txSigned);
+    const hash = web.eth.sendSignedTransaction(
+      txSigned.rawTransaction,
+      (err, hash) => {
+        if (err) console.log("Transaction Error:", err);
+      }
+    );
+    return hash;
+  } catch (err) {
+    console.log("Promise Error:", err);
+    return false;
+  }
+};
 
 // const transfer = (address) => {};
 
