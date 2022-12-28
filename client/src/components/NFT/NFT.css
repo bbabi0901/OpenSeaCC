@@ -1,11 +1,4 @@
-.NFT{
-    margin: 3%;
-    width: 95%;
-    display: block;
-    align-items: center;
-    justify-content: space-around;
 
-}
 .nft__content{
     justify-content: space-around;
     align-items: center;
@@ -25,7 +18,20 @@
 .nft__nft_image img{
     margin: 0;
     padding: 0;
-    width: auto;
-    height: 250px;
+    width: 320px;
+    height: auto;
 
 }
+.parts{
+    margin: 5px;
+    display: block;
+    width: 320px;
+    height: 480px;
+    border: 3px;
+    border-color: black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    text-align: center;
+    
+}
+
