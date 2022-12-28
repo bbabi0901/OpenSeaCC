@@ -10,8 +10,6 @@ var mintRouter = require("./routes/mint");
 var walletRouter = require("./routes/wallet");
 var imageRouter = require("./routes/image");
 
-const { send } = require('process');
-const { use } = require('./routes/index');
 
 var app = express();
 
