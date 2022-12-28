@@ -184,14 +184,13 @@ h4{
 }
 .NFT{
     margin: 5px;
-    display: block;
-    width: 320px;
-    height: 180px;
+    display: flex;
     border: 3px;
     border-color: black;
     border-radius: 20px;
     background-color: whitesmoke;
     text-align: center;
+    justify-content: space-around;
 }
 
 .browse_by_category{
@@ -446,6 +445,8 @@ footer h3 h4 h5 {
     color: gray;
 }
 .display{
+    width: 100%;
+    display: flex;
     margin: 20px 20px 100px 20px;
 
 }

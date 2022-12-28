@@ -1,7 +1,7 @@
 .NFT{
     margin: 3%;
     width: 95%;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: space-around;
 
@@ -19,7 +19,7 @@
     text-align: center;
 }
 .nft__nft_image{
-    margin: 0;
+    margin: 5px 0;
 
 }
 .nft__nft_image img{
