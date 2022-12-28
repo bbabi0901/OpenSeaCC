@@ -1,9 +1,11 @@
 import Web3 from "web3";
-import abi from "./ERC721/ERC721ABI.js";
+// import abi from "./ERC721/ERC721ABI.js";
+import abi from "./ERC721/erc721testABI.js";
 import { getGoerliWeb } from "./wallet.js";
 // import axios from "axios";
 
-const contractAddr = "0x4197425d40E4fDA55C0c2913bcDB325217A7079a";
+// const contractAddr = "0x4197425d40E4fDA55C0c2913bcDB325217A7079a";
+const contractAddr = "0xb769c830b248e5a1d03ef97331b03da797132458";
 const privateKey = "";
 
 // minting tx
