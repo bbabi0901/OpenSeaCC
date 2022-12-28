@@ -3,7 +3,6 @@ var router = express.Router();
 
 var {market} = require("../controller/marketController")
 
-// router.get('/', market);
 router.get('/', market);
 
 module.exports = router;
