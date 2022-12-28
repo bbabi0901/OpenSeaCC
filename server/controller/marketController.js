@@ -13,34 +13,31 @@ module.exports = {
         const result = await execute(query.SELECT_CATEGORY, category);
 
         if (result) {
-            return res.send({data:result[0]})
+            return res.send(result[0])
         } else {
             return res.send({data:"fail"});
         }
     },
     market_trending : async(req, res) => {
         const result = await execute(query.SELECT_CATEGORY, "trending");
-        console.log(result[0])
         if (result) {
-            return res.send({data:result[0]})
+            return res.send(result[0])
         } else {
             return res.sendFile(path.join(__dirname + "../../../client/build/index.html"));
         }
     },
     market_art : async(req, res) => {
         const result = await execute(query.SELECT_CATEGORY, "art");
-        console.log(result[0])
         if (result) {
-            return res.send({data:result[0]})
+            return res.send(result[0])
         } else {
             return res.sendFile(path.join(__dirname + "../../../client/build/index.html"));
         }
     },
     market_collectibles : async(req, res) => {
         const result = await execute(query.SELECT_CATEGORY, "collectibles");
-        console.log(result[0])
         if (result) {
-            return res.send({data:result[0]})
+            return res.send(result[0])
         } else {
             return res.sendFile(path.join(__dirname + "../../../client/build/index.html"));
         }
