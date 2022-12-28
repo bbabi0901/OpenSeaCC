@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Mint = ({name, account}) => {
@@ -137,12 +138,14 @@ const Mint = ({name, account}) => {
             </select>
           </div>
           <div className="add__create">
-            <button 
-            className="add__create_button" 
-            type='submit'
-            >
+            <Link to="/mypage">
+              <button 
+              className="add__create_button" 
+              type='submit'
+              >
               <h3>Create</h3>  
-            </button>
+              </button>
+            </Link>
           </div>
         </form>
       </div>
