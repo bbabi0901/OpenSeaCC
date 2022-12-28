@@ -18,6 +18,24 @@ const MyPage = ({ name, account, web3 }) => {
     return result;
   });
 
+  const [nft, setNft] = useState([]);
+let newArr = [];
+
+useEffect(() => {
+  axios.get("http://localhost:3000/mypage").then((res) => {
+    for (let i = 0; i < res.data.length; i++) {
+      if (res.data[i].address === account) {
+        // console.log(res.data[i].address)
+        newArr.push(res.data[i]);
+      }
+    }
+    // console.log(res.data)
+    // console.log(newArr)
+    setNft(newArr);
+  });
+}, []);
+
+
   return (
     <div className="mypage">
       <div className="background_image">
