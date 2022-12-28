@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import NFT from "../components/NFT/NFT";
-import { Router } from "react-router-dom";
 import axios from "axios";
 import { getGoerliWeb, getWallet } from "../utils/wallet";
 import abi from "../utils/ERC721/azukiABI";
@@ -37,6 +36,7 @@ const Market = () => {
   // const [nftList, setNftList] = useState([]);
   const trendingClick =()=>{
     console.log("click trending")
+
 
     axios.get("http://localhost:3000/market/trending")
     .then((response) => {
@@ -93,7 +93,9 @@ const Market = () => {
           )}
         </ul>
       </div>
+
     </div>
+    
   );
 };
 
