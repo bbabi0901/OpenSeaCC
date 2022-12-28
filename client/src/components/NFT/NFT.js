@@ -62,6 +62,7 @@ export default function NFT({nft}) {
                 <div className="nft__nft_address">{nft.nft_address}</div>
                 <div className="nft__nft_name">{nft.nft_name}</div>
                 <div className="nft__nft_price">${nft.nft_price}</div>
+
               </div>
             </div>
             <div className = "nft__discription"></div>
