@@ -6,17 +6,17 @@ import { useState } from "react";
 import abi from "../utils/ERC721/testAbi";
 
 const NFTdetails = ({ account }) => {
-  const req = async () => {
-    const result = await axios.post(
-      "http://localhost:3000/nftdetails",
-      nftDetails, // body
-      { "Content-Type": "application/json" } // header
-    );
-    return result;
-  };
-  const result = req().then((result) => {
-    return result;
-  });
+  // const req = async () => {
+  //   const result = await axios.post(
+  //     "http://localhost:3000/nftdetails",
+  //     nftDetails, // body
+  //     { "Content-Type": "application/json" } // header
+  //   );
+  //   return result;
+  // };
+  // const result = req().then((result) => {
+  //   return result;
+  // });
 
   // tokenId로 chain에서 찾아와서 setNftDetail
   const [nftDetails, setNftDetails] = useState({
