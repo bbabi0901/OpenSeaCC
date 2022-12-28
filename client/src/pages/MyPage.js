@@ -5,35 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { getWallet } from "../utils/wallet";
 
 const MyPage = ({ name, account, web3 }) => {
-  const req = async () => {
-    const result = await axios.post(
+
+  const [nfts, setNfts] = useState();
+  
+  useEffect(() => {
+    axios.post(
       "http://localhost:3000/mypage/userInfo",
-      { address: account }, // body
+      { address: account },
       { "Content-Type": "application/json" } // header
-    );
-    return result;
-  };
-
-  const result = req().then((result) => {
-    return result;
-  });
-
-  const [nft, setNft] = useState([]);
-let newArr = [];
-
-useEffect(() => {
-  axios.get("http://localhost:3000/mypage").then((res) => {
-    for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].address === account) {
-        // console.log(res.data[i].address)
-        newArr.push(res.data[i]);
-      }
-    }
-    // console.log(res.data)
-    // console.log(newArr)
-    setNft(newArr);
-  });
-}, []);
+    ).then((response) => {
+      setNfts(response.data)
+    })
+    ;
+  }, []);
 
 
   return (
@@ -90,16 +74,18 @@ useEffect(() => {
         </div>
       </div>
       <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-          </div>
+        {console.log(nfts)}
+        {
+          nfts !== {} && nfts !== undefined
+          ? nfts.owner.map((item) => {
+            return (
+              <NFT nft={item} />
+            )
+          })
+          : 0
+        }
+
+      </div>
     </div>
   );
 };
