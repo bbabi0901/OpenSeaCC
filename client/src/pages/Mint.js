@@ -32,6 +32,8 @@ const Mint = ({name, account}) => {
   const handleSubmit = e => {
     e.preventDefault()
     const mintData = JSON.stringify(values, null,2);
+    alert(JSON.stringify(values, null,2))
+
     req(mintData)
   }
   const handleChangeFile = (event) => {
@@ -120,17 +122,18 @@ const Mint = ({name, account}) => {
             ></input>
           </div>
           <div className="add__collection">
-            <h3>Collection</h3>
-            <h6>This is the collection where your item will appear.</h6>
+            <h3>Theme</h3>
+            <h6>This is the theme where your item will added.</h6>
             <select 
             className = 'text_input' 
             placeholder = 'Select Collection'
             name='nft_collection'
             onChange={handleChange}
-
             >
-              <option value = 'Select Collection'>...Select Collection</option>
-              <option value = 'No Result'>...No Result</option>
+              <option value = ''>...Select Collection</option>
+              <option value = 'trending'>Trending</option>
+              <option value = 'art'>Art</option>
+              <option value = 'collectibles'>Collectibles</option>
             </select>
           </div>
           <div className="add__create">
