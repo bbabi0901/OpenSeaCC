@@ -9,6 +9,10 @@ export default function NFT({nft, handleClick}) {
             <div className="nft__Info">
               <div className="nft__Info--wrapper">
                 <div className="nft__nft_image"onClick={(e) => handleClick(e, nft.id)}><img src='https://turbofuture.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:eco%2Cw_1200%2Cx_300%2Cy_489/MTkxODE4MTg0MDIwNjAwMzA2/shutterstock_1928691428.jpg'/></div>
+                이미지
+                nft_id
+                nft_이름
+                nft_price
                 <div className="nft__user_address">asdfsadf</div>
                 <div className="nft__nft_address">1213123123</div>
                 <div className="nft__nft_name">Russ</div>

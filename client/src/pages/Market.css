@@ -11,13 +11,13 @@
     padding: 0;
     display: flex;
     color: gray;
-    justify-content: space-between;
+    justify-content: left;
 }
 .category :hover{
     color: black;
 }
 .category a {
-    margin: 0;
+    margin: 0 30px;
 }
 .category a h3{
     
