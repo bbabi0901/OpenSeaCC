@@ -11,6 +11,7 @@ import abi from "../utils/ERC721/azukiABI";
 const Market = () => {
   const [isFiltered, setIsFiltered] = useState();
   const handleFilterNFT = (e) => {};
+  const [nfts, setNtf] = useState([]);
 
   const web = getGoerliWeb();
   const getNftList = async () => {
@@ -30,15 +31,39 @@ const Market = () => {
     }
     return nftList;
   };
+
+
   const azukiList = getNftList();
   // const [nftList, setNftList] = useState([]);
   const trendingClick =()=>{
+    console.log("click trending")
+
+    axios.get("http://localhost:3000/market/trending")
+    .then((response) => {
+      console.log(response.data)
+      setNtf(response.data)
+    })
+
     return
   }
   const artClick =()=>{
+    console.log("click art")
+    
+    axios.get("http://localhost:3000/market/art")
+    .then((response) => {
+      console.log(response.data)
+      setNtf(response.data)
+    })
     return
   }
   const collectiblesClick =()=>{
+    console.log("click collectibles")
+
+    axios.get("http://localhost:3000/market/collectibles")
+    .then((response) => {
+      console.log(response.data)
+      setNtf(response.data)
+    })
     return
   }
 
@@ -46,26 +71,26 @@ const Market = () => {
     <div className="market">
       <h1>Explore collections </h1>
       <div className="category">
-        <button onClick={trendingClick()}
+        <button onClick={(e) => trendingClick()}
         className="trending">
           <h3>Trending</h3>
         </button>
-        <button onClick={artClick()} className="art">
+        <button onClick={(e) => artClick()} className="art">
           <h3>Art</h3>
         </button>
-        <button onClick={collectiblesClick()}
+        <button onClick={(e) => collectiblesClick()}
         className="collectibles">
           <h3>Collectibles</h3>
         </button>
       </div>
       <div className="goods">
         <ul className="NFTs">
-          {/* {NFTs.map(NFT => {
+          {nfts.map((item) => {
               return (
-              <NFT  NFT={NFT} key={NFT.id}/>
+              <NFT nft={item} key={item.id}/>
               )
               }
-          )} */}
+          )}
           <div className="display">
             <div className="nft_list">
               <NFT />
