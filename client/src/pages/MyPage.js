@@ -83,14 +83,14 @@ const MyPage = ({ name, account, web3 }) => {
           </select>
         </div>
       </div>
-      <div className="trending_top_number">
+      <div className="display">
         {console.log(nfts)}
         {
           nfts !== {} && nfts !== undefined
           ? nfts.owner.map((item) => {
             return (
               <NFT 
-                className = 'trending_top_source'
+                className = 'nft_list'
                 nft={item} 
               />
             )
@@ -99,7 +99,7 @@ const MyPage = ({ name, account, web3 }) => {
         }
 
       </div>
-    </div> 
+    </div>
   );
 };
 
