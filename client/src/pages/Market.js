@@ -1,10 +1,11 @@
 import './Market.css'
 import React,  { useEffect } from 'react';
+import { useState } from "react";
+import {Link} from 'react-router-dom'
 import NFT from '../components/NFT/NFT';
 import { Router } from 'react-router-dom';
 import axios from "axios";
 import { getGoerliWeb, getWallet } from "../utils/wallet";
-import { useState } from "react";
 import abi from "../utils/ERC721/testAbi";
 
 
@@ -16,9 +17,9 @@ const Market = () => {
     <div className='market'>
       <h1>Explore collections</h1>
       <div className="category">
-        <a href='/' className="trending"><h3>Trending</h3></a>
-        <a href='/' className="art"><h3>Art</h3></a>
-        <a href='/' className="collectibles"><h3>Collectibles</h3></a>
+        <Link to='/trending' className="trending"><h3>Trending</h3></Link>
+        <Link to='/art' className="art"><h3>Art</h3></Link>
+        <Link to='/collectibles' className="collectibles"><h3>Collectibles</h3></Link>
       </div>
       <div className='goods'>
         <ul className="NFTs">
