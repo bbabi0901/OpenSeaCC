@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import './NFT.css'
 import axios from "axios";
 import { useState } from "react";
+import { getGoerliWeb, getWallet } from "../../utils/wallet";
+import abi from "../../utils/ERC721/testAbi";
 
 export default function NFT({nft, handleClick}) {
   const req = async () => {
@@ -27,6 +29,19 @@ export default function NFT({nft, handleClick}) {
     reg_dt: "",
     upt_dt: "",
   });
+  const [tokenURI, setTokenURI] = useState(
+    "https://i.guim.co.uk/img/media/ef8492feb3715ed4de705727d9f513c168a8b196/37_0_1125_675/master/1125.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=d456a2af571d980d8b2985472c262b31"
+  );
+
+  const testContractAddr = "0x4e5E76fEd68E5a0456059aC46A0bAe5623C522Fc";
+  const testTokenId = 1;
+
+  const web3 = getGoerliWeb();
+  const getERC721NFT = async () => {
+    const tokenContract = new web3.eth.Contract(abi, testContractAddr);
+    const tokenURI = await tokenContract.methods.tokenURI(testTokenId);
+    setTokenURI(tokenURI);
+  };
   console.log(isNft.nft_id)
     return(
       
@@ -34,7 +49,7 @@ export default function NFT({nft, handleClick}) {
           <div className="nft__content">
             <div className="nft__Info">
               <div className="nft__Info--wrapper">
-                <div className="nft__nft_image"onClick={(e) => handleClick(e, nft.id)}><img src='https://turbofuture.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:eco%2Cw_1200%2Cx_300%2Cy_489/MTkxODE4MTg0MDIwNjAwMzA2/shutterstock_1928691428.jpg'/></div>
+                <div className="nft__nft_image"onClick={(e) => handleClick(e, nft.id)}><img src={tokenURI}/></div>
                 <div className="nft__nft_address">{isNft.nft_address}</div>
                 <div className="nft__nft_name">{isNft.nft_name}</div>
                 <div className="nft__nft_price">${isNft.nft_price}</div>
