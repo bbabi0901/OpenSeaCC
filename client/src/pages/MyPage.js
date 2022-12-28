@@ -7,7 +7,9 @@ import { getWallet } from "../utils/wallet";
 const MyPage = ({ name, account, web3 }) => {
 
   const [nfts, setNfts] = useState();
+  const [disconnect, setDisconnect] = useState(account);
   
+
   useEffect(() => {
     axios.post(
       "http://localhost:3000/mypage/userInfo",
@@ -18,6 +20,11 @@ const MyPage = ({ name, account, web3 }) => {
     })
     ;
   }, []);
+
+  function logOut() {
+    localStorage.clear()
+    return setDisconnect(!account)
+  }
 
 
   return (
@@ -41,10 +48,13 @@ const MyPage = ({ name, account, web3 }) => {
           <h1>{name}</h1>
           <div className="wallet_address">
             <i className="fa-brands fa-ethereum"></i>
-            <h5>{account}</h5>
+            <h5>{disconnect}</h5>
             <div className="created_date">
               <h5>Joined December 2022</h5>
             </div>
+            <button onClick={logOut}>
+                  Disconnect Wallet
+                </button>
           </div>
         </div>
         <div className=""></div>
