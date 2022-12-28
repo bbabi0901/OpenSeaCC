@@ -8,12 +8,18 @@
 .category{
     width: 94%;
     margin: 0 3%;
-    padding: 0;
     display: flex;
-    color: gray;
     justify-content: left;
+    color: gray;
+
 }
-.category :hover{
+.category button{
+    padding: 0;
+    border: 0;
+    background-color: white;
+    color: gray;
+}
+.category button :hover{
     color: black;
 }
 .category a {

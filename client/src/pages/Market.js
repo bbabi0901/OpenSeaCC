@@ -38,15 +38,15 @@ const Market = () => {
     <div className="market">
       <h1>Explore collections </h1>
       <div className="category">
-        <Link to="/market/trending" className="trending">
+        <button onClick="/market/trending" className="trending">
           <h3>Trending</h3>
-        </Link>
-        <Link to="/market/art" className="art">
+        </button>
+        <button onClick="/market/art" className="art">
           <h3>Art</h3>
-        </Link>
-        <Link to="/market/collectibles" className="collectibles">
+        </button>
+        <button onClick="/market/collectibles" className="collectibles">
           <h3>Collectibles</h3>
-        </Link>
+        </button>
       </div>
       <div className="goods">
         <ul className="NFTs">
