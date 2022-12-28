@@ -33,6 +33,7 @@ const Market = () => {
   const azukiList = getNftList();
   // const [nftList, setNftList] = useState([]);
 
+
   return (
     <div className="market">
       <h1>Explore collections </h1>
@@ -71,6 +72,7 @@ const Market = () => {
               <NFT />
               <NFT />
             </div> */}
+
           </div>
         </ul>
       </div>

@@ -182,28 +182,7 @@ h4{
 
 
 }
-.food_NFTs_spotlight{
-    display: flex;
-    align-items: center;
-
-}
-.food_NFTs_spotlight_1{
-    margin: 5px;
-    display: block;
-    width: 320px;
-    height: 180px;
-    border: 3px;
-    border-color: black;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    text-align: center;
-}
-.NFT_101{
-    display: flex;
-    align-items: center;
-
-}
-.NFT_101_1{
+.NFT{
     margin: 5px;
     display: block;
     width: 320px;
@@ -469,7 +448,4 @@ footer h3 h4 h5 {
 .display{
     margin: 20px 20px 100px 20px;
 
-}
-.display .NFT_101 .NFT_101_1{
-    margin: 10px;
 }

@@ -79,7 +79,7 @@ const MyPage = ({ name, account, web3 }) => {
           nfts !== {} && nfts !== undefined
           ? nfts.owner.map((item) => {
             return (
-              <NFT nft={item} />
+              <NFT className = 'NFT'nft={item} />
             )
           })
           : 0
