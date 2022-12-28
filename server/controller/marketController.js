@@ -20,7 +20,6 @@ module.exports = {
     },
     market_trending : async(req, res) => {
         const result = await execute(query.SELECT_CATEGORY, "trending");
-        console.log(result[0])
         if (result) {
             return res.send(result[0])
         } else {
@@ -29,7 +28,6 @@ module.exports = {
     },
     market_art : async(req, res) => {
         const result = await execute(query.SELECT_CATEGORY, "art");
-        console.log(result[0])
         if (result) {
             return res.send(result[0])
         } else {
@@ -38,7 +36,6 @@ module.exports = {
     },
     market_collectibles : async(req, res) => {
         const result = await execute(query.SELECT_CATEGORY, "collectibles");
-        console.log(result[0])
         if (result) {
             return res.send(result[0])
         } else {
