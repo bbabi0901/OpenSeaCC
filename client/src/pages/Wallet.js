@@ -63,6 +63,7 @@ const Wallet = ({ name, account, onWalletConnect }) => {
   return (
     <div>
       Wallet 미구현, {accConncected}, Balance: {balance}
+      <img src="https://ikzttp.mypinata.cloud/ipfs/QmYDvPAXtiJg7s8JdRBSLWdgSphQdac8j1YuQNNxcGE1hg/7.png" />
     </div>
   );
 };
