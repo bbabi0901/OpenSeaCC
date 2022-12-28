@@ -25,7 +25,7 @@ app.use(logger('dev'));
 app.use(express.json({limit: '100mb'}));
 app.use(express.urlencoded({limit: '100mb', extended: false }));
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: 'http://localhost:8081',
   credentials: true
 }))
 app.use(cookieParser());

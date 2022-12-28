@@ -4,20 +4,34 @@ import { Button } from "reactstrap";
 import NFT from "../components/NFT/NFT";
 const Main = () => {
   const [pagination, setPagination] = useState(0);
+  const [nfts, setNfts] = useState({});
+
   const handlePrevClick = () => {
     setPagination((curr) => {
-      curr -= 1;
+      if (curr <= 0) {
+        return 0
+      } else {
+        return curr -= 1;
+      }
     });
   };
   const handleNextClick = () => {
     setPagination((curr) => {
-      curr += 1;
+      return curr += 1;
     });
   };
+
+  // console.log(pagination)
   const [nftList, setNftList] = useState([]);
   useEffect(() => {
     // axios.get();
+    axios.get("http://localhost:3000/mainList?point=" + pagination)
+    .then((response) => {
+      setNfts(response.data)
+    })
   }, [pagination]);
+
+  console.log(nfts);
   return (
     <div className="body">
       <div className="slide">
@@ -59,7 +73,22 @@ const Main = () => {
         <h5>VOLUME</h5>
       </span>
       <div className="trending_top_number">
-        <div className="trending_top_number_a">
+        {
+          nfts.length > 0
+          ?nfts.map((item, index) => {
+            return (
+              <div className={index > 5 ? "trending_top_number_b" : "trending_top_number_a"}>
+                <a href={`http://localhost:8081/nftdetails?id=${item.id}`}>
+                  <h4>{item.id}</h4>
+                  <img src={`http://localhost:3000/images?path=${item.nft_image}`} />
+                  <h4>{item.nft_name}</h4>
+                </a>
+              </div>
+            )
+          })
+          :""
+        }
+        {/* <div className="trending_top_number_a">
           <a href="#">
             <h4>1</h4>
             <img src="https://opensea.io/collection/yaypegs"></img>
@@ -85,8 +114,8 @@ const Main = () => {
             <img src="https://opensea.io/collection/kagura-jp"></img>
             <h4>COLLECTION_5</h4>
           </a>
-        </div>
-        <div className="trending_top_number_b">
+        </div> */}
+        {/* <div className="trending_top_number_b">
           <a href="#">
             <h4>6</h4>
             <img src="https://opensea.io/collection/arbitrum-odyssey-nft"></img>
@@ -112,7 +141,7 @@ const Main = () => {
             <img src="https://opensea.io/collection/a-common-place"></img>
             <h4>COLLECTION_10</h4>
           </a>
-        </div>
+        </div> */}
       </div>
       <div className="main_nft_pagination">
         <Button className="main_nft_pagination_prev" onClick={handlePrevClick}>
