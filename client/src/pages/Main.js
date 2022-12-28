@@ -64,199 +64,54 @@ const Main = () => {
           </div>
         </span>
       </div>
-      <span className="trending_top_menu">
-        <h5>COLLECTION</h5>
-        <h5>FLOOR PRICE</h5>
-        <h5>VOLUME</h5>
-        <h5>COLLECTION</h5>
-        <h5>FLOOR PRICE</h5>
-        <h5>VOLUME</h5>
-      </span>
+
+      <div className="main_nft_pagination">
+        <Button className="main_nft_pagination_button" onClick={handlePrevClick}>
+        <h1>Prev</h1>
+        </Button>
+        <Button className="main_nft_pagination_button" onClick={handleNextClick}>
+        <h1>Next</h1>
+        </Button>
+      </div>
       <div className="trending_top_number">
         {
           nfts.length > 0
           ?nfts.map((item, index) => {
             return (
-              <div className={index > 5 ? "trending_top_number_b" : "trending_top_number_a"}>
-                <a href={`http://localhost:8081/nftdetails?id=${item.id}`}>
-                  <h4>{item.id}</h4>
+              <div className="trending_top_source">
+                <a href={`http://localhost:3000/nftdetails?id=${item.id}`}>
                   <img src={`http://localhost:3000/images?path=${item.nft_image}`} />
-                  <h4>{item.nft_name}</h4>
+                  <h4>{item.nft_name} #{item.id}</h4>
+                  <h4>{item.nft_price} ETH</h4>
                 </a>
               </div>
             )
           })
           :""
         }
-        {/* <div className="trending_top_number_a">
-          <a href="#">
-            <h4>1</h4>
-            <img src="https://opensea.io/collection/yaypegs"></img>
-            <h4>COLLECTION_1</h4>
-          </a>
-          <a href="#">
-            <h4>2</h4>
-            <img src="https://opensea.io/collection/genesis-oath"></img>
-            <h4>COLLECTION_2</h4>
-          </a>
-          <a href="#">
-            <h4>3</h4>
-            <img src="https://opensea.io/collection/wolf-game"></img>
-            <h4>COLLECTION_3</h4>
-          </a>
-          <a href="#">
-            <h4>4</h4>
-            <img src="https://opensea.io/collection/tougenkyouofficial"></img>
-            <h4>COLLECTION_4</h4>
-          </a>
-          <a href="#">
-            <h4>5</h4>
-            <img src="https://opensea.io/collection/kagura-jp"></img>
-            <h4>COLLECTION_5</h4>
-          </a>
-        </div> */}
-        {/* <div className="trending_top_number_b">
-          <a href="#">
-            <h4>6</h4>
-            <img src="https://opensea.io/collection/arbitrum-odyssey-nft"></img>
-            <h4>COLLECTION_6</h4>
-          </a>
-          <a href="#">
-            <h4>7</h4>
-            <img src="https://opensea.io/collection/pacific-rim-legacy-collection"></img>
-            <h4>COLLECTION_7</h4>
-          </a>
-          <a href="#">
-            <h4>8</h4>
-            <img src="https://opensea.io/collection/10ktf-stockroom"></img>
-            <h4>COLLECTION_8</h4>
-          </a>
-          <a href="#">
-            <h4>9</h4>
-            <img src="https://opensea.io/collection/acrocalypse"></img>
-            <h4>COLLECTION_9</h4>
-          </a>
-          <a href="#">
-            <h4>10</h4>
-            <img src="https://opensea.io/collection/a-common-place"></img>
-            <h4>COLLECTION_10</h4>
-          </a>
-        </div> */}
-      </div>
-      <div className="main_nft_pagination">
-        <Button className="main_nft_pagination_prev" onClick={handlePrevClick}>
-          Prev
-        </Button>
-        <Button className="main_nft_pagination_next" onClick={handleNextClick}>
-          Next
-        </Button>
-      </div>
-      <h3>Notable collections</h3>
-      <div className="display">
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
         </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
+
+
+
+      <h1>Notable collections</h1>
+      <div className="trending_top_number">
+        {
+          nfts.length > 0
+          ?nfts.map((item, index) => {
+            return (
+              <div className="trending_top_source">
+                <a href={`http://localhost:3000/nftdetails?id=${item.id}`}>
+                  <img src={`http://localhost:3000/images?path=${item.nft_image}`} />
+                  <h4>{item.nft_name} #{item.id}</h4>
+                  <h4>{item.nft_price} ETH</h4>
+                </a>
+              </div>
+            )
+          })
+          :""
+        }
         </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-      </div>
-      <h3>Food NFTs spotlight</h3>
-      <div className="display">
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-      </div>
-      <h3>NFT_101</h3>
-      <div className="display">
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-      </div>
-      <h3>Browse by category</h3>
-      <div className="display">
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-      </div>
-      <div className="display">
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-      </div>
-      <div className="display">
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-        <div className="nft_list">
-          <NFT />
-          <NFT />
-          <NFT />
-        </div>
-      </div>
+
       <div className="footer">
         <div className="footer_head">
           {/* <!--sign up--> */}

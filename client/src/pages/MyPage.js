@@ -73,14 +73,14 @@ const MyPage = ({ name, account, web3 }) => {
           </select>
         </div>
       </div>
-      <div className="display">
+      <div className="trending_top_number">
         {console.log(nfts)}
         {
           nfts !== {} && nfts !== undefined
           ? nfts.owner.map((item) => {
             return (
               <NFT 
-                className = 'nft_list'
+                className = 'trending_top_source'
                 nft={item} 
               />
             )
