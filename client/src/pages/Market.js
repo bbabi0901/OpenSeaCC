@@ -38,13 +38,13 @@ const Market = () => {
     <div className="market">
       <h1>Explore collections </h1>
       <div className="category">
-        <Link to="/trending" className="trending">
+        <Link to="/market/trending" className="trending">
           <h3>Trending</h3>
         </Link>
-        <Link to="/art" className="art">
+        <Link to="/market/art" className="art">
           <h3>Art</h3>
         </Link>
-        <Link to="/collectibles" className="collectibles">
+        <Link to="/market/collectibles" className="collectibles">
           <h3>Collectibles</h3>
         </Link>
       </div>
