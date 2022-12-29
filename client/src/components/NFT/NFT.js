@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import './NFT.css'
 import axios from "axios";
 import { useState } from "react";
 import { getGoerliWeb, getWallet } from "../../utils/wallet";
@@ -61,8 +60,8 @@ export default function NFT({nft}) {
                   <img src={`http://localhost:3000/images?path=${nft.nft_image}`}/>
                 </div>
                 <div className="nft__nft_address">{nft.nft_address}</div>
-                <div className="nft__nft_name">{nft.nft_name}#{nft.id} </div>
-                <div className="nft__nft_price">{nft.nft_price} ETH</div>
+                <div className="nft__nft_name"><h2>{nft.nft_name}#{nft.id}</h2></div>
+                <div className="nft__nft_price"><h3>{nft.nft_price} ETH</h3></div>
 
               </div>
             </div>

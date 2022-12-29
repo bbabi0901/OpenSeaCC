@@ -452,4 +452,9 @@ footer h3 h4 h5 {
     align-items: center;
     justify-content: space-between;
 }
+.nft__Info--wrapper h3, h2{
+    padding: 0;
+    text-align: center;
+
+}
 
