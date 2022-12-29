@@ -1,6 +1,7 @@
 const execute = require("./../database/ExecuteQuery")
 const query = require("./../database/Query");
-const path = require("path")
+const {AddChain} = require("./../utils/minting");
+const path = require("path");
 const fs = require('fs');
 
 module.exports = {
@@ -9,17 +10,21 @@ module.exports = {
         const time = Date.now();
         const img = req.body.img;
         const address = req.body.address;
-        const info = req.body.info;
-        
-        const name = time + "_" + address
+        let info = req.body.info;
+
+        const name = time + "_" + address;
 
         const fullnm = `${name}.jpg`;
 
+        const resultToken = await AddChain(fullnm, address);
+        
+        info = JSON.parse(info)
+
         fs.writeFileSync(path.join(__dirname, `../../data/${fullnm}`), img[0].replace(/^data:image\/jpeg;base64,/, ""), "base64");
 
-        execute(query.INSERT_NFT, [address, "", info.nft_name, info.nft_detail, fullnm, info.nft_price])
+        await execute(query.INSERT_NFT, [address, address, info.nft_name, info.nft_detail, info.nft_collection, fullnm, info.nft_price, resultToken])
 
-        res.send({"data":fullnm}).end()
+        return res.send({"data":fullnm}).end();
     },
 
     mintDetail : async (req, res) => {

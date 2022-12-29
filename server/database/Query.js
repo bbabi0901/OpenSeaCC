@@ -9,13 +9,17 @@ const query = {
             owner_address,
             nft_name,
             nft_detail,
+            category,
             nft_image,
             nft_price,
+            token_id,
             reg_dt,
             upt_dt
         )
         VALUES
         (
+            ?,
+            ?,
             ?,
             ?,
             ?,

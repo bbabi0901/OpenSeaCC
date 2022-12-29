@@ -7,12 +7,12 @@ const Mint = ({name, account}) => {
   const [values, setValues] = useState({});
   const [imgBase64, setImgBase64] = useState([]); // 파일 base64
   const [imgFile, setImgFile] = useState(null);	//파일	
-  const req = async () => {
+  const req = async (mintData) => {
     const result = await axios.post("http://localhost:3000/mint/minting",
       {
         "address" : address,
         "img" : imgBase64,
-        "info" : values
+        "info" : mintData
       },  // body
       {
         "Content-Type": "multipart/form-data",
@@ -35,7 +35,7 @@ const Mint = ({name, account}) => {
     const mintData = JSON.stringify(values, null,2);
     alert(JSON.stringify(values, null,2))
 
-    req()
+    req(mintData)
   }
   const handleChangeFile = (event) => {
 
