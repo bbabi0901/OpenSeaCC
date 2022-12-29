@@ -79,11 +79,7 @@ const Main = () => {
           ?nfts.map((item, index) => {
             return (
               <div className="trending_top_source">
-                <a href={`http://localhost:3000/nftdetails?id=${item.id}`}>
-                  <img src={`http://localhost:3000/images?path=${item.nft_image}`} />
-                  <h4>{item.nft_name} #{item.id}</h4>
-                  <h4>{item.nft_price} ETH</h4>
-                </a>
+                <NFT nft={item}/>
               </div>
             )
           })
