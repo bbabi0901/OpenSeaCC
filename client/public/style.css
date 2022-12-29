@@ -164,20 +164,13 @@ h4{
 }
 
 .NFT{
-    margin: 5px;
-    display: flex;
-
-    border: 3px;
-    border-color: black;
-    border-radius: 20px;
-    background-color: whitesmoke;
     margin: 2%;
-    width: 18%;
-    display: flex;
-    text-align: center;
+    display: grid;
+    width: 100%;
+    margin: 0 auto; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
 
-    align-items: center;
-    justify-content: space-between;
 }
 
 .browse_by_category{

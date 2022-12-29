@@ -68,6 +68,7 @@ const Market = () => {
   }
 
   return (
+    <div>
     <div className="market">
       <h1>Explore collections </h1>
       <div className="category">
@@ -83,17 +84,17 @@ const Market = () => {
           <h3>Collectibles</h3>
         </button>
       </div>
-      <div className="goods">
-        <ul className="NFTs">
+
+
+    </div>
+    <div className="NFT">
           {nfts.map((item) => {
               return (
               <NFT nft={item} key={item.id}/>
               )
               }
           )}
-        </ul>
       </div>
-
     </div>
     
   );
