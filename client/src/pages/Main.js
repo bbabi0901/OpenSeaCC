@@ -87,27 +87,6 @@ const Main = () => {
         }
         </div>
 
-
-
-      <h1>Notable collections</h1>
-      <div className="trending_top_number">
-        {
-          nfts.length > 0
-          ?nfts.map((item, index) => {
-            return (
-              <div className="trending_top_source">
-                <a href={`http://localhost:3000/nftdetails?id=${item.id}`}>
-                  <img src={`http://localhost:3000/images?path=${item.nft_image}`} />
-                  <h4>{item.nft_name} #{item.id}</h4>
-                  <h4>{item.nft_price} ETH</h4>
-                </a>
-              </div>
-            )
-          })
-          :""
-        }
-        </div>
-
       <div className="footer">
         <div className="footer_head">
           {/* <!--sign up--> */}

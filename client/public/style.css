@@ -36,8 +36,8 @@ a{
     align-items: center;
 }
 .mypage img{
-    margin: 20px 1%;
-    width: 98%;
+    margin: 20px 0;
+    width: 100%;
     height: auto;
 }
 .slide{
@@ -97,10 +97,23 @@ h2{
     align-items: center;
     font-size: 24px;
 }
+.name{
+    justify-content: space-around;
+}
 .main_nft_pagination{
     font-size: large;
 }
-
+.disconnect_wallet {
+    width: 200px;
+    height: 15px;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    background-color: white;
+}
+.disconnect_wallet h5{
+    width: 200px;
+    text-align: center;
+}
 .main_nft_pagination_button{
     margin: 10px 2%;
     padding: 0;
@@ -427,8 +440,11 @@ footer h3 h4 h5 {
 .display{
     display: grid;
     width: 100%;
-    margin: 0 auto; 
+    margin: 0; 
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
 }
 

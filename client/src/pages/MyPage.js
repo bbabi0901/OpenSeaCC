@@ -52,8 +52,8 @@ const MyPage = ({ name, account, web3 }) => {
             <div className="created_date">
               <h5>Joined December 2022</h5>
             </div>
-            <button onClick={logOut}>
-                  Disconnect Wallet
+            <button className='disconnect_wallet'onClick={logOut}>
+            <h5>Disconnect Wallet</h5>
                 </button>
           </div>
         </div>

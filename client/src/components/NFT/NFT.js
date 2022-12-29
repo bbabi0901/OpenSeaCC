@@ -51,7 +51,8 @@ export default function NFT({nft}) {
 
     if (nft) {
       return(
-      <Link id={nft.nft_id} key ={nft.nft_id} to={"../nftdetails"}>
+
+      <Link id={nft.id} key ={nft.id} to={"../nftdetails?id="+nft.id}>
         <div className="parts">
           <div className="nft__content">
             <div className="nft__Info">
@@ -60,8 +61,8 @@ export default function NFT({nft}) {
                   <img src={`http://localhost:3000/images?path=${nft.nft_image}`}/>
                 </div>
                 <div className="nft__nft_address">{nft.nft_address}</div>
-                <div className="nft__nft_name">{nft.nft_name}</div>
-                <div className="nft__nft_price">${nft.nft_price}</div>
+                <div className="nft__nft_name">{nft.nft_name}#{nft.id} </div>
+                <div className="nft__nft_price">{nft.nft_price} ETH</div>
 
               </div>
             </div>
