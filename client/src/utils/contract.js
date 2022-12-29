@@ -1,5 +1,7 @@
 import Web3 from "web3";
-import abi from "./ERC721/azukiABI.js";
+import azukiAbi from "./ERC721/azukiABI.js";
+import catAbi from "./ERC721/catABI.js";
+import abi from "./abi/ERC721ABI";
 import { getGoerliWeb } from "./wallet.js";
 // require("dotenv").config();
 
@@ -7,7 +9,6 @@ const { PRIVATE_KEY } = process.env;
 
 // const contractAddr = "0x4197425d40E4fDA55C0c2913bcDB325217A7079a";
 const contractAddr = "0xb769c830b248e5a1d03ef97331b03da797132458";
-const contractAddrAzuki = "0x10B8b56D53bFA5e374f38e6C0830BAd4ebeE33E6";
 const web = getGoerliWeb();
 
 // minting tx
@@ -58,15 +59,18 @@ const signTx = async (tx, privateKey, web) => {
 const collections = {
   trending: {
     contractAddr: "0x10B8b56D53bFA5e374f38e6C0830BAd4ebeE33E6",
-    abi: abi,
+    abi: azukiAbi,
+    num: 0,
   },
   art: {
     contractAddr: "0x10B8b56D53bFA5e374f38e6C0830BAd4ebeE33E6",
-    abi: abi,
+    abi: azukiAbi,
+    num: 1,
   },
   collectibles: {
     contractAddr: "0x10B8b56D53bFA5e374f38e6C0830BAd4ebeE33E6",
-    abi: abi,
+    abi: azukiAbi,
+    num: 2,
   },
 };
 

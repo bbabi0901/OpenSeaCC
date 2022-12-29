@@ -12,20 +12,22 @@ const Market = ({ onImageClick }) => {
   const [nfts, setNtfs] = useState([]);
 
   const web = getGoerliWeb();
-
+  const id = collections[category].num * 4;
   const getNftList = async (category) => {
     const nftList = [];
     const contractAddr = collections[category].contractAddr;
     const contractAbi = collections[category].abi;
     const tokenContract = new web.eth.Contract(contractAbi, contractAddr);
-    const tokenName = await tokenContract.methods.name().call();
+    // const tokenName = await tokenContract.methods.name().call();
     // const totalSupply = await tokenContract.methods.totalSupply().call()
-    for (let tokenId = 1; tokenId <= 5; tokenId++) {
+
+    for (let tokenId = id; tokenId <= id + 4; tokenId++) {
       const tokenuri = await tokenContract.methods.tokenURI(tokenId).call();
       const owner = await tokenContract.methods.ownerOf(tokenId).call();
+
       axios.get(tokenuri).then((res) => {
-        const image = res.data.image;
-        nftList.push({ tokenName, tokenId, image, contractAddr, owner });
+        const { name, image } = res.data;
+        nftList.push({ name, tokenId, image, contractAddr, owner });
       });
     }
     return nftList;
@@ -33,11 +35,9 @@ const Market = ({ onImageClick }) => {
   // nft trending, collection, art에 따라 contract주소(=collection) 다르게
 
   useEffect(() => {
-    getNftList(category)
-      .then((res) => {
-        setNtfs(res);
-      })
-      .then(console.log(nfts));
+    getNftList(category).then((res) => {
+      setNtfs(res);
+    });
   }, [category]);
 
   const onCategoryClick = (e) => {

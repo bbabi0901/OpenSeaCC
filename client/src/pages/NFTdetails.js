@@ -55,7 +55,7 @@ const NFTdetails = ({ nft }) => {
         </div>
         <div className="top_right">
           <div className="info">
-            <div className="nft_name">{nftDetails.nft_name}</div>
+            <div className="nft_name">{nft.name}</div>
             <div className="owner">
               <h4>Owned by {nft.owner}</h4>
             </div>

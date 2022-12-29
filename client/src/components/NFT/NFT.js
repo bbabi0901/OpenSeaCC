@@ -29,9 +29,7 @@ export default function NFT({ nft, onImageClick }) {
               </Link>
               <div className="nft__nft_address">{nft.nft_address}</div>
               <div className="nft__nft_name">
-                <h2>
-                  {nft.tokenName} #{nft.tokenId}
-                </h2>
+                <h2>{nft.name}</h2>
               </div>
               <div className="nft__nft_price">
                 <h3>{nft.nft_price} ETH</h3>
