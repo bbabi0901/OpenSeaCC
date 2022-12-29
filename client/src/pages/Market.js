@@ -68,8 +68,8 @@ const Market = () => {
   }
 
   return (
-    <div>
     <div className="market">
+    <div className="explore_collections">
       <h1>Explore collections </h1>
       <div className="category">
         <button onClick={(e) => trendingClick()}
@@ -86,15 +86,16 @@ const Market = () => {
       </div>
 
 
-    </div>
-    <div className="NFT">
-          {nfts.map((item) => {
-              return (
-              <NFT nft={item} key={item.id}/>
-              )
-              }
-          )}
       </div>
+      <div className="display">
+            {nfts.map((item) => {
+                return (
+                <NFT className="nft_list" nft={item} key={item.id}/>
+                )
+                }
+            )}
+      </div>
+
     </div>
     
   );

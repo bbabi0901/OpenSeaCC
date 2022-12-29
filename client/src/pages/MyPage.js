@@ -92,6 +92,7 @@ const MyPage = ({ name, account, web3 }) => {
               <NFT 
                 className = 'nft_list'
                 nft={item} 
+                key={item.id}
               />
             )
           })
