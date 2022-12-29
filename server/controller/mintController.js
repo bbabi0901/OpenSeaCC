@@ -30,18 +30,7 @@ module.exports = {
         const nft = await execute(query.GET_NFT_BY_ID, id);
 
         if (nft) {
-            const nftResult = nft[0];
-            const address = nftResult;
-            // const usr = await execute(query.GET_USER, address);
-
-            const result = {
-                user_address : address,
-                nft_name : nftResult.nft_name,
-                discription : nftResult.nft_detail,
-                nft_image : nftResult.nft_image,
-                nft_price : nftResult.nft_price
-            }
-            return await res.send(result)
+            return await res.send(nft[0][0])
 
         } else {
             return await res.send({data:"fail"})
