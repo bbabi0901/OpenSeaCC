@@ -1,6 +1,6 @@
 import Web3 from "web3";
 import azukiAbi from "./ERC721/azukiABI.js";
-import catAbi from "./ERC721/catABI.js";
+// import catAbi from "./ERC721/demonABI.js";
 import abi from "./abi/ERC721ABI";
 import { getGoerliWeb } from "./wallet.js";
 // require("dotenv").config();

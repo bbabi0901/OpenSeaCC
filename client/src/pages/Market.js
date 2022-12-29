@@ -12,7 +12,7 @@ const Market = ({ onImageClick }) => {
   const [nfts, setNtfs] = useState([]);
 
   const web = getGoerliWeb();
-  const id = collections[category].num * 4;
+  const id = collections[category].num * 8;
   const getNftList = async (category) => {
     const nftList = [];
     const contractAddr = collections[category].contractAddr;
@@ -21,7 +21,7 @@ const Market = ({ onImageClick }) => {
     // const tokenName = await tokenContract.methods.name().call();
     // const totalSupply = await tokenContract.methods.totalSupply().call()
 
-    for (let tokenId = id; tokenId <= id + 4; tokenId++) {
+    for (let tokenId = id; tokenId <= id + 8; tokenId++) {
       const tokenuri = await tokenContract.methods.tokenURI(tokenId).call();
       const owner = await tokenContract.methods.ownerOf(tokenId).call();
 
