@@ -1,60 +1,44 @@
 import axios from "axios";
 import "./NFTdetails.css";
 import { getGoerliWeb, getWallet } from "../utils/wallet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import abi from "../utils/ERC721/testAbi";
+import abi from "../utils/ERC721/azukiABI";
 
-const NFTdetails = ({ account }) => {
-  const req = async () => {
-    const result = await axios.post(
-      "http://localhost:3000/nftdetails",
-      nftDetails, // body
-      { "Content-Type": "application/json" } // header
-    );
-    return result;
-  };
-  const result = req().then((result) => {
-    return result;
-  });
-
+// props로 contract주소랑 id받아온다
+const NFTdetails = ({ nft }) => {
   // tokenId로 chain에서 찾아와서 setNftDetail
   const [nftDetails, setNftDetails] = useState({
+    contract_address: "",
+    tokenId: 0,
     user_address: "0x0000000000000000000000000000000000000000",
-    nft_address: "test nft address",
+    owner_address: "0x0000000000000000000000000000000000000000",
     nft_name: "test nft name",
     nft_detail: "test nft detail",
+    nft_image: "",
     nft_price: "0.99 ETH $",
     reg_dt: "",
     upt_dt: "",
   });
 
-  const [tokenURI, setTokenURI] = useState(
-    "https://i.guim.co.uk/img/media/ef8492feb3715ed4de705727d9f513c168a8b196/37_0_1125_675/master/1125.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=d456a2af571d980d8b2985472c262b31"
-  );
-
-  const testContractAddr = "0x4e5E76fEd68E5a0456059aC46A0bAe5623C522Fc";
-  const testTokenId = 1;
-
-  const web3 = getGoerliWeb();
-  const getERC721NFT = async () => {
-    const tokenContract = new web3.eth.Contract(abi, testContractAddr);
-    const tokenURI = await tokenContract.methods.tokenURI(testTokenId);
-    setTokenURI(tokenURI);
-  };
-
-  const onAddToCartClick = () => {
-    getERC721NFT();
-  };
+  // db에는 contract주소, tokenId, name, detail, creator, createdAt, updatedAt. owner, img은 메소드로
+  // 제일 좋은 건 ipfs 공부...
+  useEffect(() => {
+    axios.get("http://localhost:3000/mint/detail?id=1").then((response) => {
+      console.log(response.data);
+      setNftDetails(response.data);
+    });
+  }, []);
 
   return (
     <div className="nft_details">
       <div className="top">
         <div className="top_left">
-          <img className="image" src={tokenURI} alt="nft"></img>
+          <img className="image" src={nft.image} alt="nft"></img>
           <div className="floor_left">
             <div>
               <h4>Description</h4>
+              <div>{nftDetails.nft_detail}</div>
               <div>
                 <h4>By</h4>
                 <a href="/">
@@ -71,24 +55,20 @@ const NFTdetails = ({ account }) => {
         </div>
         <div className="top_right">
           <div className="info">
-            <div className="nft_name">{/*nft_name*/}</div>
+            <div className="nft_name">{nftDetails.nft_name}</div>
             <div className="owner">
-              <h4>Owned by {nftDetails.user_address}</h4>
-              <a href="/">{/*user*/}</a>
+              <h4>Owned by {nft.owner}</h4>
             </div>
           </div>
           <div className="sale_ends">
-            <h4>Sale ends 2022년 12월 29일 at 오전 8:06 GMT+9</h4>
-            <h4>02 17 06 24</h4>
-            <h4>Days Hours Minutes Seconds</h4>
+            <h4>Create {nftDetails.reg_dt}</h4>
+            {/* <h4>02 17 06 24</h4>
+            <h4>Days Hours Minutes Seconds</h4> */}
           </div>
           <div className="buy_sell">
             <h4>Current price</h4>
-            <h4>
-              {nftDetails.nft_price}
-              {/*this.props.nft_price*/}
-            </h4>
-            <button className="add_to_cart" onClick={onAddToCartClick}>
+            <h4>{nftDetails.nft_price}</h4>
+            <button className="add_to_cart">
               <h3>Add to cart</h3>
             </button>
             <button className="make_offer">

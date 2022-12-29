@@ -1,34 +1,54 @@
-import React from 'react';
-import './NFT.css'
-export default function NFT({nft, handleClick}) {
-    return(
-      
-        <a href='/' className="NFT" id='1' key = '1'>
-          <div className="nft__content">
-            <div className="nft__Info">
-              <div className="nft__Info--wrapper">
-                <div className="nft__nft_image"onClick={(e) => handleClick(e, nft.id)}><img src='https://turbofuture.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:eco%2Cw_1200%2Cx_300%2Cy_489/MTkxODE4MTg0MDIwNjAwMzA2/shutterstock_1928691428.jpg'/></div>
-                <div className="nft__user_address">asdfsadf</div>
-                <div className="nft__nft_address">1213123123</div>
-                <div className="nft__nft_name">Russ</div>
-                <div className="nft__nft_detail">big, cool</div>
-                <div className="nft__nft_price">$123,430</div>
-                <div className = "nft__reg_dt">1234</div>
-                <div className = "nft__upt_dt">{1234}</div>
+import React from "react";
+import { Link } from "react-router-dom";
+import { CardBody, Card } from "reactstrap";
+import axios from "axios";
+import { useState } from "react";
+import NFTdetails from "../../pages/NFTdetails";
+
+export default function NFT({ nft, onImageClick }) {
+  if (nft) {
+    return (
+      <div className="parts">
+        <div className="nft__content">
+          <div className="nft__Info">
+            <div className="nft__Info--wrapper">
+              <Link
+                id={nft.id}
+                key={nft.id}
+                to={`../nft/${nft.contractAddr}/${nft.tokenId}`}
+              >
+                <div
+                  className="nft__nft_image"
+                  onClick={() => {
+                    onImageClick(nft);
+                  }}
+                  value={nft.id}
+                >
+                  <img src={nft.image} />
+                </div>
+              </Link>
+              <div className="nft__nft_address">{nft.nft_address}</div>
+              <div className="nft__nft_name">
+                <h2>
+                  {nft.tokenName} #{nft.tokenId}
+                </h2>
+              </div>
+              <div className="nft__nft_price">
+                <h3>{nft.nft_price} ETH</h3>
               </div>
             </div>
-            <div className = "nft__discription"></div>
           </div>
-        
-      </a>
+          <div className="nft__discription"></div>
+        </div>
+      </div>
     );
-
+  } else {
+    return;
+  }
 }
 
-
-
-
-{/* <li className="NFT" id={nft.id} key = {nft.id}>
+{
+  /* <li className="NFT" id={nft.id} key = {nft.id}>
 <div className="nft__content">
   <div className="nft__Info">
     <div className="nft__Info--wrapper">
@@ -44,5 +64,5 @@ export default function NFT({nft, handleClick}) {
   </div>
   <div className = "nft__discription">{nft.discription}</div>
 </div>
-
-</li> */}
+</li> */
+}

@@ -15,11 +15,20 @@ module.exports = {
     userInfo : async (req, res) => {
 
         const address = req.body.address;
+        console.log(req.body)
+        const creatorNFT = await execute(query.GET_NFT_LIST_FROM_CREATOR, address);
+        const ownerNFT = await execute(query.GET_NFT_LIST_FROM_OWNER, address);
         
-        const userResult = await execute(query.GET_USER, address);
+        let result = {};
+        if (creatorNFT) {
+            
+            result.creator = creatorNFT[0];
+        }
 
-        const nftResult = await execute(query.GET_NFT, address);
-        
-        return res.send(nftResult);
+        if (ownerNFT) {
+            result.owner = ownerNFT[0];
+        }
+
+        return res.send(result);
     }
 }

@@ -52,9 +52,6 @@ function Header({ account, isAccConnected }) {
             <ul>
               <Link to="/mint">Mint</Link>
             </ul>
-            <ul>
-              <Link to="/nftdetails">NFTdetails</Link>
-            </ul>
           </div>
         </ul>
         {/* <!--icon.symbol--> */}

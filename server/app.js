@@ -3,15 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var mypageRouter = require("./routes/mypage");
 var mintRouter = require("./routes/mint");
 var walletRouter = require("./routes/wallet");
 var imageRouter = require("./routes/image");
+var marketRouter = require("./routes/market")
 
-const { send } = require('process');
-const { use } = require('./routes/index');
 
 var app = express();
 
@@ -24,6 +24,10 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json({limit: '100mb'}));
 app.use(express.urlencoded({limit: '100mb', extended: false }));
+app.use(cors({
+  origin: 'http://localhost:8081',
+  credentials: true
+}))
 app.use(cookieParser());
 
 
@@ -32,6 +36,7 @@ app.use("/mypage", mypageRouter);
 app.use("/mint", mintRouter);
 app.use("/wallet",walletRouter);
 app.use("/images", imageRouter);
+app.use("/market", marketRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

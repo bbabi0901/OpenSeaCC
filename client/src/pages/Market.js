@@ -1,53 +1,93 @@
-import './Market.css'
-import React,  { useEffect } from 'react';
-import NFT from '../components/NFT/NFT';
-import { Router } from 'react-router-dom';
+import "./Market.css";
+import { Button } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import NFT from "../components/NFT/NFT";
+import axios from "axios";
+import { getGoerliWeb } from "../utils/wallet";
+import { collections } from "../utils/contract";
 
+const Market = ({ onImageClick }) => {
+  const [category, setCategory] = useState("trending");
+  const [nfts, setNtfs] = useState([]);
 
+  const web = getGoerliWeb();
 
-const Market = () => {
+  const getNftList = async (category) => {
+    const nftList = [];
+    const contractAddr = collections[category].contractAddr;
+    const contractAbi = collections[category].abi;
+    const tokenContract = new web.eth.Contract(contractAbi, contractAddr);
+    const tokenName = await tokenContract.methods.name().call();
+    // const totalSupply = await tokenContract.methods.totalSupply().call()
+    for (let tokenId = 1; tokenId <= 5; tokenId++) {
+      const tokenuri = await tokenContract.methods.tokenURI(tokenId).call();
+      const owner = await tokenContract.methods.ownerOf(tokenId).call();
+      axios.get(tokenuri).then((res) => {
+        const image = res.data.image;
+        nftList.push({ tokenName, tokenId, image, contractAddr, owner });
+      });
+    }
+    return nftList;
+  };
+  // nft trending, collection, art에 따라 contract주소(=collection) 다르게
+
+  useEffect(() => {
+    getNftList(category)
+      .then((res) => {
+        setNtfs(res);
+      })
+      .then(console.log(nfts));
+  }, [category]);
+
+  const onCategoryClick = (e) => {
+    e.preventDefault();
+    const value = e.target.value;
+    setCategory(value);
+  };
+
   return (
-    <div className='market'>
-      <h1>Explore collections</h1>
-      <div className="category">
-        <a href='/' className="trending"><h3>Trending</h3></a>
-        <a href='/' className="top"><h3>Top</h3></a>
-        <a href='/' className="art"><h3>Art</h3></a>
-        <a href='/' className="collectibles"><h3>Collectibles</h3></a>
-        <a href='/' className="domain_names"><h3>Domain Names</h3></a>
-        <a href='/' className="music"><h3>Music</h3></a>
-        <a href='/' className="photography"><h3>Photography</h3></a>
-        <a href='/' className="sports"><h3>Sports</h3></a>
-        <a href='/' className="trading_cards"><h3>Trading Cards</h3></a>
-        <a href='/' className="utility"><h3>Utility</h3></a>
-        <a href='/' className="virtual_worlds"><h3>Virtual Worlds</h3></a>
+    <div className="market">
+      <div className="explore_collections">
+        <h1>Explore collections </h1>
+        <div className="category">
+          <Button
+            onClick={onCategoryClick}
+            value="trending"
+            className="category_detail"
+          >
+            Trending
+          </Button>
+          <Button
+            onClick={onCategoryClick}
+            value="art"
+            className="category_detail"
+          >
+            Art
+          </Button>
+          <Button
+            onClick={onCategoryClick}
+            value="collectibles"
+            className="category_detail"
+          >
+            Collectibles
+          </Button>
+        </div>
       </div>
-      <div className='goods'>
-        <ul className="NFTs">
-          
-          {/* {NFTs.map(NFT => {
-              return (
-              <NFT  NFT={NFT} key={NFT.id}/>
-              )
-              }
-          )} */}
-          <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-          </div>
-        </ul>
+      <div className="display">
+        {nfts.map((nft) => {
+          return (
+            <NFT
+              className="nft"
+              nft={nft}
+              onImageClick={onImageClick}
+              key={nft.tokenId}
+            />
+          ); // NFT에선 이미지 클릭하면 Link to NFTdetails
+        })}
       </div>
     </div>
-    );
-
-
+  );
 };
 
 export default Market;

@@ -1,4 +1,7 @@
 import Web3 from "web3";
+// require("dotenv").config();
+
+const { GOERLI_URL } = process.env;
 
 const getWallet = async (type = "metamask") => {
   if (window.ethereum) {
@@ -33,4 +36,9 @@ const getGoerliWeb = () => {
   return web3;
 };
 
-export { getWallet, getBalance, getGoerliWeb };
+const getGanacheWeb = () => {
+  const web3 = new Web3(new Web3.providers.HttpProvider(""));
+  return web3;
+};
+
+export { getWallet, getBalance, getGoerliWeb, getGanacheWeb };

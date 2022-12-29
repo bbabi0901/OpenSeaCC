@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const Mint = ({name, account}) => {
@@ -6,12 +7,12 @@ const Mint = ({name, account}) => {
   const [values, setValues] = useState({});
   const [imgBase64, setImgBase64] = useState([]); // 파일 base64
   const [imgFile, setImgFile] = useState(null);	//파일	
-  const req = async () => {
+  const req = async (mintData) => {
     const result = await axios.post("http://localhost:3000/mint/minting",
       {
         "address" : address,
         "img" : imgBase64,
-        "info" : values
+        "info" : mintData
       },  // body
       {
         "Content-Type": "multipart/form-data",
@@ -32,6 +33,8 @@ const Mint = ({name, account}) => {
   const handleSubmit = e => {
     e.preventDefault()
     const mintData = JSON.stringify(values, null,2);
+    alert(JSON.stringify(values, null,2))
+
     req(mintData)
   }
   const handleChangeFile = (event) => {
@@ -120,26 +123,29 @@ const Mint = ({name, account}) => {
             ></input>
           </div>
           <div className="add__collection">
-            <h3>Collection</h3>
-            <h6>This is the collection where your item will appear.</h6>
+            <h3>Theme</h3>
+            <h6>This is the theme where your item will added.</h6>
             <select 
             className = 'text_input' 
             placeholder = 'Select Collection'
             name='nft_collection'
             onChange={handleChange}
-
             >
-              <option value = 'Select Collection'>...Select Collection</option>
-              <option value = 'No Result'>...No Result</option>
+              <option value = ''>...Select Collection</option>
+              <option value = 'trending'>Trending</option>
+              <option value = 'art'>Art</option>
+              <option value = 'collectibles'>Collectibles</option>
             </select>
           </div>
           <div className="add__create">
-            <button 
-            className="add__create_button" 
-            type='submit'
-            >
+            {/* <Link to="/mypage"> */}
+              <button 
+              className="add__create_button" 
+              type='submit'
+              >
               <h3>Create</h3>  
-            </button>
+              </button>
+            {/* </Link> */}
           </div>
         </form>
       </div>

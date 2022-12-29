@@ -1,22 +1,31 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import NFT from '../components/NFT/NFT';
 import { useNavigate } from "react-router-dom";
-
 import { getWallet } from "../utils/wallet";
 
 const MyPage = ({ name, account, web3 }) => {
-  const req = async () => {
-    const result = await axios.post(
-      "http://localhost:3000/mypage/userInfo",
-      { address: account }, // body
-      { "Content-Type": "application/json" } // header
-    );
-    return result;
-  };
 
-  const result = req().then((result) => {
-    return result;
-  });
+  const [nfts, setNfts] = useState();
+  const [disconnect, setDisconnect] = useState(account);
+  
+
+  useEffect(() => {
+    axios.post(
+      "http://localhost:3000/mypage/userInfo",
+      { address: account },
+      { "Content-Type": "application/json" } // header
+    ).then((response) => {
+      setNfts(response.data)
+    })
+    ;
+  }, []);
+
+  function logOut() {
+    localStorage.clear()
+    return setDisconnect(!account)
+  }
+
 
   return (
     <div className="mypage">
@@ -39,10 +48,13 @@ const MyPage = ({ name, account, web3 }) => {
           <h1>{name}</h1>
           <div className="wallet_address">
             <i className="fa-brands fa-ethereum"></i>
-            <h5>{account}</h5>
+            <h5>{disconnect}</h5>
             <div className="created_date">
               <h5>Joined December 2022</h5>
             </div>
+            <button className='disconnect_wallet'onClick={logOut}>
+            <h5>Disconnect Wallet</h5>
+                </button>
           </div>
         </div>
         <div className=""></div>
@@ -72,30 +84,21 @@ const MyPage = ({ name, account, web3 }) => {
         </div>
       </div>
       <div className="display">
-        <div className="NFT_101">
-          <div className="NFT_101_1">1</div>
-          <div className="NFT_101_1">2</div>
-          <div className="NFT_101_1">3</div>
-          <div className="NFT_101_1">4</div>
-          <div className="NFT_101_1">5</div>
-          <div className="NFT_101_1">6</div>
-        </div>
-        <div className="NFT_101">
-          <div className="NFT_101_1">1</div>
-          <div className="NFT_101_1">2</div>
-          <div className="NFT_101_1">3</div>
-          <div className="NFT_101_1">4</div>
-          <div className="NFT_101_1">5</div>
-          <div className="NFT_101_1">6</div>
-        </div>
-        <div className="NFT_101">
-          <div className="NFT_101_1">1</div>
-          <div className="NFT_101_1">2</div>
-          <div className="NFT_101_1">3</div>
-          <div className="NFT_101_1">4</div>
-          <div className="NFT_101_1">5</div>
-          <div className="NFT_101_1">6</div>
-        </div>
+        {console.log(nfts)}
+        {
+          nfts !== {} && nfts !== undefined
+          ? nfts.owner.map((item) => {
+            return (
+              <NFT 
+                className = 'nft_list'
+                nft={item} 
+                key={item.id}
+              />
+            )
+          })
+          : 0
+        }
+
       </div>
     </div>
   );

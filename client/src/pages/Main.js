@@ -1,5 +1,37 @@
-import NFT from '../components/NFT/NFT';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Button } from "reactstrap";
+import NFT from "../components/NFT/NFT";
 const Main = () => {
+  const [pagination, setPagination] = useState(0);
+  const [nfts, setNfts] = useState({});
+
+  const handlePrevClick = () => {
+    setPagination((curr) => {
+      if (curr <= 0) {
+        return 0
+      } else {
+        return curr -= 1;
+      }
+    });
+  };
+  const handleNextClick = () => {
+    setPagination((curr) => {
+      return curr += 1;
+    });
+  };
+
+  // console.log(pagination)
+  const [nftList, setNftList] = useState([]);
+  useEffect(() => {
+    // axios.get();
+    axios.get("http://localhost:3000/mainList?point=" + pagination)
+    .then((response) => {
+      setNfts(response.data)
+    })
+  }, [pagination]);
+
+  console.log(nfts);
   return (
     <div className="body">
       <div className="slide">
@@ -32,142 +64,31 @@ const Main = () => {
           </div>
         </span>
       </div>
-      <span className="trending_top_menu">
-        <h5>COLLECTION</h5>
-        <h5>FLOOR PRICE</h5>
-        <h5>VOLUME</h5>
-        <h5>COLLECTION</h5>
-        <h5>FLOOR PRICE</h5>
-        <h5>VOLUME</h5>
-      </span>
-      <div className="trending_top_number">
-        <div className="trending_top_number_a">
-          <a href="#">
-            <h4>1</h4>
-            <img src="https://opensea.io/collection/yaypegs"></img>
-            <h4>COLLECTION_1</h4>
-          </a>
-          <a href="#">
-            <h4>2</h4>
-            <img src="https://opensea.io/collection/genesis-oath"></img>
-            <h4>COLLECTION_2</h4>
-          </a>
-          <a href="#">
-            <h4>3</h4>
-            <img src="https://opensea.io/collection/wolf-game"></img>
-            <h4>COLLECTION_3</h4>
-          </a>
-          <a href="#">
-            <h4>4</h4>
-            <img src="https://opensea.io/collection/tougenkyouofficial"></img>
-            <h4>COLLECTION_4</h4>
-          </a>
-          <a href="#">
-            <h4>5</h4>
-            <img src="https://opensea.io/collection/kagura-jp"></img>
-            <h4>COLLECTION_5</h4>
-          </a>
-        </div>
-        <div className="trending_top_number_b">
-          <a href="#">
-            <h4>6</h4>
-            <img src="https://opensea.io/collection/arbitrum-odyssey-nft"></img>
-            <h4>COLLECTION_6</h4>
-          </a>
-          <a href="#">
-            <h4>7</h4>
-            <img src="https://opensea.io/collection/pacific-rim-legacy-collection"></img>
-            <h4>COLLECTION_7</h4>
-          </a>
-          <a href="#">
-            <h4>8</h4>
-            <img src="https://opensea.io/collection/10ktf-stockroom"></img>
-            <h4>COLLECTION_8</h4>
-          </a>
-          <a href="#">
-            <h4>9</h4>
-            <img src="https://opensea.io/collection/acrocalypse"></img>
-            <h4>COLLECTION_9</h4>
-          </a>
-          <a href="#">
-            <h4>10</h4>
-            <img src="https://opensea.io/collection/a-common-place"></img>
-            <h4>COLLECTION_10</h4>
-          </a>
-        </div>
-      </div>
 
-      <h3>Notable collections</h3>
-      <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-          </div>
-      <h3>Food NFTs spotlight</h3>
-      <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-          </div>
-      <h3>NFT_101</h3>
-      <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
+      <div className="main_nft_pagination">
+        <Button className="main_nft_pagination_button" onClick={handlePrevClick}>
+        <h1>Prev</h1>
+        </Button>
+        <Button className="main_nft_pagination_button" onClick={handleNextClick}>
+        <h1>Next</h1>
+        </Button>
       </div>
-      <h3>Browse by category</h3>
-      <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-      </div>
-      <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-      </div>
-      <div className="display">
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-            <div className="nft_list">
-            <NFT/><NFT/><NFT/>
-            </div>
-      </div>
-        <div className="footer">
+      <div className="trending_top_number">
+        {
+          nfts.length > 0
+          ?nfts.map((item, index) => {
+            return (
+              <div className="nft_list">
+                <NFT nft={item}/>
+              </div>
+            )
+          })
+          :""
+        }
+        </div>
+
+
+      <div className="footer">
         <div className="footer_head">
           {/* <!--sign up--> */}
           <div className="stay_in_the_loop">
@@ -178,7 +99,9 @@ const Main = () => {
             </h4>
 
             <input className="footer_input"></input>
-            <button className="footer_signup"><h2>Sign up</h2></button>
+            <button className="footer_signup">
+              <h2>Sign up</h2>
+            </button>
           </div>
           <div className="join_the_community">
             <h2>Join the community</h2>
@@ -200,63 +123,65 @@ const Main = () => {
             <div className="footer_menu_1">
               <div>
                 <a className="footer_logo" href="/">
-                  <img className="footer_logo" src="https://opensea.io/static/images/logos/opensea-white.svg"/>
+                  <img
+                    className="footer_logo"
+                    src="https://opensea.io/static/images/logos/opensea-white.svg"
+                  />
                 </a>
                 <h2>OpenSea</h2>
                 <h4>
                   The world’s first and largest digital marketplace for crypto
-                  collectibles and non-fungible tokens (NFTs). Buy, sell, and discover
-                  exclusive digital items.
+                  collectibles and non-fungible tokens (NFTs). Buy, sell, and
+                  discover exclusive digital items.
                 </h4>
+              </div>
             </div>
-          </div>
-          <div className="footer_menu_2">
+            <div className="footer_menu_2">
               <div className="marketplace">
-              <h3>Marketplace</h3>
-              <h4>All NFTs</h4>
-              <h4>Art</h4>
-              <h4>Collectibles</h4>
-              <h4>Domain Names</h4>
-              <h4>Music</h4>
-              <h4>Photography</h4>
-              <h4>Sports</h4>
-              <h4>Trading Cards</h4>
-              <h4>Utlity</h4>
-              <h4>Virtual Worlds</h4>
+                <h3>Marketplace</h3>
+                <h4>All NFTs</h4>
+                <h4>Art</h4>
+                <h4>Collectibles</h4>
+                <h4>Domain Names</h4>
+                <h4>Music</h4>
+                <h4>Photography</h4>
+                <h4>Sports</h4>
+                <h4>Trading Cards</h4>
+                <h4>Utlity</h4>
+                <h4>Virtual Worlds</h4>
               </div>
             </div>
             <div className="my_account">
               <h3>My Account</h3>
-              <h4>Profile</h4>            
+              <h4>Profile</h4>
               <h4>Favorites</h4>
               <h4>Watcst</h4>
               <h4>My Collections</h4>
               <h4>Settings</h4>
-              <h3 >Stats</h3>
+              <h3>Stats</h3>
               <h4>Rankings</h4>
               <h4>Activity</h4>
             </div>
             <div className="resources">
-              <h3>Resources</h3>       
-                <h4>Learn</h4>
-                <h4>Help Center</h4>
-                <h4>Platform Status</h4>
-                <h4>Partners</h4>
-                <h4>Taxes</h4>
-                <h4>Blog</h4>        
-                <h4>Docs</h4>
-                <h4>Newsletter</h4>     
+              <h3>Resources</h3>
+              <h4>Learn</h4>
+              <h4>Help Center</h4>
+              <h4>Platform Status</h4>
+              <h4>Partners</h4>
+              <h4>Taxes</h4>
+              <h4>Blog</h4>
+              <h4>Docs</h4>
+              <h4>Newsletter</h4>
             </div>
             <div className="company">
-              <h3>Company</h3>      
-                <h4>About</h4>
-                <h4>Careers</h4>
-                <h4>Ventures</h4>
-                <h4>Grants</h4>
+              <h3>Company</h3>
+              <h4>About</h4>
+              <h4>Careers</h4>
+              <h4>Ventures</h4>
+              <h4>Grants</h4>
             </div>
-
           </div>
-          </div>  
+        </div>
         <div>
           <h6>© 2018 - 2022 Ozone Networks, Inc</h6>
           <h6>Privacy Policy</h6>
@@ -264,7 +189,6 @@ const Main = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 

@@ -1,52 +1,49 @@
-
-.market{
-    text-align: left;
-    width: 94%;
-    margin: 3%;
+.market {
+  text-align: left;
+  width: 94%;
+  margin: 3%;
 }
 
-.category{
-    width: 94%;
-    margin: 0 3%;
-    padding: 0;
-    display: flex;
-    color: gray;
-    justify-content: space-between;
+.category {
+  width: 94%;
+  margin: 0 3%;
+  display: flex;
+  justify-content: left;
 }
-.category :hover{
-    color: black;
+.category button {
+  padding: 0;
+  border: 0;
+  background-color: white;
 }
-.category a {
-    margin: 0;
+.category button :hover {
+  color: black;
 }
-.category a h3{
-    
-    color: gray;
-    padding: 0px;
+.category .category_detail {
+  margin: 10px 30px;
+  color: gray;
+  padding: 0px;
 }
-h3{
-    padding: 0 20px 0 0;
+.category_detail {
+  padding: 0 20px 0 0;
 }
-.goods{
-    border-top: 2px solid lightgray;
-    
-    justify-content: space-around;
-}
-.nft_list{
-    padding: 0;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
+.goods {
+  border-top: 2px solid lightgray;
 
+  justify-content: space-around;
+}
+.nft_list {
+  padding: 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-.NFTs{
-    display: flex;
-    margin: 30px 10px;
-    padding: 0;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+.NFTs {
+  display: flex;
+  margin: 30px 10px;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }

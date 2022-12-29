@@ -44,6 +44,10 @@ const App = () => {
     localStorage.setItem("address", account);
   };
 
+  const [nft, setNft] = useState({});
+  const onImageClick = (nft) => {
+    setNft(nft);
+  };
   const name = "example";
   return (
     <div className="App">
@@ -52,7 +56,10 @@ const App = () => {
         <section className="features">
           <Routes>
             <Route exact path="/" element={<Main />} />
-            <Route path="/market" element={<Market />} />
+            <Route
+              path="/market"
+              element={<Market onImageClick={onImageClick} />}
+            />
             <Route
               path="/mypage"
               element={<MyPage name={name} account={account} web3={web3} />}
@@ -68,7 +75,10 @@ const App = () => {
                 />
               }
             />
-            <Route path="/nftdetails" element={<NFTdetails />} />
+            <Route
+              path={`/nft/${nft.contractAddr}/${nft.tokenId}`}
+              element={<NFTdetails nft={nft} />}
+            />
           </Routes>
         </section>
       </main>

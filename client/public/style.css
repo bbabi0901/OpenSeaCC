@@ -36,13 +36,14 @@ a{
     align-items: center;
 }
 .mypage img{
-    margin: 0;
-    padding: 0;
+    margin: 20px 0;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: auto;
+}
+.market img{
+    margin: 20px 0;
+    width: 100%;
+    height: auto;
 }
 .slide{
     margin: 0px;
@@ -65,8 +66,8 @@ h2{
 
 }
 .trending_top{
+    height: 100px;
     background-color: whitesmoke;
-
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -79,8 +80,62 @@ h2{
     display: flex;
     list-style: none;
 }
-.trending_top_number a{
-    color: rgb(89, 89, 89);
+
+.trending_top_number{
+    width: 100%;
+    margin-bottom: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+.trending_top_number img{
+    margin: 20px 1%;
+    margin: 1%;
+    width: 98%;
+    height: auto;
+}
+.trending_top_source{
+    
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    align-items: center;
+    font-size: 24px;
+}
+.name{
+    justify-content: space-around;
+}
+.main_nft_pagination{
+    font-size: large;
+}
+.disconnect_wallet {
+    width: 200px;
+    height: 15px;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    background-color: white;
+}
+.disconnect_wallet h5{
+    width: 200px;
+    text-align: center;
+}
+.main_nft_pagination_button{
+    margin: 10px 2%;
+    padding: 0;
+    width: 45%;
+    height: 50px;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.main_nft_pagination_button h1:hover{
+    color: black;
+}
+.main_nft_pagination_button h1{
+    margin: 10px;
+    color: lightgray;
+
 }
 h3{
     text-align: left;
@@ -118,101 +173,22 @@ h5{
 i{
     padding: 5px;
 }
-.trending_top_number{
-    display: flex;
-     margin: 0px;
-}
-.trending_top_number img{
-    width: 40px;
-    height: 40px;
-}
-.trending_top_number_a{
-    color: darkgray;
-    display: block;
-    padding: 0 10px 0 0;
-    width: 50%;
-    text-align:left;
-}
-.trending_top_number_a a{
-    display: flex;
-    margin: 5px;
-    padding: 5px;
-    background-color: whitesmoke;
-    height: 30px;
-    align-items: center;
-    border-radius: 10px;
-}
-.trending_top_number_b{
-    color: darkgray;
-    display: block;
-    padding: 0 0 0 10px;
-    width: 50%;
-    text-align:left;
 
-}
-.trending_top_number_b a{
-    display: flex;
-    margin: 5px;
-    padding: 5px;
-    background-color: whitesmoke;
-    height: 30px;
-    align-items: center;
-    border-radius: 10px;
-}
 
 h4{
     margin: 0;
     padding-left: 20px;
     width: 20px;
 }
-.notable_collections{
-    display: flex;
-    align-items: center;
-}
-.notable_collections_1{
-    margin: 5px;
-    display: block;
-    width: 320px;
-    height: 180px;
-    border: 3px;
-    border-color: black;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    text-align: center;
 
+.NFT{
+    margin: 2%;
+    display: grid;
+    width: 100%;
+    margin: 0 auto; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
 
-}
-.food_NFTs_spotlight{
-    display: flex;
-    align-items: center;
-
-}
-.food_NFTs_spotlight_1{
-    margin: 5px;
-    display: block;
-    width: 320px;
-    height: 180px;
-    border: 3px;
-    border-color: black;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    text-align: center;
-}
-.NFT_101{
-    display: flex;
-    align-items: center;
-
-}
-.NFT_101_1{
-    margin: 5px;
-    display: block;
-    width: 320px;
-    height: 180px;
-    border: 3px;
-    border-color: black;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    text-align: center;
 }
 
 .browse_by_category{
@@ -467,9 +443,18 @@ footer h3 h4 h5 {
     color: gray;
 }
 .display{
-    margin: 20px 20px 100px 20px;
+    display: grid;
+    width: 100%;
+    margin: 0; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.nft__Info--wrapper h3, h2{
+    padding: 0;
+    text-align: center;
 
 }
-.display .NFT_101 .NFT_101_1{
-    margin: 10px;
-}
+
