@@ -51,7 +51,7 @@ export default function NFT({nft}) {
 
     if (nft) {
       return(
-      <Link className='NFT' id={nft.nft_id} key ={nft.nft_id} to={"../nftdetails?id="+nft.id}>
+      <Link id={nft.nft_id} key ={nft.nft_id} to={"../nftdetails?id="+nft.id}>
         <div className="parts">
           <div className="nft__content">
             <div className="nft__Info">
