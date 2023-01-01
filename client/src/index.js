@@ -16,15 +16,15 @@ const getLibrary = (provider) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ChakraProvider> */}
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <RecoilRoot>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </RecoilRoot>
-    </Web3ReactProvider>
-    {/* </ChakraProvider> */}
+    <ChakraProvider>
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <RecoilRoot>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </RecoilRoot>
+      </Web3ReactProvider>
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

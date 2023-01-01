@@ -7,7 +7,7 @@ import WalletSellection from "../Wallet/Wallet";
 import { useEffect, useState } from "react";
 import { connectors } from "../../utils/connectors";
 
-function Header({}) {
+function Header() {
   // 이러면 atom을 '구독'하는 다른 컴포넌트에서는 useRecoilValue(key값)을 통해 atom을 조회.
   // selector -> 변화된 값으로부터 파생되는 다른 결과물. (ex. text -> text.length) selector({})로 설정후 useRecoilValue를 통해 불러올 수 있다.
   const searchTextState = atom({

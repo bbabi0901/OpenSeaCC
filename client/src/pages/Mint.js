@@ -2,6 +2,31 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Input, Textarea, Button } from "@chakra-ui/react";
 import axios from "axios";
+// Goal: upload on ipfs and chain directly from client
+
+// Step0. connect ipfs
+// sudo npm install -save ipfs-api
+// const ipfsAPI = require('ipfs-api');
+// const ipfs = ipfsAPI('192.168.0.8' ,'5001', {protocol: 'http'})
+
+// Step1. metadata from state => compile in json
+// exMetadata = {
+//   name: '',
+//   image: '', <- external Link?
+//   description: ''
+// } <- becomes data when accessing tokenURI
+
+// Step2. upload image on ipfs by using ipfs-api
+// => returns hash data(ex. QmT7~~~) => metadata에 해쉬를 파싱해서 image에 externallink가 없으면 넣어준다
+// 이 메타데이터도 따로 ipfs에 업로드 -> 이때 나온 해시를 파싱한게 becomes part of tokenURI
+
+// Step3. default contract or default contract에 collection/token이름과 심볼을 받아서 컨트랙트 "대신" 발행.
+// 발행한 컨트랙트(=contract abi)와 tokenURI가 있으면 NFT 발행 가능.
+
+// 요약 => 1.메타데이터를 만들고 2.ipfs에 올리고 3.올릴때반환된값을 활용해서 minting
+
+// Extra step. When calling ipfs image
+// npm install react-ipfs-image(https://www.npmjs.com/package/react-ipfs-image)
 
 const Mint = ({ name, account }) => {
   const address = localStorage.getItem("address");

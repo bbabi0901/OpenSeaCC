@@ -36,6 +36,7 @@ const Market = ({ onImageClick }) => {
 
   useEffect(() => {
     getNftList(category).then((res) => {
+      console.log(res.length);
       setNtfs(res);
     });
   }, [category]);
