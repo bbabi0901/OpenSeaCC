@@ -1,48 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import { Input, Textarea, Button } from "@chakra-ui/react";
+import axios from "axios";
 
-const Mint = ({name, account}) => {
+const Mint = ({ name, account }) => {
   const address = localStorage.getItem("address");
   const [values, setValues] = useState({});
   const [imgBase64, setImgBase64] = useState([]); // 파일 base64
-  const [imgFile, setImgFile] = useState(null);	//파일	
+  const [imgFile, setImgFile] = useState(null); //파일
   const req = async (mintData) => {
-    const result = await axios.post("http://localhost:3000/mint/minting",
+    const result = await axios.post(
+      "http://localhost:3000/mint/minting",
       {
-        "address" : address,
-        "img" : imgBase64,
-        "info" : mintData
-      },  // body
+        address: address,
+        img: imgBase64,
+        info: mintData,
+      }, // body
       {
         "Content-Type": "multipart/form-data",
       } // header
-    )
+    );
 
     return result;
-  }
+  };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValues({
       ...values,
       account,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const mintData = JSON.stringify(values, null,2);
-    alert(JSON.stringify(values, null,2))
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const mintData = JSON.stringify(values, null, 2);
+    alert(JSON.stringify(values, null, 2));
 
-    req(mintData)
-  }
+    req(mintData);
+  };
   const handleChangeFile = (event) => {
-
     setImgFile(event.target.files);
     //fd.append("file", event.target.files)
     setImgBase64([]);
-    for(var i=0;i<event.target.files.length;i++){
+    for (var i = 0; i < event.target.files.length; i++) {
       if (event.target.files[i]) {
         let reader = new FileReader();
         reader.readAsDataURL(event.target.files[i]); // 1. 파일을 읽어 버퍼에 저장합니다.
@@ -50,108 +51,112 @@ const Mint = ({name, account}) => {
         reader.onloadend = () => {
           const base64 = reader.result;
           if (base64) {
-          var base64Sub = base64.toString()
-             
-          setImgBase64(imgBase64 => [...imgBase64, base64Sub]);
+            var base64Sub = base64.toString();
+
+            setImgBase64((imgBase64) => [...imgBase64, base64Sub]);
           }
-        }
+        };
       }
     }
+  };
 
-  }
-
-  return(
-    
-  <div className="Mint">
-    <div className="container">
-    <form onSubmit={handleSubmit}>
-        <h1>Create New Item</h1>
-        <h6>* Required fields</h6>
-        <h3>Image, Video, Audio, or 3D Model</h3>
-        <h6>File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</h6>
-        <div className="add__img">
-
-          <div className="upload">
-          <input type="file" id="file"  onChange={handleChangeFile} multiple="multiple" />
-          
+  return (
+    <div className="Mint">
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <h1>Create New Item</h1>
+          <h6>* Required fields</h6>
+          <h3>Image, Video, Audio, or 3D Model</h3>
+          <h6>
+            File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG,
+            GLB, GLTF. Max size: 100 MB
+          </h6>
+          <div className="add__img">
+            <div className="upload">
+              <input
+                type="file"
+                id="file"
+                onChange={handleChangeFile}
+                multiple="multiple"
+              />
+            </div>
+            <ul className="image_preview">
+              <i className="fa-regular fa-image"></i>
+            </ul>
           </div>
-          <ul className="image_preview">
-          <i className="fa-regular fa-image"></i>
-          </ul>
-
-        </div>
           <div className="add__name">
             <h3>Name</h3>
-            <input 
-            className = 'text_input'
-            type='text' 
-            placeholder = '   Item name'
-            name='nft_name'
-            onChange={handleChange}
-            ></input>
+            <Input
+              className="text_input"
+              type="text"
+              placeholder="   Item name"
+              name="nft_name"
+              onChange={handleChange}
+            ></Input>
           </div>
           <div className="add__external_link">
             <h3>External link</h3>
-            <h6>OpenSea will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</h6>
-            <input 
-            
-            className = 'text_input' 
-            type='text' 
-            placeholder = '   https://yoursite.io/item/123'
-            name='nft_img_link'
-            onChange={handleChange}
-            ></input>
+            <h6>
+              OpenSea will include a link to this URL on this item's detail
+              page, so that users can click to learn more about it. You are
+              welcome to link to your own webpage with more details.
+            </h6>
+            <Input
+              className="text_input"
+              type="text"
+              placeholder="   https://yoursite.io/item/123"
+              name="nft_img_link"
+              onChange={handleChange}
+            ></Input>
           </div>
           <div className="add__discription">
             <h3>Description</h3>
-            <h6>The description will be included on the item's detail page underneath its image. Markdown syntax is supported.</h6>
-            <textarea 
-            className = 'text_input discription'  
-            placeholder = '  Provide a detailed discription of your item.'
-            name='nft_detail'
-            onChange={handleChange}
-            ></textarea>
+            <h6>
+              The description will be included on the item's detail page
+              underneath its image. Markdown syntax is supported.
+            </h6>
+            <Textarea
+              className="text_input discription"
+              placeholder="  Provide a detailed discription of your item."
+              name="nft_detail"
+              onChange={handleChange}
+            ></Textarea>
           </div>
           <div className="add__price">
             <h3>Price</h3>
-            <input 
-            
-            className = 'text_input' 
-            type='number' 
-            name='nft_price'
-            onChange={handleChange}
-            ></input>
+            <Input
+              className="text_input"
+              type="number"
+              name="nft_price"
+              onChange={handleChange}
+            ></Input>
           </div>
           <div className="add__collection">
             <h3>Theme</h3>
             <h6>This is the theme where your item will added.</h6>
-            <select 
-            className = 'text_input' 
-            placeholder = 'Select Collection'
-            name='nft_collection'
-            onChange={handleChange}
+            <select
+              className="text_input"
+              placeholder="Select Collection"
+              name="nft_collection"
+              onChange={handleChange}
             >
-              <option value = ''>...Select Collection</option>
-              <option value = 'trending'>Trending</option>
-              <option value = 'art'>Art</option>
-              <option value = 'collectibles'>Collectibles</option>
+              <option value="">...Select Collection</option>
+              <option value="trending">Trending</option>
+              <option value="art">Art</option>
+              <option value="collectibles">Collectibles</option>
             </select>
           </div>
           <div className="add__create">
             {/* <Link to="/mypage"> */}
-              <button 
-              className="add__create_button" 
-              type='submit'
-              >
-              <h3>Create</h3>  
-              </button>
+            <Button className="add__create_button" type="submit">
+              <h3>Create</h3>
+            </Button>
             {/* </Link> */}
           </div>
         </form>
       </div>
     </div>
-
-  )
+  );
 };
 
 export default Mint;

@@ -1,11 +1,38 @@
 import { Link } from "react-router-dom";
+import { atom, useRecoilState } from "recoil";
+import { useWeb3React } from "@web3-react/core";
 import "./Header.css";
+import { useDisclosure, Input } from "@chakra-ui/react";
+import WalletSellection from "../Wallet/Wallet";
+import { useEffect, useState } from "react";
+import { connectors } from "../../utils/connectors";
 
-function Header({ account, isAccConnected }) {
+function Header({}) {
+  // 이러면 atom을 '구독'하는 다른 컴포넌트에서는 useRecoilValue(key값)을 통해 atom을 조회.
+  // selector -> 변화된 값으로부터 파생되는 다른 결과물. (ex. text -> text.length) selector({})로 설정후 useRecoilValue를 통해 불러올 수 있다.
+  const searchTextState = atom({
+    key: "searchTextState",
+    default: "",
+  });
+  const [searchText, setSearchText] = useRecoilState(searchTextState);
+  const onChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { library, chainId, account, activate, deactivate, active } =
+    useWeb3React();
+  const refreshState = () => {
+    window.localStorage.setItem("provider", undefined);
+  };
+
+  useEffect(() => {
+    const provider = window.localStorage.getItem("provider");
+    if (provider) activate(connectors[provider]);
+  }, []);
   return (
     <div className="header">
       <div className="nav">
-        {/* <!--logo--> */}
         <span className="nav__CI">
           <Link to="/">
             <img
@@ -15,80 +42,57 @@ function Header({ account, isAccConnected }) {
             />
           </Link>
           <Link className="nav__siteName" to="/">
-            <h3>OpenSea</h3>
+            <h3>Gatiga</h3>
           </Link>
         </span>
-
-        {/* <!--Search items, collections, and accounts--> */}
-        {/* <a href='#'><i class="fa-solid fa-magnifying-glass"></i></a> */}
         <span className="nav__text_input">
-          <input
+          <Input
             className="text_input"
             aria-label="Search OpenSea"
             aria-multiline="false"
             placeholder="   Search items, collections, and accounts"
             role="searchbox"
             type="search"
-          ></input>
+            value={searchText}
+            onChange={onChange}
+          ></Input>
         </span>
         <ul>
           <div className="nav__menu">
-            {/* <!--Explore--> */}
             <ul>
               <Link to="/market">Market</Link>
-              {/* <!-- <li>All NFTs</li>
-                            <li>Art</li>
-                            <li>Collectibles</li>
-                            <li>Domain Names</li>
-                            <li>Music</li>
-                            <li>Photography</li>
-                            <li>Sports</li>
-                            <li>Trading Cards</li>
-                            <li>Utility</li>
-                            <li>Virtual Worlds</li> --> */}
             </ul>
-
-            {/* <!--Create--> */}
             <ul>
               <Link to="/mint">Mint</Link>
             </ul>
           </div>
         </ul>
-        {/* <!--icon.symbol--> */}
         <div className="nav__icons">
           <li>
-            <Link to="/mypage">
-              <i className="fa-solid fa-user"></i>
-            </Link>
+            {active ? (
+              <Link to="/mypage">
+                <i className="fa-solid fa-user"></i>
+              </Link>
+            ) : (
+              ""
+            )}
           </li>
-          {/* <!-- <li>Profile</li>
-                        <li>Favorites</li>
-                        <li>Watchlist</li>
-                        <li>My Collections</li>
-                        <li>Settings</li>
-                        <li>Language</li>
-                        <ul><a><-Choose Language</a>
-                            <li>English</li>
-                            <li>Spanish</li>
-                            <li>Deutsch</li>
-                            <li>French</li>
-                            <li>Japanese</li>
-                            <li>Korean</li>
-                            <li>Chinese</li>
-                        </ul>
-                        <li>Night Mode.onOff</li> --> */}
-
-          {/* <!--Wallet.symbol--> */}
           <li>
-            <Link to="/wallet">
-              <i
-                className={
-                  isAccConnected
-                    ? "fa-solid fa-wallet"
-                    : "fa-solid fa-wallet gray"
-                }
-              ></i>
-            </Link>
+            {!active ? (
+              <Link>
+                <i className="fa-solid fa-wallet gray" onClick={onOpen}></i>
+              </Link>
+            ) : (
+              <Link to="/">
+                <i
+                  className="fa-solid fa-wallet"
+                  onClick={() => {
+                    refreshState();
+                    deactivate();
+                  }}
+                ></i>
+              </Link>
+            )}
           </li>
           {/* <!--Cart.symbol--> */}
           <li>
@@ -98,6 +102,7 @@ function Header({ account, isAccConnected }) {
           </li>
         </div>
       </div>
+      <WalletSellection isOpen={isOpen} closeModal={onClose} />
     </div>
   );
 }
